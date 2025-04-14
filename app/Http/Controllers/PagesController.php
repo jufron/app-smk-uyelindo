@@ -9,7 +9,63 @@ class PagesController extends Controller
 {
     public function index () : View
     {
-        return view('frond.index');
+        $testimonials = (object)[
+            [
+                'image' => null,
+                'position' => 'Alumni 2019',
+                'message' => 'Sekolah ini memberikan pengalaman belajar yang luar biasa dan mempersiapkan saya untuk masa depan yang lebih baik. Saya sangat bersyukur bisa menempuh pendidikan di sekolah ini.',
+                'name' => 'Ahmad Rizki'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2020',
+                'message' => 'Para guru sangat kompeten.',
+                'name' => 'Sarah Amelia'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2021',
+                'message' => 'Fasilitas sekolah sangat mendukung proses pembelajaran dan pengembangan diri siswa. Kegiatan ekstrakurikuler yang beragam membuat saya bisa mengembangkan bakat dan minat dengan maksimal.',
+                'name' => 'Budi Santoso'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2018',
+                'message' => 'Lingkungan belajar yang nyaman.',
+                'name' => 'Dina Putri'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2022',
+                'message' => 'Saya mendapatkan banyak ilmu dan pengalaman berharga selama bersekolah disini. Terima kasih kepada semua guru yang telah membimbing dengan penuh kesabaran dan dedikasi tinggi.',
+                'name' => 'Reza Pratama'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2017',
+                'message' => 'Sekolah terbaik.',
+                'name' => 'Maya Sari'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2017',
+                'message' => 'Pengalaman belajar di sekolah ini sangat berkesan dan membentuk karakter saya menjadi pribadi yang lebih baik. Terima kasih atas semua ilmu dan nilai-nilai kehidupan yang diajarkan.',
+                'name' => 'Andi Permana'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2017',
+                'message' => 'Guru-guru yang profesional.',
+                'name' => 'Siti Nurhaliza'
+            ],
+            [
+                'image' => null,
+                'position' => 'Alumni 2017',
+                'message' => 'Sekolah ini memiliki standar pendidikan yang sangat tinggi dan berhasil mengantarkan para siswanya menuju kesuksesan. Saya bangga bisa menjadi bagian dari sejarah sekolah ini.',
+                'name' => 'Indra Kusuma'
+            ]
+        ];
+        return view('frond.index', compact('testimonials'));
     }
     
     public function sejarah () : View

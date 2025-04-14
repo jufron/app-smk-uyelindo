@@ -10,73 +10,46 @@
     metaTwitterDescription="Dapatkan informasi lengkap untuk menghubungi SMK Uyelindo Kupang, termasuk lokasi, email, dan nomor telepon."
     >
     <x-frond.navbar />
-    <section class="contact-section section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-12">
-                        <h2 class="mb-4">Hubungi Kami</h2>
 
-                        <form class="contact-form me-lg-5 pe-lg-3" action="" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" placeholder="Email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <textarea name="message" rows="5" class="form-control" placeholder="Pesan"></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                        </form>
+    <section>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+            <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
+                <h2 class="mt-10 text-3xl font-extrabold text-gray-900">Kontak</h2>
+                <p class="mt-4 text-lg text-gray-500">Hubungi kami untuk informasi lebih lanjut tentang SMK Uyelindo Kupang. Kami siap membantu menjawab pertanyaan Anda.</p>
+            </div>
+            <div class="mt-16 lg:mt-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="rounded-lg overflow-hidden">
+                        <iframe
+                            src="https://maps.google.com/maps?q=smk+uyelindo+kupang&output=embed"
+                            width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-
-                    <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                        <div class="contact-info">
-                            <div class="contact-info-item">
-                                <div class="contact-info-body">
-                                    <h5 class="mb-3">Alamat Sekolah</h5>
-                                    <p>Jl. Veteran No. 108, Fatululi, Kec. Oebobo, Kota Kupang, Nusa Tenggara Tim.</p>
-                                </div>
+                    <div>
+                        <div class="max-w-full mx-auto rounded-lg overflow-hidden">
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg font-medium text-gray-900">Alamat</h3>
+                                <p class="mt-1 text-gray-600">Jl. Perintis Kemerdekaan I No.9, Oebufu, Kec. Oebobo, Kota Kupang, Nusa Tenggara Timur.</p>
                             </div>
-
-                            <div class="contact-info-item">
-                                <div class="contact-info-body">
-                                    <h5 class="mb-3">Kontak</h5>
-                                    <p>
-                                        <i class="bi bi-telephone-fill me-2"></i>
-                                        (0380) 8438423
-                                    </p>
-                                    <p>
-                                        <i class="bi bi-envelope-fill me-2"></i>
-                                        smkuyelindo@gmail.com
-                                    </p>
+                            <div class="border-t border-gray-200 px-6 py-4">
+                                <h3 class="text-lg font-medium text-gray-900">Social Media</h3>
+                                    <div class="flex space-x-4 mt-5">
+                                        <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-facebook-square text-2xl"></i></a>
+                                        <a href="#" class="text-gray-600 hover:text-pink-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-instagram text-2xl"></i></a>
+                                        <a href="#" class="text-gray-600 hover:text-red-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-youtube text-2xl"></i></a>
+                                        <a href="#" class="text-gray-600 hover:text-black px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-tiktok text-2xl"></i></a>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="contact-info-item">
-                                <div class="contact-info-body">
-                                    <h5 class="mb-3">Jam Operasional</h5>
-                                    <p>Senin - Jumat: 07.00 - 14.00 WITA</p>
-                                    <p>Sabtu: 07.00 - 12.00 WITA</p>
-                                </div>
+                                <div class="border-t border-gray-200 px-6 py-4">
+                                <h3 class="text-lg font-medium text-gray-900">Contact</h3>
+                                <p class="mt-1 text-gray-600">Email: info@example.com</p>
+                                <p class="mt-1 text-gray-600">Phone: +1 23494 34993</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="maps-section">
-            <div class="container-fluid p-0">
-                <div class="maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.8655489046007!2d123.60775937495834!3d-10.17239848951565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c569c9f903c5fab%3A0x91d4e7a15f4d301e!2sSMK%20UYELINDO%20KUPANG!5e0!3m2!1sid!2sid!4v1701414269197!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
     <x-frond.footer />
 </x-layouts.frond.app>
