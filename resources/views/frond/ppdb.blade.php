@@ -25,9 +25,9 @@
         </div>
     </section>
     {{-- ? hero section --}}
-    
+
     {{-- ? gelombang pendaftaran --}}
-    <section class="bg-slate-50">
+    <section class="bg-yellow-100">
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <!-- Title -->
             <div class="flex flex-col items-center text-center">
@@ -41,7 +41,7 @@
             <!-- Content -->
             <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
                 <!-- Item -->
-                <div class="grid gap-6 rounded-md border border-solid border-yellow-300 p-8 md:p-10">
+                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10">
                     <div class="h-16 w-16 rounded-full bg-orange-950 flex items-center justify-center">
                         <span class="text-2xl font-bold text-yellow-300">1</span>
                     </div>
@@ -53,7 +53,7 @@
                     </p>
                 </div>
                 <!-- Item -->
-                <div class="grid gap-6 rounded-md border border-solid border-yellow-300 p-8 md:p-10">
+                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10">
                     <div class=" h-16 w-16 rounded-full bg-orange-950 flex items-center justify-center">
                         <span class="text-2xl font-bold text-yellow-300">2</span>
                     </div>
@@ -65,7 +65,7 @@
                     </p>
                 </div>
                 <!-- Features Item -->
-                <div class="grid gap-6 rounded-md border border-solid border-yellow-300 p-8 md:p-10">
+                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10">
                     <div class="h-16 w-16 rounded-full bg-orange-950 flex items-center justify-center">
                         <span class="text-2xl font-bold text-yellow-300">3</span>
                     </div>
@@ -136,7 +136,7 @@
     {{-- ? alur pendaftaran --}}
 
     {{-- ? presyaratan --}}
-    <section class="container relative mx-auto py-12 px-2 bg-slate-50">
+    <section class="container relative mx-auto py-12 px-2 ">
 
         <h2 class="text-center text-3xl font-bold md:text-5xl">
             Persyaratan
@@ -195,7 +195,7 @@
                     3. Tidak buta warna (untuk jurusan tertentu)
                 </h5>
             </div>
-        </div>    
+        </div>
     </section>
     {{-- ? presyaratan --}}
 
@@ -214,7 +214,7 @@
             <!-- Content -->
             <ul class="grid gap-5 sm:grid-cols-2 md:gap-4">
                 <!-- Item -->
-                <li class="rounded-md bg-gray-100 p-8 md:p-10">
+                <li class="rounded-md bg-yellow-100 p-8 md:p-10">
                     <!-- Divider -->
                     <p class="mb-3 text-2xl font-semibold">
                         Teknik Komputer dan Jaringan
@@ -224,7 +224,7 @@
                     </p>
                 </li>
                 <!-- Item -->
-                <li class="rounded-md bg-gray-100 p-8 md:p-10">
+                <li class="rounded-md bg-yellow-100 p-8 md:p-10">
                     <!-- Divider -->
                     <p class="mb-3 text-2xl font-semibold">
                         Rekayasa Perangkat Lunak
@@ -239,7 +239,7 @@
     {{-- ? program keahlian --}}
 
     {{-- ? biaya pendaftaran --}}
-    <section class="bg-slate-100 py-10">
+    <section class="bg-yellow-100 py-10">
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
                 <h2 class="text-3xl font-bold md:text-5xl">Biaya Pendaftaran</h2>
@@ -287,85 +287,361 @@
     {{--? form pendaftaran --}}
     <section class="py-20 container mx-auto">
         <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
-            <h2 class="text-3xl font-bold md:text-5xl">Biaya Pendaftaran</h2>
+            <h2 class="text-3xl font-bold md:text-5xl">Form Pendaftaran Online</h2>
             <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12">
-                Informasi rincian biaya pendaftaran untuk calon peserta didik baru
+                Silahkan lengkapi data diri Anda dengan benar untuk melanjutkan proses pendaftaran sebagai calon peserta didik baru
             </p>
         </div>
 
-        <form class="mx-5 md:mx-0">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="mb-5">
-                    <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
-                        Full Name
-                    </label>
-                    <input type="text" name="name" id="name" placeholder="Full Name"
-                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+        <form class="mx-5 md:mx-0" action="" method="POST" x-data="{ tinggalDengan: '' }">
+            @csrf
+            <label class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
+                Biodata Siswa Baru
+            </label>
+            <div class="grid grid-cols-2 lg:grid-cols-12 gap-4">
+                {{-- ? nama lengkap --}}
+                <div class="col-span-2 lg:col-span-4">
+                    <x-frond.input
+                        name="nama_lengkap"
+                        label="Nama Lengkap"
+                        placeholder="Masukan Nama Lengkap Anda"
+                    />
                 </div>
-                <div class="mb-5">
-                    <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
-                        Phone Number
-                    </label>
-                    <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
-                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                {{-- ? nama panggilan --}}
+                <div class="col-span-2 lg:col-span-3">
+                    <x-frond.input
+                        name="nama_panggilan"
+                        label="Nama Panggilan"
+                        placeholder="Masukan Nama Panggilan Anda"
+                    />
                 </div>
-                <div class="mb-5">
-                    <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
-                        Email Address
-                    </label>
-                    <input type="email" name="email" id="email" placeholder="Enter your email"
-                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                {{-- ? email --}}
+                <div class="col-span-2 lg:col-span-3">
+                    <x-frond.input
+                        name="email"
+                        label="Email"
+                        placeholder="Masukan Email Anda"
+                        type="email"
+                    />
                 </div>
-                <div class="mb-5">
-                    <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
-                        Date
-                    </label>
-                    <input type="date" name="date" id="date"
-                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                {{-- ? nisn (number input) --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input
+                        name="nisn"
+                        label="NISN"
+                        placeholder="Masukan NISN Anda"
+                        type="number"
+                    />
                 </div>
-                <div class="mb-5">
-                    <label for="time" class="mb-3 block text-base font-medium text-[#07074D]">
-                        Time
+                {{-- ? tempat tanggal lahir (date input) --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input
+                        name="tanggal_lahir"
+                        label="Tanggal Lahir"
+                        placeholder="Masukan Tanggal Lahur Anda"
+                        type="date"
+                    />
+                </div>
+                {{-- ? jenis kelamin (select input) --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input-select name="jenis_kelamin" label="Jenis Kelamin">
+                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? agama (select input) --}}
+                <div class="col-spann-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input-select name="agama" label="Agama">
+                        <option value="" disabled selected>Pilih Agama</option>
+                        <option value="islam">Islam</option>
+                        <option value="kristen">Kristen</option>
+                        <option value="katolik">Katolik</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="buddha">Buddha</option>
+                        <option value="konghucu">Konghucu</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? alamat siswa --}}
+                <div class="col-span-2 lg:col-span-4">
+                    <x-frond.input
+                        name="alamat_siswa"
+                        label="Alamat Siswa"
+                        placeholder="Masukan Alamat Rumah Anda"
+                    />
+                </div>
+                {{-- ? asal sekolah --}}
+                <div class="col-span-2 lg:col-span-4">
+                    <x-frond.input
+                        name="alamat_siswa"
+                        label="Alamat Siswa"
+                        placeholder="Masukan Alamat Rumah Anda"
+                    />
+                </div>
+                {{-- ? alamat sekolah asal --}}
+                <div class="col-span-2 lg:col-span-5">
+                    <x-frond.input
+                        name="alamat_sekolah_asal"
+                        label="Alamat Sekolah Asall"
+                        placeholder="Masukan Alamat Sekolah Asal"
+                    />
+                </div>
+                {{-- ? anak ke brp (select input) --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-1">
+                    <x-frond.input-select name="anamk_ke" label="Anak Ke">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? status anak dalam keluarga (select input)  --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input-select name="status_anak" label="Status Anak">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="kandung">Anak Kandung</option>
+                        <option value="tiri">Anak Tiri</option>
+                        <option value="angkat">Anak Angkat</option>
+                        <option value="lainya">Lainya</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? nomor hp siswa --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-3">
+                    <x-frond.input
+                        name="nomor_hp_siswa"
+                        label="No Hp Siswa"
+                        placeholder="contoh 081..."
+                        type="number"
+                    />
+                </div>
+                {{-- ? jumlah saudara kandung --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input-select name="jumlah_saudara_kandung" label="Jumlah Saudara Kandung">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? tinggal dengan --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <label for="tinggal_dengan" class="mb-3 block text-base font-medium text-[#07074D]">
+                        Tinggal Dengan
                     </label>
-                    <input type="time" name="time" id="time"
-                        class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                    <select 
+                        name="tinggal_dengan" 
+                        id="tinggal_dengan" 
+                        class="w-full rounded-md border border-yellow-200 bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:ring-yellow-300 focus:border-yellow-300 focus:shadow-md appearance-none"
+                        x-model="tinggalDengan"
+                        >
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="orang_tua">Orang Tua</option>
+                        <option value="wali_murid">Wali Murid</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="mb-5 pt-3">
-                <label class="mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
-                    Address Details
-                </label>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="mb-5">
-                        <input type="text" name="area" id="area" placeholder="Enter area"
-                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                    </div>
-                    <div class="mb-5">
-                        <input type="text" name="city" id="city" placeholder="Enter city"
-                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                    </div>
-                    <div class="mb-5">
-                        <input type="text" name="state" id="state" placeholder="Enter state"
-                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                    </div>
-                    <div class="mb-5">
-                        <input type="text" name="post-code" id="post-code" placeholder="Post Code"
-                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                    </div>
+            {{-- ? orang tua --}}
+            <label 
+                class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl" 
+                x-show="tinggalDengan === 'orang_tua' " 
+                x-cloak
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90"
+                >
+                Orang Tua
+            </label>
+            <div 
+                class="grid grid-cols-2 lg:grid-cols-12 gap-4" 
+                x-show="tinggalDengan === 'orang_tua' " 
+                x-cloak
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90"
+                >
+                {{-- ? nama lengkap ayah/wali --}}
+                <div class="col-span-2 lg:col-span-4">
+                    <x-frond.input
+                        name="nama_lengkap_ayah"
+                        label="Nama Lengkap Ayah"
+                        placeholder="Masukan Nama Lengkap Ayah"
+                    />
+                </div>
+                {{-- ? pekerjaan ayah --}}
+                <div class="col-span-2 lg:col-span-3">
+                    <x-frond.input
+                        name="pekerjaan_ayah"
+                        label="Pekerjaan Ayah"
+                        placeholder="Masukan Pekerjaan Ayah"
+                    />
+                </div>
+                {{-- ? pendidikan terkahir ayah --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input-select name="pendidikan_ayah" label="Pendidikan Ayah">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="SD">SD/MI</option>
+                        <option value="SMP">SMP/MTS</option>
+                        <option value="SMA">SMA/SMK/MA</option>
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
+                        <option value="D3">D3</option>
+                        <option value="D4">D4</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? nama lengkap ibu --}}
+                <div class="col-span-2 lg:col-span-4">
+                    <x-frond.input
+                        name="nama_lengkap_ibu"
+                        label="Nama Lengkap Ibu"
+                        placeholder="Masukan Nama Lengkap Ibu"
+                    />
+                </div>
+                {{-- ? pekerjaan ibu --}}
+                <div class="col-span-2 lg:col-span-3">
+                    <x-frond.input
+                        name="pekerjaan_ibu"
+                        label="Pekerjaan Ibu"
+                        placeholder="Masukan Pekerjaan Ibu"
+                    />
+                </div>
+                {{-- ? pendidikan terkahir ibu --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input-select name="pendidikan_ibu" label="Pendidikan Ibu">
+                        <option value="" disabled selected>Pilih</option>
+                        <option value="SD">SD/MI</option>
+                        <option value="SMP">SMP/MTS</option>
+                        <option value="SMA">SMA/SMK/MA</option>
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
+                        <option value="D3">D3</option>
+                        <option value="D4">D4</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? nomor hp orang tua --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-4">
+                    <x-frond.input
+                        name="nomor_hp_ortu"
+                        label="No Hp Orang TUa"
+                        placeholder="contoh 081..."
+                        type="number"
+                    />
+                </div>
+                {{-- ? alamat orang tua --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-4">
+                    <x-frond.input
+                        name="alamat_orang_tua"
+                        label="Alamat Orang Tua"
+                        placeholder="Alamat Orang Tua"
+                    />
+                </div>
+            </div>
+            
+            {{-- ? input wali siswa --}}
+            <label 
+                class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl" 
+                x-show="tinggalDengan === 'wali_murid'" 
+                x-cloak
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90"
+                >
+                Wali Siswa
+            </label>
+            <div 
+                class="grid grid-cols-2 lg:grid-cols-12 gap-4" 
+                x-show="tinggalDengan === 'wali_murid'" 
+                x-cloak
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90"
+                >
+                {{-- ? nama lengkap Wali siswa --}}
+                <div class="col-span-2 lg:col-span-4">
+                    <x-frond.input
+                        name="nama_lengkap_wali"
+                        label="Nama Lengkap Wali Siswa"
+                        placeholder="Masukan Nama Lengkap Wali Siswa"
+                    />
+                </div>
+                {{-- ? pekerjaan wali siswa --}}
+                <div class="col-span-2 lg:col-span-3">
+                    <x-frond.input
+                        name="pekerjaan_wali"
+                        label="Pekerjaan Wali Siswa"
+                        placeholder="Masukan Pekerjaan Wali Siswa"
+                    />
+                </div>
+                {{-- ? hubungan Dengan Wali siswa --}}
+                <div class="col-span-2 lg:col-span-3">
+                    <x-frond.input-select name="status_anak" label="Hubungan Dengan Siswa">
+                        <option value="" disabled selected>Pilih Hubungan</option>
+                        <option value="kakek">Kakek</option>
+                        <option value="nenek">Nenek</option>
+                        <option value="paman">Paman</option>
+                        <option value="bibi">Bibi</option>
+                        <option value="saudara">Saudara</option>
+                        <option value="lainnya">Lainnya</option>
+                    </x-frond.input-select>
+                </div>
+                {{-- ? alamat wali siswa --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-4">
+                    <x-frond.input
+                        name="alamat_wali_siswa"
+                        label="Alamat Wali Siswa"
+                        placeholder="Alamat Wali Siswa"
+                    />
+                </div>
+                {{-- ? nomor hp wali siswa --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-4">
+                    <x-frond.input
+                        name="nomor_hp_wali"
+                        label="No Hp Wali"
+                        placeholder="contoh 081..."
+                        type="number"
+                    />
                 </div>
             </div>
 
-            <div>
-                <button
-                    class="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                    Book Appointment
-                </button>
-            </div>
+            <button class="mt-10 hover:shadow-form rounded-md bg-yellow-300 py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                Kirim 
+            </button>
         </form>
     </section>
     {{--? form pendaftaran --}}
-    
+
     {{-- ? pertanyaan yang sering ditanyakan --}}
     <div class="py-10">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
@@ -374,7 +650,7 @@
                     Pertanyaan yang Sering <span class="text-yellow-300">Ditanyakan</span>
                 </h3>
             </div>
-    
+
             <div class="mt-20">
                 <ul class="">
                     <li class="text-left mb-10">
@@ -399,7 +675,7 @@
                                     question?</h4>
                             </div>
                         </div>
-    
+
                         <div class="flex flex-row items-start">
                             <div class="bg-indigo-100 p-5 px-10 w-full flex items-center">
                                 <p class="text-gray-700 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
