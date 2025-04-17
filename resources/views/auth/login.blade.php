@@ -62,7 +62,7 @@
                         <form class="mx-auto max-w-xs mt-10 mb-20" action="{{ route('login') }}" method="POST">
                             @csrf
                             <input
-                                class="w-full px-8 py-4 rounded-lg font-medium @error('email') bg-red-500 border-red-500 @else bg-yellow-100 border border-yellow-200 @enderror placeholder-gray-500 text-sm focus:outline-none focus:border-yellow-400 focus:bg-white"
+                                class="w-full px-8 py-4 rounded-lg font-medium @error('email') bg-red-100 border-red-500 @else bg-yellow-100 border border-yellow-200 @enderror placeholder-gray-500 text-sm focus:outline-none focus:border-yellow-400 focus:bg-white"
                                 type="email" 
                                 placeholder="Email" 
                                 name="email"
@@ -73,7 +73,7 @@
                             @enderror
 
                             <input
-                                class="w-full px-8 py-4 rounded-lg font-medium @error('email') bg-red-500 border-red-500 @else bg-yellow-100 border border-yellow-200 @enderror placeholder-gray-500 text-sm focus:outline-none focus:border-yellow-400 focus:bg-white mt-5"
+                                class="w-full px-8 py-4 rounded-lg font-medium @error('email') bg-red-100 border-red-500 @else bg-yellow-100 border border-yellow-200 @enderror placeholder-gray-500 text-sm focus:outline-none focus:border-yellow-400 focus:bg-white mt-5"
                                 type="password" 
                                 placeholder="Password"
                                 name="password"
