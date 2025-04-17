@@ -11,53 +11,42 @@
     >
     <x-frond.navbar />
 
-    <!-- Testimonial Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
-                <p class="text-gray-600">Testimoni dari para siswa dan orang tua tentang SMK Uyelindo Kupang</p>
-            </div>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial Card 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Testimonial 1" class="w-16 h-16 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="text-xl font-semibold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-gray-600">Siswa Kelas XII</p>
+    <section class="container mx-auto max-w-6xl px-4 py-10 my-20">
+        <h3 class="text-gray-800 py-10 text-5xl text-center font-bold">Apa Kata Mereka?</h3>
+        <div class="md:columns-2 lg:columns-3 gap-6 p-4 sm:p-1 mt-2">
+            @foreach ($testimonials as $testimoni)
+            <div class="animate-in zoom-in duration-200">
+                <div class="ring-1 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white hover:ring-2 ring-yellow-100 hover:ring-yellow-300 transform duration-200 hover:shadow-yellow-300 hover:shadow-md z-0 relative">
+                    <div class="flex flex-col break-inside-avoid-page z-0 relative">
+                        <div class="flex justify-between">
+                            <div class="flex space-x-6">
+                                <div class="flex space-x-4 flex-shrink-0 w-52">
+                                    <img src="https://randomuser.me/api/portraits/men/51.jpg"
+                                        class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <div class="font-semibold">
+                                            {{ $testimoni['name'] }}
+                                        </div>
+                                        <div class="text-sm">
+                                            {{ $testimoni['position'] }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <a href="#" target="_blank" class="whitespace-pre-line break-inside-avoid-page">
+                            {{ $testimoni['message'] }}
+                        </a>
                     </div>
-                    <p class="text-gray-700">"Belajar di SMK Uyelindo membuka banyak kesempatan bagi saya. Fasilitas lengkap dan guru-guru yang kompeten membuat proses belajar menjadi menyenangkan."</p>
-                </div>
-    
-                <!-- Testimonial Card 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Testimonial 2" class="w-16 h-16 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="text-xl font-semibold text-gray-800">Michael Chen</h4>
-                            <p class="text-gray-600">Alumni 2022</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Pengalaman praktik industri yang diberikan sangat berharga. Sekarang saya sudah bekerja di perusahaan IT terkemuka berkat bekal yang saya dapat di SMK Uyelindo."</p>
-                </div>
-    
-                <!-- Testimonial Card 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Testimonial 3" class="w-16 h-16 rounded-full object-cover">
-                        <div class="ml-4">
-                            <h4 class="text-xl font-semibold text-gray-800">Maria Putri</h4>
-                            <p class="text-gray-600">Orang Tua Siswa</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Saya sangat puas dengan perkembangan anak saya selama bersekolah di sini. Tidak hanya akademis, karakter dan kedisiplinannya juga terbentuk dengan baik."</p>
                 </div>
             </div>
+            @endforeach
         </div>
     </section>
-    
+
     <x-frond.footer />
+
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="50" />
 </x-layouts.frond.app>

@@ -11,66 +11,59 @@
     >
     <x-frond.navbar />
 
-    <!-- Fasilitas Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Fasilitas Sekolah</h2>
-                <p class="text-gray-600">Berbagai fasilitas modern untuk mendukung proses pembelajaran</p>
+    <section id="features" class="px-2 space-y-6 py-8 md:py-12 lg:py-24 max-w-5xl mx-auto">
+        <div class="mx-auto flex max-w-[58rem] flex-col items-center mb-20 space-y-4 text-center">
+            <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Fasilitas Lengkap untuk Masa Depan Cemerlang</h2>
+            <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                Nikmati fasilitas modern dan lengkap yang akan mendukung setiap langkah pendidikan Anda di SMK Uyelindo Kupang
+            </p>
+        </div>
+        <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold">Laboratorium Komputer Canggih</h3>
+                        <p class="text-sm text-muted-foreground">Dilengkapi komputer terbaru dan software industri untuk mengasah keterampilan digital Anda</p>
+                    </div>
+                </div>
             </div>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Laboratorium Komputer -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Laboratorium Komputer" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Laboratorium Komputer</h3>
-                        <p class="text-gray-600">Dilengkapi dengan komputer modern dan software terkini untuk praktik pemrograman dan desain.</p>
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold">Perpustakaan Digital</h3>
+                        <p class="text-sm text-muted-foreground">Akses ribuan buku dan sumber belajar digital untuk memperluas wawasan dan pengetahuan</p>
                     </div>
                 </div>
-    
-                <!-- Perpustakaan -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da" alt="Perpustakaan" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Perpustakaan</h3>
-                        <p class="text-gray-600">Koleksi buku lengkap dengan suasana nyaman untuk belajar dan membaca.</p>
+            </div>
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold">Bengkel Praktik Modern</h3>
+                        <p class="text-sm text-muted-foreground">Praktik langsung dengan peralatan industri standar untuk mempersiapkan Anda ke dunia kerja</p>
                     </div>
                 </div>
-    
-                <!-- Laboratorium Jaringan -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" alt="Laboratorium Jaringan" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Laboratorium Jaringan</h3>
-                        <p class="text-gray-600">Fasilitas praktik jaringan komputer dengan peralatan standar industri.</p>
+            </div>
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold">Ruang Multimedia</h3>
+                        <p class="text-sm text-muted-foreground">Studio produksi dan editing yang dilengkapi peralatan profesional untuk proyek multimedia</p>
                     </div>
                 </div>
-    
-                <!-- Ruang Praktik -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1598302936625-6075fbd98dd8" alt="Ruang Praktik" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Ruang Praktik</h3>
-                        <p class="text-gray-600">Ruangan khusus untuk praktik kejuruan dengan peralatan lengkap.</p>
+            </div>
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold">Fasilitas Olahraga</h3>
+                        <p class="text-sm text-muted-foreground">Lapangan olahraga multifungsi dan gym untuk menjaga kebugaran dan mengembangkan bakat olahraga</p>
                     </div>
                 </div>
-    
-                <!-- Lapangan Olahraga -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1543633550-f431af584afd" alt="Lapangan Olahraga" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Lapangan Olahraga</h3>
-                        <p class="text-gray-600">Fasilitas olahraga outdoor untuk kegiatan fisik dan ekstrakurikuler.</p>
-                    </div>
-                </div>
-    
-                <!-- Ruang Multimedia -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Ruang Multimedia" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Ruang Multimedia</h3>
-                        <p class="text-gray-600">Studio multimedia modern untuk produksi konten digital dan editing.</p>
+            </div>
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold">Area Kolaborasi</h3>
+                        <p class="text-sm text-muted-foreground">Ruang diskusi modern dan co-working space untuk mendukung pembelajaran kolaboratif dan inovatif</p>
                     </div>
                 </div>
             </div>
@@ -78,4 +71,6 @@
     </section>
 
     <x-frond.footer />
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="50" />
 </x-layouts.frond.app>

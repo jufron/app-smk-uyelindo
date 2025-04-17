@@ -706,19 +706,5 @@
     </div>
     {{-- ? pertanyaan yang sering ditanyakan --}}
 
-    <!-- Kontak Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Informasi Kontak</h2>
-            <div class="text-center">
-                <p class="mb-4">Untuk informasi lebih lanjut, silakan hubungi:</p>
-                <p class="font-semibold">Panitia PPDB SMK Uyelindo Kupang</p>
-                <p>Telp: (0380) XXXXXXX</p>
-                <p>Email: ppdb@smkuyelindo.sch.id</p>
-                <p>WhatsApp: +62 XXX-XXXX-XXXX</p>
-            </div>
-        </div>
-    </section>
-
     <x-frond.footer />
 </x-layouts.frond.app>

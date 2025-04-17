@@ -9,8 +9,7 @@
             <div class="flex items-center justify-between w-full">
                 {{-- ? brand --}}
                 <a href="{{ route('index') }}" class="flex-shrink-0 flex items-center">
-                    <img class="h-10 w-auto" src="https://tailwindflex.com/images/logo.svg" alt="Logo">
-                    <span class="ml-2 text-xl font-bold">Company</span>
+                    <img class="h-14 w-auto" src="{{ asset('img/logo.png') }}" alt="Logo" loading="lazy">
                 </a>
                 {{-- ? list menu item --}}
                 <div class="hidden md:ml-10 md:flex md:space-x-6" x-data="{ open: null }" x-cloak>
@@ -53,7 +52,7 @@
                         @mouseleave="open = null">
                         <button @class([
                             'px-1 py-2 text-sm font-medium flex items-center',
-                            'text-yellow-400' => request()->routeIs('jurusan') || request()->routeIs('galeri-foto') || request()->routeIs('guru-staf') || request()->routeIs('fasilitas') || request()->routeIs('siswa-prestasi')
+                            'text-yellow-400' => request()->routeIs('jurusan') || request()->routeIs('galeri-foto') || request()->routeIs('guru-staf') || request()->routeIs('fasilitas') || request()->routeIs('siswa-prestasi') || request()->routeIs('testimoni')
                             ])>
                             Akademik
                             <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -77,6 +76,7 @@
                                 <a @click="open = null" href="{{ route('guru-staf') }}" @class(['block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', 'text-yellow-400' => request()->routeIs('guru-staf') ]) >Guru & Staf</a>
                                 <a @click="open = null" href="{{ route('fasilitas') }}" @class(['block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', 'text-yellow-400' => request()->routeIs('fasilitas') ]) >Fasilitas</a>
                                 <a @click="open = null" href="{{ route('siswa-prestasi') }}" @class(['block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', 'text-yellow-400' => request()->routeIs('siswa-prestasi') ]) >Siswa Berprestasi</a>
+                                <a @click="open = null" href="{{ route('testimoni') }}" @class(['block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', 'text-yellow-400' => request()->routeIs('testimoni') ]) >Testimoni</a>
                             </div>
                         </div>
                     </div>
@@ -87,12 +87,15 @@
                 <div class="flex items-center">
                     {{-- ? login register dekstop version --}}
                     <div class="hidden md:ml-4 md:flex md:items-center md:space-x-4">
-                        <a href="#" class="px-3 py-2 text-sm font-medium">
+                        @auth
+                        <a href="{{ route('dashboard') }}" class="px-3 py-2 text-sm font-medium">
+                            {{ auth()->user()->name }}
+                        </a>
+                        @else
+                        <a href="{{ route('login') }}" class="px-3 py-2 text-sm font-medium">
                             Login
                         </a>
-                        {{-- <a href="#" class="bg-white text-indigo-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-                            Sign Up
-                        </a> --}}
+                        @endauth
                     </div>
                     {{-- ? hamburger menu for mobile --}}
                     <div class="flex items-center md:hidden">
@@ -144,7 +147,7 @@
             <div x-data="{ open: false }" class="relative">
                 <button @click="open = !open" @class([
                     'flex items-center text-gray-300 hover:text-white hover:bg-gray-700 w-full px-3 py-2 rounded-md text-base font-medium',
-                    'text-yellow-400' => request()->routeIs('jurusan') || request()->routeIs('galeri-foto') || request()->routeIs('guru-staf') || request()->routeIs('fasilitas') || request()->routeIs('siswa-prestasi')
+                    'text-yellow-400' => request()->routeIs('jurusan') || request()->routeIs('galeri-foto') || request()->routeIs('guru-staf') || request()->routeIs('fasilitas') || request()->routeIs('siswa-prestasi') || request()->routeIs('testimoni')
                 ]) >
                     Akademik
                     <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -165,22 +168,26 @@
                         <a href="{{ route('galeri-foto') }}" @class(['block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-600', 'text-yellow-400' => request()->routeIs('galeri-foto') ]) >Galeri Foto</a>
                         <a href="{{ route('guru-staf') }}" @class(['block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-600', 'text-yellow-400' => request()->routeIs('guru-staf') ]) >Guru & Staf</a>
                         <a href="{{ route('fasilitas') }}" @class(['block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-600', 'text-yellow-400' => request()->routeIs('fasilitas') ]) >Fasilitas</a>
+                        <a href="{{ route('testimoni') }}" @class(['block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-600', 'text-yellow-400' => request()->routeIs('testimoni') ]) >Testimoni</a>
                     </div>
                 </div>
             </div>
             <a href="{{ route('ppdb') }}" @class(['text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium','text-yellow-400' => request()->routeIs('ppdb') ]) >PPDB</a>
             <a href="{{ route('kontak') }}" @class(['text-gray-300 hover:text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium','text-yellow-400' => request()->routeIs('kontak') ]) >Kontak</a>
             <div class="pt-4 pb-3 border-t border-gray-700">
+                @auth
                 <div class="flex items-center px-5 space-y-3">
-                    <a href="#" class="block w-full text-center text-white bg-gray-700 px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600">
+                    <a href="{{ route('dashboard') }}" class="block w-full text-center text-white bg-gray-700 px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600">
+                        {{ auth()->user()->name }}
+                    </a>
+                </div>
+                @else
+                <div class="flex items-center px-5 space-y-3">
+                    <a href="{{ route('login') }}" class="block w-full text-center text-white bg-gray-700 px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600">
                         Login
                     </a>
                 </div>
-                {{-- <div class="mt-3 px-5">
-                    <a href="#" class="block w-full text-center bg-white text-indigo-600 px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">
-                        Sign Up
-                    </a>
-                </div> --}}
+                @endauth
             </div>
         </div>
     </div>

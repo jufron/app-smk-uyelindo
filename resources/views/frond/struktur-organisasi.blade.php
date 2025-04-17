@@ -11,53 +11,64 @@
     >
     <x-frond.navbar />
 
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bold">Struktur Organisasi</h1>
-                        <p class="text-muted">SMK Uyelindo Kupang</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="text-center">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Struktur Organisasi SMK Uyelindo Kupang" class="img-fluid mb-4">
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title mb-4">Susunan Organisasi</h5>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td width="200"><strong>Kepala Sekolah</strong></td>
-                                            <td>Drs. Yohanis Lay</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Wakil Kepala Sekolah Bidang Kurikulum</strong></td>
-                                            <td>Drs. Agustinus Lulu</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Wakil Kepala Sekolah Bidang Kesiswaan</strong></td>
-                                            <td>Drs. Yohanes S. Ping</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Wakil Kepala Sekolah Bidang Sarana Prasarana</strong></td>
-                                            <td>Drs. Dominggus Bako</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Wakil Kepala Sekolah Bidang Humas</strong></td>
-                                            <td>Drs. Yohanes Taus</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Kepala Tata Usaha</strong></td>
-                                            <td>Maria Goreti Bunga</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+    <section class="my-10 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">Struktur Oranisasi SMK Uyelindo Kupang</h1>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <div class="flex flex-col items-center">
+                        <!-- Kepala Sekolah -->
+                        <div class="bg-blue-100 p-4 rounded-lg mb-4 text-center w-64">
+                            <h3 class="font-semibold">Kepala Sekolah</h3>
+                            <p class="text-sm text-gray-600">Drs. Yohanes Suban Beliu, MM</p>
+                        </div>
+
+                        <!-- Level Wakil -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Waka Kurikulum</h4>
+                                <p class="text-sm text-gray-600">Yohanes D. Nino, S.Pd</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Waka Kesiswaan</h4>
+                                <p class="text-sm text-gray-600">Melkior Tukan, S.Pd</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Waka Sarpras</h4>
+                                <p class="text-sm text-gray-600">Oktovianus Funan, S.Pd</p>
+                            </div>
+                            <div class="bg-green-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Waka Humas</h4>
+                                <p class="text-sm text-gray-600">Yohanes B. Keraf, S.Pd</p>
+                            </div>
+                        </div>
+
+                        <!-- Level Kepala Program -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <div class="bg-yellow-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Kaprog TKJ</h4>
+                                <p class="text-sm text-gray-600">Maria G. Bria, S.Pd</p>
+                            </div>
+                            <div class="bg-yellow-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Kaprog RPL</h4>
+                                <p class="text-sm text-gray-600">Yuliana Putri, S.Kom</p>
+                            </div>
+                            <div class="bg-yellow-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Kaprog MM</h4>
+                                <p class="text-sm text-gray-600">Antonius Bouk, S.Pd</p>
+                            </div>
+                        </div>
+
+                        <!-- Guru dan Staf -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-gray-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Guru</h4>
+                                <p class="text-sm text-gray-600">Guru Produktif & Normatif</p>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg text-center">
+                                <h4 class="font-semibold">Tata Usaha</h4>
+                                <p class="text-sm text-gray-600">Staff Administrasi</p>
                             </div>
                         </div>
                     </div>
@@ -67,4 +78,6 @@
     </section>
 
     <x-frond.footer />
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="50" />
 </x-layouts.frond.app>

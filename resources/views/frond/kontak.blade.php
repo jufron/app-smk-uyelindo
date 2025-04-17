@@ -52,4 +52,6 @@
     </section>
 
     <x-frond.footer />
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="50" />
 </x-layouts.frond.app>

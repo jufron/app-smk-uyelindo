@@ -12,13 +12,13 @@
     <x-frond.navbar />
 
     <!-- Galeri Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-16">
         <div class="container mx-auto px-4">
             <div class="text-center my-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-5">Galeri Foto</h2>
+                <h2 class="text-5xl font-bold text-gray-800 mb-5">Galeri Foto</h2>
                 <p class="text-gray-600">Dokumentasi kegiatan dan momen berkesan di SMK Uyelindo Kupang</p>
             </div>
-    
+
             <div class="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
                 <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080"/>
                 <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080"/>
@@ -40,6 +40,8 @@
 
         </div>
     </section>
-    
+
     <x-frond.footer />
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="100" />
 </x-layouts.frond.app>

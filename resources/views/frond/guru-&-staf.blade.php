@@ -12,100 +12,117 @@
     <x-frond.navbar />
 
     <!-- Hero Section -->
-        <section class="bg-gray-100 py-16">
+    <section class="my-10">
+        <div class="bg-gray-100 py-16">
             <div class="container mx-auto px-4">
                 <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Guru & Staf SMK Uyelindo Kupang</h1>
                 <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
                     Kenali para pendidik dan tenaga kependidikan yang berdedikasi dalam membimbing siswa-siswi kami menuju masa depan yang cerah.
                 </p>
             </div>
-        </section>
-    
-        <!-- Guru Section -->
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold text-center mb-12">Tenaga Pendidik</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Guru Card 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3" alt="Guru 1" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Sarah Johnson</h3>
-                            <p class="text-gray-600 mb-2">Guru Matematika</p>
-                            <p class="text-sm text-gray-500">S2 Pendidikan Matematika</p>
-                        </div>
-                    </div>
-    
-                    <!-- Guru Card 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3" alt="Guru 2" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">John Smith</h3>
-                            <p class="text-gray-600 mb-2">Guru Fisika</p>
-                            <p class="text-sm text-gray-500">S2 Pendidikan Fisika</p>
-                        </div>
-                    </div>
-    
-                    <!-- Guru Card 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?ixlib=rb-4.0.3" alt="Guru 3" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Maria Garcia</h3>
-                            <p class="text-gray-600 mb-2">Guru Bahasa Inggris</p>
-                            <p class="text-sm text-gray-500">S1 Pendidikan Bahasa Inggris</p>
-                        </div>
-                    </div>
-    
-                    <!-- Guru Card 4 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1601935111741-ae98b2b230b0?ixlib=rb-4.0.3" alt="Guru 4" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">David Wilson</h3>
-                            <p class="text-gray-600 mb-2">Guru Komputer</p>
-                            <p class="text-sm text-gray-500">S2 Teknik Informatika</p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </section>
+
+    <section class="my-10">
+        <!-- Content -->
+        <div class="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 sm:justify-items-stretch md:grid-cols-3 lg:grid-cols-4 md:gap-4 lg:gap-6">
+            <!-- Item -->
+            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+            <p class="font-bold">John Robert</p>
+            <p class="text-center text-sm text-gray-500">
+                Webflow Developer
+            </p>
+            <div class="mt-4 flex">
+                <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+                <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
             </div>
-        </section>
-    
-        <!-- Staf Section -->
-        <section class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-semibold text-center mb-12">Tenaga Kependidikan</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Staf Card 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1587837073080-448bc6a2329b?ixlib=rb-4.0.3" alt="Staf 1" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Amanda Brown</h3>
-                            <p class="text-gray-600 mb-2">Kepala Tata Usaha</p>
-                            <p class="text-sm text-gray-500">S1 Administrasi Pendidikan</p>
-                        </div>
-                    </div>
-    
-                    <!-- Staf Card 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3" alt="Staf 2" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Michael Davis</h3>
-                            <p class="text-gray-600 mb-2">Pustakawan</p>
-                            <p class="text-sm text-gray-500">S1 Ilmu Perpustakaan</p>
-                        </div>
-                    </div>
-    
-                    <!-- Staf Card 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3" alt="Staf 3" class="w-full h-64 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Emily Taylor</h3>
-                            <p class="text-gray-600 mb-2">Staf Administrasi</p>
-                            <p class="text-sm text-gray-500">S1 Manajemen</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </section>
+            <!-- Item -->
+            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
+            <p class="font-bold">Annisyah Matah</p>
+            <p class="text-center text-sm text-gray-500">
+                Webflow Developer
+            </p>
+            <div class="mt-4 flex">
+                <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+                <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+            </div>
+            </div>
+            <!-- Item -->
+            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+            <p class="font-bold">Tamara Lind</p>
+            <p class="text-center text-sm text-gray-500">
+                UI//UX Designer
+            </p>
+            <div class="mt-4 flex">
+                <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+                <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+            </div>
+            </div>
+            <!-- Item -->
+            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+            <p class="font-bold">Kevin Mason</p>
+            <p class="text-center text-sm text-gray-500">Product Manager</p>
+            <div class="mt-4 flex">
+                <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+                <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+            </div>
+            </div>
+            <!-- Item -->
+            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+            <p class="font-bold">Amy Parker</p>
+            <p class="text-center text-sm text-gray-500">
+                Webflow Developer
+            </p>
+            <div class="mt-4 flex">
+                <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+                <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+            </div>
+            </div>
+            <!-- Item -->
+            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+            <p class="font-bold">Ben Watson</p>
+            <p class="text-center text-sm text-gray-500">CEO</p>
+            <div class="mt-4 flex">
+                <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+                <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
     <x-frond.footer />
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="100" />
 </x-layouts.frond.app>

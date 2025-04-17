@@ -11,68 +11,70 @@
     >
     <x-frond.navbar />
 
-    <!-- Prestasi Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Siswa Berprestasi</h2>
-                <p class="text-gray-600">Prestasi gemilang yang telah diraih oleh siswa-siswi kami</p>
-            </div>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Prestasi Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://source.unsplash.com/random/800x600/?achievement,trophy" alt="Prestasi 1" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Juara 1 Olimpiade Matematika</h3>
-                        <p class="text-gray-600 mb-4">Ahmad Fadhil - Kelas XII IPA 1</p>
-                        <p class="text-gray-700">Meraih juara pertama dalam Olimpiade Matematika tingkat Nasional tahun 2023</p>
-                    </div>
+    <section>
+        <!-- Container -->
+        <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+            <h2 class="text-center text-3xl font-bold md:text-5xl">
+                Siswa Berprestasi SMK Uyelindo
+            </h2>
+            <p class="mx-auto mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
+                Prestasi gemilang yang telah diraih oleh siswa-siswi terbaik kami dalam berbagai bidang
+            </p>
+            <!-- Content -->
+            <div class="mx-auto grid justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4 lg:justify-items-stretch">
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">John</p>
+                    <p class="text-sm text-gray-500">Webflow Developer</p>
                 </div>
-    
-                <!-- Prestasi Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://source.unsplash.com/random/800x600/?achievement,medal" alt="Prestasi 2" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Juara 2 Lomba Karya Ilmiah</h3>
-                        <p class="text-gray-600 mb-4">Siti Aisyah - Kelas XI IPA 2</p>
-                        <p class="text-gray-700">Meraih juara kedua dalam Lomba Karya Ilmiah Remaja tingkat Provinsi</p>
-                    </div>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">Annisyah</p>
+                    <p class="text-sm text-gray-500">Webflow Developer</p>
                 </div>
-    
-                <!-- Prestasi Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://source.unsplash.com/random/800x600/?achievement,competition" alt="Prestasi 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Juara 1 Lomba Debat Bahasa Inggris</h3>
-                        <p class="text-gray-600 mb-4">Muhammad Rizki - Kelas X IPS 1</p>
-                        <p class="text-gray-700">Meraih juara pertama dalam Kompetisi Debat Bahasa Inggris antar SMA</p>
-                    </div>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">Tamara</p>
+                    <p class="text-sm text-gray-500">UI/UX Designer</p>
                 </div>
-            </div>
-    
-            <!-- Pagination -->
-            <div class="mt-12 flex justify-center">
-                <nav class="inline-flex rounded-md shadow">
-                    <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                        Previous
-                    </a>
-                    <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                        1
-                    </a>
-                    <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                        2
-                    </a>
-                    <a href="#" class="px-3 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                        3
-                    </a>
-                    <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                        Next
-                    </a>
-                </nav>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">Kevin</p>
+                    <p class="text-sm text-gray-500">Product Manager</p>
+                </div>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">John</p>
+                    <p class="text-sm text-gray-500">Webflow Developer</p>
+                </div>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">Annisyah</p>
+                    <p class="text-sm text-gray-500">Webflow Developer</p>
+                </div>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">Tamara</p>
+                    <p class="text-sm text-gray-500">UI/UX Designer</p>
+                </div>
+                <!-- Item -->
+                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
+                    <p class="font-bold">Kevin</p>
+                    <p class="text-sm text-gray-500">Product Manager</p>
+                </div>
             </div>
         </div>
     </section>
-        
+
     <x-frond.footer />
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="50" />
 </x-layouts.frond.app>

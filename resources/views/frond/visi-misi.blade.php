@@ -11,7 +11,7 @@
     >
     <x-frond.navbar />
 
-    <section class="bg-gray-100 py-16">
+    <section class="my-10 py-16">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">Visi dan Misi SMK Uyelindo Kupang</h1>
@@ -42,4 +42,7 @@
     </section>
 
     <x-frond.footer />
+
+    {{-- ? banner --}}
+    <x-frond.mini-banner scrollPosition="50" />
 </x-layouts.frond.app>
