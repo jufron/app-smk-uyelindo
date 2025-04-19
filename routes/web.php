@@ -21,6 +21,4 @@ Route::controller(PagesController::class)->group( function () {
     Route::get('kontak', 'kontak')->name('kontak');
 });
 
-Route::get('test', fn () => view('dashboard.index'));
-
 require __DIR__.'/auth.php';
