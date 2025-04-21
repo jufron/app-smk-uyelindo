@@ -7,8 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- ? Favicon --}}
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/faviicon/180.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/faviicon/32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/faviicon/16.png') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('img/faviicon/144.png') }}">
 
+    <link rel="manifest" href="{{ asset('img/faviicon/180.png') }}">
+
+    <meta name="msapplication-TileColor" content="#cade14">
+    <meta name="theme-color" content="#cade14">
+    
     <title>Dashboard | {{ $title ?? null }}</title>
 
    {{--? Fonts and icons --}}
