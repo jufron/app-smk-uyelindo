@@ -8,8 +8,11 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 {{-- ? dashboard --}}
-                <li class="nav-item active">
-                    <a href="#">
+                <li @class([
+                    'nav-item',
+                    'active' => request()->routeIs('dashboard')
+                ])>
+                    <a href="{{ route('dashboard') }}">
                         <i class="fas fa-home"></i>
                         <p>Dashobard</p>
                     </a>
@@ -36,21 +39,44 @@
                 </li>
 
                 {{-- ? manajement berita --}}
-                <li class="nav-item">
+                <li @class([
+                    'nav-item',
+                    'active submenu' => request()->routeIs('dashboard.kategory.index') ||
+                                        request()->routeIs('dashboard.kategory.create') ||
+                                        request()->routeIs('dashboard.kategory.edit') ||
+                                        request()->routeIs('dashboard.berita.index') || 
+                                        request()->routeIs('dashboard.berita.create') || 
+                                        request()->routeIs('dashboard.berita.edit')
+                ])>
                     <a data-bs-toggle="collapse" href="#manajement-berita">
                         <i class="fas fa-th-list"></i>
                         <p>Manajement Berita</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="manajement-berita">
+                    <div @class([
+                        'collapse', 
+                        'show' => request()->routeIs('dashboard.kategory.index') ||
+                                  request()->routeIs('dashboard.kategory.create') ||
+                                  request()->routeIs('dashboard.kategory.edit') ||
+                                  request()->routeIs('dashboard.berita.index') || 
+                                  request()->routeIs('dashboard.berita.create') || 
+                                  request()->routeIs('dashboard.berita.edit')
+                        ])
+                        id="manajement-berita">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="#">
+                            <li @class(['active' => request()->routeIs('dashboard.kategory.index') ||
+                                                    request()->routeIs('dashboard.kategory.create') ||
+                                                    request()->routeIs('dashboard.kategory.edit')
+                            ])>
+                                <a href="{{ route('dashboard.kategory.index') }}">
                                     <span class="sub-item">Kategory</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
+                            <li @class(['active' => request()->routeIs('dashboard.berita.index') || 
+                                                    request()->routeIs('dashboard.berita.create') || 
+                                                    request()->routeIs('dashboard.berita.edit')
+                            ])>
+                                <a href="{{ route('dashboard.berita.index') }}">
                                     <span class="sub-item">Berita</span>
                                 </a>
                             </li>
@@ -143,6 +169,7 @@
                         </ul>
                     </div>
                 </li>
+                
                 <li class="nav-item active submenu">
                     <a data-bs-toggle="collapse" href="#forms">
                         <i class="fas fa-pen-square"></i>

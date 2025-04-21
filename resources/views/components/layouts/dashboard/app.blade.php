@@ -10,16 +10,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/faviicon/180.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/faviicon/32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/faviicon/16.png') }}">
-    <meta name="msapplication-TileImage" content="{{ asset('img/faviicon/144.png') }}">
-
-    <link rel="manifest" href="{{ asset('img/faviicon/180.png') }}">
 
     <meta name="msapplication-TileColor" content="#cade14">
     <meta name="theme-color" content="#cade14">
     
     <title>Dashboard | {{ $title ?? null }}</title>
 
-   {{--? Fonts and icons --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+    {{--? Fonts and icons --}}
   <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
   <script>
     WebFont.load({
@@ -31,7 +31,7 @@
           "Font Awesome 5 Brands",
           "simple-line-icons",
         ],
-        urls: ["assets/css/fonts.min.css"],
+        urls: ["{{ asset('assets/css/fonts.min.css') }}"],
       },
       active: function () {
         sessionStorage.fonts = true;
