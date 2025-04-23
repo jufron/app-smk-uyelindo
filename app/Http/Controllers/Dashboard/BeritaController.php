@@ -2,18 +2,32 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Berita;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\BeritaRequest;
+use App\Services\Berita\BeritaServiceInterface;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 
 class BeritaController extends Controller
 {
+    public function __construct(
+        protected BeritaServiceInterface $beritaService,
+    ) {}
+
     /**
      * Display a listing of the resource.
      */
     public function index() : View
     {
         return view('dashboard.berita.berita');
+    }
+
+    public function getLatest () : JsonResponse
+    {
+        return $this->beritaService->getAll();
     }
 
     /**
@@ -27,7 +41,7 @@ class BeritaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(BeritaRequest $request) : RedirectResponse
     {
         notify()->success('Berhasil Menambahkan Data');
         return redirect()->route('dashboard.berita.index');
@@ -36,23 +50,23 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Berita $berita) : JsonResponse
     {
-        
+        return $this->beritaService->showBerita($berita);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id) : View
+    public function edit(Berita $berita) : View
     {
-        return view('dashboard.berita.ubah');
+        return view('dashboard.berita.ubah', compact('berita'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BeritaRequest $request, Berita $berita) : RedirectResponse
     {
         notify()->success('Berhasil Memperbaharui Data');
         return redirect()->route('dashboard.berita.index');
@@ -61,7 +75,7 @@ class BeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Berita $berita) : RedirectResponse
     {
         notify()->success('Berhasil Menghapus Data');
         return redirect()->route('dashboard.berita.index');

@@ -1,7 +1,7 @@
 <x-layouts.dashboard.app title="Berita">
     {{-- * my style --}}
     <x-slot:myStyle>
-        
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
     </x-slot:myStyle>
     {{-- * my style --}}
 
@@ -13,92 +13,68 @@
         <div class="card-body">
             <div class="my-4">
                 <a href="{{ route('dashboard.berita.create') }}" class="btn btn-success">Tambah</A>
-                <button class="btn btn-secondary">Filter</button>
+                <button class="btn btn-secondary">Reset Filter</button>
             </div>
-            
+
             <div class="table-responsive">
-                <div 
-                    id="basic-datatables_wrapper" 
+                <div
+                    id="basic-datatables_wrapper"
                     class="dataTables_wrapper container-fluid dt-bootstrap4"
                     >
                     <div class="row">
                         <div class="col-sm-12">
-                            <table 
-                                id="basic-datatables" 
-                                class="display table table-striped table-hover dataTable" 
-                                role="grid" 
-                                aria-describedby="basic-datatables_info"
+                            <table
+                                id="berita-datatable"
+                                class="display table table-striped table-hover dataTable"
+                                role="grid"
+                                data-url="{{ route('dashboard.berita.fetch') }}"
                                 >
                                 <thead>
                                     <tr role="row">
-                                        <th style="width: 50px;">No</th>
-                                        <th style="width: 214.469px;">Nama</th>
-                                        <th style="width: 101.219px;">Deskripsi</th>
-                                        <th style="width: 35.875px;">Tanggal Buat</th>
-                                        <th style="width: 99.0312px;">Tanggal Perbaharui</th>
+                                        <th style="width: 20%;">No</th>
+                                        <th style="width: 100%;">Poster</th>
+                                        <th style="width: 100%;">Judul</th>
+                                        <th style="width: 50px;">Status</th>
+                                        <th style="width: 50px;">Kategory</th>
+                                        <th style="width: 100px">Tanggal Buat</th>
+                                        <th style="width: 100px;">Tanggal Perbaharui</th>
                                         <th style="width: 120px;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr role="row">
-                                        <th style="width: 50px;">No</th>
-                                        <th style="width: 214.469px;">Nama</th>
-                                        <th style="width: 101.219px;">Deskripsi</th>
-                                        <th style="width: 35.875px;">Tanggal Buat</th>
-                                        <th style="width: 99.0312px;">Tanggal Perbaharui</th>
+                                        <th style="width: 20%;">No</th>
+                                        <th style="width: 100%;">Poster</th>
+                                        <th style="width: 100%;">Judul</th>
+                                        <th style="width: 50px;">Status</th>
+                                        <th style="width: 50px;">Kategory</th>
+                                        <th style="width: 100px">Tanggal Buat</th>
+                                        <th style="width: 100px;">Tanggal Perbaharui</th>
                                         <th style="width: 120px;">Aksi</th>
                                     </tr>
                                 </tfoot>
-                                <tbody>
-                                    <tr role="row" class="odd">
-                                        <td>1</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>33</td>
-                                        <td>2008/11/28</td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-round btn-info">
-                                                <i class="fas fa-info-circle"></i>
-                                              </button>
-                                            <button type="button" class="btn btn-icon btn-round btn-warning">
-                                                <i class="fas fa-edit text-white"></i>
-                                              </button>
-                                            <button type="button" class="btn btn-icon btn-round btn-danger">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr role="row" class="even">
-                                        <td >2</td>
-                                        <td>Chief Executive Officer (CEO)</td>
-                                        <td>London</td>
-                                        <td>47</td>
-                                        <td>2009/10/09</td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-round btn-info">
-                                                <i class="fas fa-info-circle"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-icon btn-round btn-warning">
-                                                <i class="fas fa-edit text-white"></i>
-                                              </button>
-                                            <button type="button" class="btn btn-icon btn-round btn-danger">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
+
+    {{-- ? modal --}}
+    <x-dashboard.modal modalLabel="Detail Kategory" modalSize="lg" />
+    {{-- ? modal --}}
+
     {{-- todo content ... --}}
 
     {{-- * my script --}}
     <x-slot:myScript>
-
+        {{-- ? Datatables --}}
+        <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
+        {{-- ? sweatalert 2 lib --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {{-- ? myscript --}}
+        <script type="module" src="{{ asset('js/dashboard/berita.js') }}"></script>
     </x-slot:myScript>
     {{-- * my script --}}
 </x-layouts.dashboard>

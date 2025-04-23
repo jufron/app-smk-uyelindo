@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -27,11 +27,13 @@ Route::resource('kategory', KategoryController::class)
         'destroy'   => 'dashboard.kategory.destroy',
     ]);
 
+Route::get('berita/fetch', [BeritaController::class, 'getLatest'])->name('dashboard.berita.fetch');
 Route::resource('berita', BeritaController::class)
     ->names([
         'index'     => 'dashboard.berita.index',
         'create'    => 'dashboard.berita.create',
         'store'     => 'dashboard.berita.store',
+        'show'      => 'dashboard.berita.show',
         'edit'      => 'dashboard.berita.edit',
         'update'    => 'dashboard.berita.update',
         'destroy'   => 'dashboard.berita.destroy',

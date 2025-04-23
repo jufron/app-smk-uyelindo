@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\DateFormatCreatedAtAndUpdatedAt;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kategory extends Model
 {
@@ -29,5 +30,10 @@ class Kategory extends Model
         return Attribute::make(
             get: fn () => Str::limit($this->deskripsi, 45, '...')
         );
+    }
+
+    public function berita () : HasMany
+    {
+        return $this->hasMany(Berita::class, 'kategory_id', 'id');
     }
 }
