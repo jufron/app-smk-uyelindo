@@ -45,54 +45,53 @@ $(document).ready(function () {
                     <img
                         src="${data.poster}"
                         alt="User Photo" class="img-fluid mb-3"
-                        width="300px">
+                        loading="lazy"
+                        width="300px"
+                    />
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">
-                                    Judul
-                                </div>
-                                <div class="col-md-8">
-                                    : ${data.title}
-                                </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
+                                Judul
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
+                                ${data.judul}
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">
-                                    Status
-                                </div>
-                                <div class="col-md-8">
-                                    : ${data.is_published
-                                        ? '<span class="badge badge-success">Publish</span>'
-                                        : '<span class="badge badge-danger">Draft</span>'}
-                                </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
+                                Status
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
+                                ${data.status
+                                    ? '<span class="badge badge-success">Publish</span>'
+                                    : '<span class="badge badge-danger">Draft</span>'}
                             </div>
                         </li>
-                        <li class="list-group-item summernote-content">
-                            ${data.content}
+                        <li class="list-group-item">
+                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
+                                Content
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
+                                ${data.content}
+                            </div>
                         </li>
                     </ul>
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">
-                                    Tanggal Buat
-                                </div>
-                                <div class="col-md-8">
-                                    : ${data.created_at}
-                                </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
+                                Tanggal Buat
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
+                                : ${data.created_at}
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">
-                                    Tanggal Perbaharui
-                                </div>
-                                <div class="col-md-8">
-                                    : ${data.updated_at}
-                                </div>
+                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
+                                Tanggal Perbaharui
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
+                                ${data.updated_at}
                             </div>
                         </li>
                     </ul>

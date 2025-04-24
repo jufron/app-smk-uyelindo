@@ -6,8 +6,8 @@
         name="{{ $name }}"
         rows="{{ $rows ?? 5 }}"
         placeholder="{{ $placeholder }}"
-    >{{ $value }}</textarea>
+    >{!! $value !!}</textarea>
     @error($name)
-    <small id="emailHelp" class="invalid-feedback text-muted">{{ $message }}</small>
+    <small class="invalid-feedback text-muted">{{ $message }}</small>
     @enderror
 </div>

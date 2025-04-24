@@ -3,9 +3,12 @@
 namespace App\Services\Berita;
 
 use App\Models\Berita;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
 use App\Services\Berita\BeritaServiceInterface;
-use Illuminate\Http\JsonResponse;
 
 class BeritaService implements BeritaServiceInterface
 {
@@ -46,6 +49,29 @@ class BeritaService implements BeritaServiceInterface
         ->toJson();
     }
 
+    public function storeBerita (Request $request) : void 
+    {
+        $posterPath = null;
+        $publishStatus = false;
+
+        if(isset($request->status)) {
+            $publishStatus = true;
+        }
+
+        if ($request->file('poster')) {
+            $posterPath = $request->file('poster')->store('berita', 'public');
+        }
+
+        $requestData = $request->only('user_id', 'poster', 'judul', 'slug', 'content', 'kategory_id',  'status');
+
+        $requestData['poster']      = $posterPath;
+        $requestData['user_id']     = Auth::user()->id;
+        $requestData['slug']        = str()->slug($requestData['judul']);
+        $requestData['status']      = $publishStatus;
+
+        Berita::create($requestData);
+    }
+
     public function showBerita (Berita $berita) : JsonResponse
     {
         if (!$berita) {
@@ -62,5 +88,41 @@ class BeritaService implements BeritaServiceInterface
             'created_at'    => $berita->created_at_format,
             'updated_at'    => $berita->updated_at_format,
         ]);
+    }
+
+    public function updateBerita ($request, $berita) : void
+    {
+        $posterPath = $berita->poster;
+        $publishStatus = $berita->status;
+
+        if(isset($request->status)) {
+            $publishStatus = true;
+        }
+
+        if ($request->hasFile('poster')) {
+            // ? Jika ada poster yang sudah ada, hapus dari penyimpanan
+            if ($posterPath && Storage::disk('public')->exists($posterPath)) {
+                Storage::disk('public')->delete($posterPath);
+            }
+
+            $posterPath = $request->file('poster')->store('berita', 'public');
+        }
+
+        $requestData = $request->only('user_id', 'poster', 'judul', 'slug', 'content', 'kategory_id',  'status');
+
+        $requestData['poster']      = $posterPath;
+        $requestData['user_id']     = Auth::user()->id;
+        $requestData['slug']        = str()->slug($requestData['judul']);
+        $requestData['status']      = $publishStatus;
+
+        $berita->update($requestData);
+    }
+
+    public function destroyBerita (Berita $berita) : void
+    {
+        if ($berita->poster && Storage::disk('public')->exists($berita->poster)) {
+            Storage::disk('public')->delete($berita->poster);
+        }
+        $berita->delete();
     }
 }

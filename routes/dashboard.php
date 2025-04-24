@@ -29,6 +29,7 @@ Route::resource('kategory', KategoryController::class)
 
 Route::get('berita/fetch', [BeritaController::class, 'getLatest'])->name('dashboard.berita.fetch');
 Route::resource('berita', BeritaController::class)
+    ->parameters(['berita' => 'berita'])
     ->names([
         'index'     => 'dashboard.berita.index',
         'create'    => 'dashboard.berita.create',

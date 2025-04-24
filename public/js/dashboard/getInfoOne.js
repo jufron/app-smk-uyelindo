@@ -7,7 +7,6 @@ function deleteData (element) {
 
     buttonDelete.addEventListener('click', function (e) {
         e.preventDefault();
-
         Swal.fire({
             title: "Apakah Anda Yakin?",
             text: "Yakin Ingin Menghapus File Tersebut!",
