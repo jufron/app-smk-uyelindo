@@ -1,7 +1,16 @@
 import { showData, deleteData } from "./getInfoOne.js";
 
-
 $(document).ready(function () {
+    // * filter input
+    const inputSelectKategory = document.querySelector('#kategory_id');
+    const inputSelectStatus = document.querySelector('#status');
+    const inputStartDate = document.querySelector('#start_date');
+    const inputEndDate = document.querySelector('#end_date');
+    
+    // * button filter
+    const buttonFilterReset = document.querySelector('#button-filter-reset');
+    
+
     const beritaDataTable = $('#berita-datatable');
 
     const datatable = beritaDataTable.DataTable({
@@ -12,16 +21,18 @@ $(document).ready(function () {
             data: function(d) {
                 // * filter data jika nanti diperlukan
                 // console.log(d);
-                // if (inputSelectStatus.value !== null && inputSelectStatus.value !== '') {
-                //     d.Status = inputSelectStatus.value;
-                // }
-
-                // if (inputStartDate.value !== null && inputStartDate.value !== '') {
-                //     d.start_date  = inputStartDate.value;
-                // }
-                // if (inputEndDate.value !== null && inputEndDate.value !== '') {
-                //     d.end_date  = inputEndDate.value;
-                // }
+                if (inputSelectKategory.value !== null && inputSelectKategory.value !== '') {
+                    d.kategory_id = inputSelectKategory.value;
+                }
+                if (inputSelectStatus.value !== null && inputSelectStatus.value !== '') {
+                    d.status = inputSelectStatus.value;
+                }
+                if (inputStartDate.value !== null && inputStartDate.value !== '') {
+                    d.start_date  = inputStartDate.value;
+                }
+                if (inputEndDate.value !== null && inputEndDate.value !== '') {
+                    d.end_date  = inputEndDate.value;
+                }
             }
         },
         columns: [
@@ -102,6 +113,51 @@ $(document).ready(function () {
             // * action delete
             deleteData(row);
         }
+    }); // ? end init datatable
+
+    // * handle button reset
+    buttonFilterReset.addEventListener('click', function () {
+        inputSelectKategory.value = '';
+        inputSelectStatus.value = '';
+        inputEndDate.value = '';
+        inputStartDate.value = '';
+
+        datatable.ajax.reload(null, false);
+        handleToastlifyPopUp('Seluruh Filter Direset');
     });
 
+    // * filter handler
+    inputSelectKategory.addEventListener('change', function () {
+        datatable.ajax.reload(null, false);
+        handleToastlifyPopUp('Filter dengan Kategory');
+    });
+    inputSelectStatus.addEventListener('change', function () {
+        datatable.ajax.reload(null, false);
+        handleToastlifyPopUp('Filter dengan Status');
+    });
+    inputStartDate.addEventListener('change', function () {
+        datatable.ajax.reload(null, false);
+        handleToastlifyPopUp('Filter dengan Tanggal Mulai');
+    });
+    inputEndDate.addEventListener('change', function () {
+        datatable.ajax.reload(null, false);
+        handleToastlifyPopUp('Filter dengan Tanggal Selesai');
+    });
+
+    // * toastify js
+    function handleToastlifyPopUp (label) {
+        Toastify({
+            text: label,
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
+    }
 }); // ? ready document

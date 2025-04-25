@@ -5,7 +5,7 @@
         id="{{ $name }}"
         name="{{ $name }}"
         >
-        <option selected disabled>Pilih</option>
+        <option value="" selected disabled>Pilih</option>
         {{ $slot }}
     </select>
     @error($name)

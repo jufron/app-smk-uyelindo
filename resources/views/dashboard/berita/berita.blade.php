@@ -1,7 +1,11 @@
 <x-layouts.dashboard.app title="Berita">
     {{-- * my style --}}
     <x-slot:myStyle>
+        {{-- ? sweetalert 2 lib --}}
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
+        
+        {{-- ? toastify css  --}}
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     </x-slot:myStyle>
     {{-- * my style --}}
 
@@ -11,9 +15,38 @@
             <h4 class="card-title">Daftar Berita</h4>
         </div>
         <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <x-dashboard.input-select label="Kategory" name="kategory_id">
+                        @foreach ($kategory as $kat)
+                        <option value="{{ $kat->id }}">{{ $kat->nama }}</option>
+                        @endforeach
+                    </x-dashboard.input-select>
+                </div>
+                <div class="col-md-3">
+                    <x-dashboard.input-select label="Status Berita" name="status">
+                        <option value="1">Publish</option>
+                        <option value="0">Draft</option>
+                    </x-dashboard.input-select>
+                </div>
+                <div class="col-md-3">
+                    <x-dashboard.input
+                        label="Tanggal Awal"
+                        type="date"
+                        name="start_date"
+                    />
+                </div>
+                <div class="col-md-3">
+                    <x-dashboard.input
+                        label="Tanggal Akhir"
+                        type="date"
+                        name="end_date"
+                    />
+                </div>
+            </div>
             <div class="my-4">
                 <a href="{{ route('dashboard.berita.create') }}" class="btn btn-success">Tambah</A>
-                <button class="btn btn-secondary">Reset Filter</button>
+                <button id="button-filter-reset" class="btn btn-secondary">Reset Filter</button>
             </div>
 
             <div class="table-responsive">
@@ -73,6 +106,8 @@
         <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
         {{-- ? sweatalert 2 lib --}}
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        {{-- ? toastify library  --}}
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         {{-- ? myscript --}}
         <script type="module" src="{{ asset('js/dashboard/berita.js') }}"></script>
     </x-slot:myScript>

@@ -45,6 +45,32 @@ class BeritaService implements BeritaServiceInterface
         ->addColumn('Aksi', function (Berita $berita) {
             return view('yajra-datatable.berita.action', compact('berita'))->render();
         })
+        ->filter( function ($query) {
+            // * search just judul
+            if (request()->has('search')) {
+                $query->where('judul', 'like', "%".request('search')['value']."%");
+            }
+            // * status active or draft
+            if (request()->has('status')) {
+                $query->where('status', request('status'));
+            }
+            // * kategory
+            if (request()->has('kategory_id')) {
+                $query->where('kategory_id', request('kategory_id'));
+            }
+            // * date range
+            if (request()->filled('start_date') && request()->filled('end_date')) {
+                $query->whereBetween('created_at', [request('start_date'), request('end_date')]);
+            } 
+            //  todo : if only start date
+            elseif (request()->filled('start_date')) {
+                $query->where('created_at', '>=', request('start_date'));
+            } 
+            //  todo : if only end date
+            elseif (request()->filled('end_date')) {
+                $query->where('created_at', '<=', request('end_date'));
+            }
+        }, true)
         ->rawColumns(['Photo', 'Status', 'Aksi'])
         ->toJson();
     }

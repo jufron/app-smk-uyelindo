@@ -23,7 +23,9 @@ class BeritaController extends Controller
      */
     public function index() : View
     {
-        return view('dashboard.berita.berita');
+        return view('dashboard.berita.berita', [
+            'kategory'  => Kategory::latest()->get()
+        ]);
     }
 
     public function getLatest () : JsonResponse
