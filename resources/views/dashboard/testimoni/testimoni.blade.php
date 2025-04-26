@@ -8,9 +8,8 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
         <style>
-            /* #testimoni-datatable th, */
             #testimoni-datatable td.white-space {
-                white-space: nowrap; /* supaya isi kolom tidak turun ke bawah */
+                white-space: nowrap;
             }
         </style>
     </x-slot:myStyle>

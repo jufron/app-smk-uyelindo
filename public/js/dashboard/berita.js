@@ -14,6 +14,7 @@ $(document).ready(function () {
     const datatable = beritaDataTable.DataTable({
         serverSide: true,
         processing: true,
+        autoWidth: false,
         ajax: {
             url: beritaDataTable.attr('data-url'),
             data: function(d) {
@@ -36,7 +37,7 @@ $(document).ready(function () {
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'Photo', name: 'Photo', searchable: false },
-            { data: 'Judul', name: 'Judul', searchable: true },
+            { data: 'Judul', name: 'Judul', searchable: true, className: 'white-space' },
             { data: 'Status', name: 'Status', searchable: false },
             { data: 'Kategory', name: 'Kategory', searchable: false },
             { data: 'Tanggal Buat', name: 'Tanggal Buat', searchable: false },

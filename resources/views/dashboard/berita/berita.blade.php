@@ -6,6 +6,12 @@
         
         {{-- ? toastify css  --}}
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+        <style>
+            #basic-datatables_wrapper td.white-space {
+                white-space: nowrap;
+            }
+        </style>
     </x-slot:myStyle>
     {{-- * my style --}}
 
