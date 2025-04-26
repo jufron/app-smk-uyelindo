@@ -50,7 +50,7 @@ class Berita extends Model
     protected function contentLimit(): Attribute
     {
         return Attribute::make(
-            get: fn () => Str::limit(strip_tags($this->content), 50),
+            get: fn () => Str::limit(strip_tags($this->content), 100),
         );
     }
 

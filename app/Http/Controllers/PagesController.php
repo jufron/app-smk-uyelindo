@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Berita;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class PagesController extends Controller
 {
-    public function dataTestimoni () 
+    public function dataTestimoni ()
     {
         return (object)[
            [
@@ -70,14 +72,25 @@ class PagesController extends Controller
     public function index () : View
     {
         $testimonials = $this->dataTestimoni();
-        return view('frond.index', compact('testimonials'));
+        // * cache 6 how
+        $berita_terbaru = Cache::remember('berita_terbaru', 60*60*6, function() {
+                    return Berita::with('user:id,name', 'kategory:id,nama')
+                                ->latest()
+                                ->limit(3)
+                                ->get();
+                });
+
+        return view('frond.index', [
+            'testimonials' => $testimonials,
+            'berita_terbaru' => $berita_terbaru
+        ]);
     }
-    
+
     public function sejarah () : View
     {
         return view('frond.sejarah');
     }
-    
+
     public function visiMisi () : View
     {
         return view('frond.visi-misi');
@@ -87,15 +100,21 @@ class PagesController extends Controller
     {
         return view('frond.struktur-organisasi');
     }
-    
+
     public function berita () : View
     {
-        return view('frond.berita');
+        $berita = Berita::with('user:id,name', 'kategory:id,nama')
+        ->latest()
+        ->cursorPaginate(10);
+
+        return view('frond.berita', [
+            'berita_terbaru'    => $berita
+        ]);
     }
 
-    public function findBerita () : View
+    public function findBerita (Berita $berita) : View
     {
-        return view('frond.detail-berita');
+        return view('frond.detail-berita', compact('berita'));
     }
 
     public function jurusan () : View
@@ -107,7 +126,7 @@ class PagesController extends Controller
     {
         return view('frond.galeri-foto');
     }
-    
+
     public function guruDanStaf () : View
     {
         return view('frond.guru-&-staf');

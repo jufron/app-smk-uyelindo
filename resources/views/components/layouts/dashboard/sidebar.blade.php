@@ -144,49 +144,6 @@
                     </div>
                 </li>
 
-                <li class="nav-section">
-                    <h4 class="text-section">umum</h4>
-                </li>
-
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarLayouts">
-                        <i class="fas fa-th-list"></i>
-                        <p>Sidebar Layouts</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="sidebarLayouts">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="../sidebar-style-2.html">
-                                    <span class="sub-item">Sidebar Style 2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../icon-menu.html">
-                                    <span class="sub-item">Icon Menu</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                
-                <li class="nav-item active submenu">
-                    <a data-bs-toggle="collapse" href="#forms">
-                        <i class="fas fa-pen-square"></i>
-                        <p>Forms</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse show" id="forms">
-                        <ul class="nav nav-collapse">
-                            <li class="active">
-                                <a href="../forms/forms.html">
-                                    <span class="sub-item">Basic Form</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
             </ul>
         </div>
     </div>

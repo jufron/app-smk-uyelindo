@@ -15,7 +15,7 @@
         <div class="col-6 col-sm-4 col-lg-2">
           <div class="card">
             <div class="card-body p-3 text-center">
-              <div class="h1 m-0">43</div>
+              <div class="h1 m-0">{{ $berita }}</div>
               <div class="text-muted mb-3">Berita</div>
             </div>
           </div>
@@ -24,7 +24,7 @@
         <div class="col-6 col-sm-4 col-lg-2">
           <div class="card">
             <div class="card-body p-3 text-center">
-              <div class="h1 m-0">11</div>
+              <div class="h1 m-0">{{ $kategory }}</div>
               <div class="text-muted mb-3">Kategori Berita</div>
             </div>
           </div>

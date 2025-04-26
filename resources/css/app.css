@@ -6,3 +6,106 @@
 [x-cloak] {
     display: none !important;
 }
+
+
+/* * ============================= summernote editor reset =============================== */
+.summernote-content ul,
+.summernote-content ol {
+    margin: 10px 0 10px 20px;
+}
+
+.summernote-content ol {
+    list-style-type: decimal !important;
+    margin-left: 20px !important;
+}
+
+.summernote-content ul {
+    list-style-type: disc !important;
+    margin-left: 20px !important;
+}
+
+.summernote-content li {
+    margin-bottom: 5px;
+}
+
+.summernote-content table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+}
+
+/* class="table table-bordered" */
+.summernote-content .table.table-bordered {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.summernote-content th,
+.summernote-content td {
+    border: 1px solid #a4a1a1;
+    padding: 8px;
+    white-space: nowrap; /* Mencegah teks dalam sel tabel turun ke baris berikutnya */
+}
+
+.summernote-content th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.summernote-content h1,
+.summernote-content h2,
+.summernote-content h3,
+.summernote-content h4,
+.summernote-content h5,
+.summernote-content h6 {
+    margin-bottom: 0.5em;
+}
+
+/* Pastikan heading tetap terlihat */
+.summernote-content h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.summernote-content h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.summernote-content h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.summernote-content h4 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.summernote-content h5 {
+    font-size: 1.125em;
+    font-weight: bold;
+}
+
+.summernote-content h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.summernote-content p {
+    margin-bottom: 1em;
+}
+
+/* Style untuk teks besar/kecil tetap sesuai */
+.summernote-content small {
+    font-size: 0.875em;
+}
+
+.summernote-content big {
+    font-size: 1.25em;
+}
+
+.summernote-content img {
+    margin: 10px;
+}
