@@ -39,7 +39,7 @@
                 </li>
 
                 {{-- ? manajement berita --}}
-                <li @class([
+                {{-- <li @class([
                     'nav-item',
                     'active submenu' => request()->routeIs('dashboard.kategory.index') ||
                                         request()->routeIs('dashboard.kategory.create') ||
@@ -82,20 +82,86 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
+
+                <x-dashboard.linkMenu-dropdown 
+                    id="manajement-berita"
+                    title="Manajement Berita"
+                    :routes="[
+                        'dashboard.kategory.index', 
+                        'dashboard.kategory.create', 
+                        'dashboard.kategory.edit',
+                        'dashboard.berita.index', 
+                        'dashboard.berita.create', 
+                        'dashboard.berita.edit',
+                    ]"
+                    :items="[
+                        [
+                            'label' => 'Kategory',
+                            'route' => 'dashboard.kategory.index',
+                            'routes' => [
+                                'dashboard.kategory.index', 
+                                'dashboard.kategory.create', 
+                                'dashboard.kategory.edit'
+                            ]
+                        ],
+                        [
+                            'label' => 'Berita',
+                            'route' => 'dashboard.berita.index',
+                            'routes' => [
+                                'dashboard.berita.index', 
+                                'dashboard.berita.create', 
+                                'dashboard.berita.edit'
+                            ]
+                        ],
+                    ]"
+                />
 
                 <li class="nav-section">
                     <h4 class="text-section">Akademik</h4>
                 </li>
 
                 {{-- ? akademik --}}
-                <li class="nav-item">
+                <x-dashboard.linkMenu-dropdown 
+                id="akademik"
+                title="Akademik"
+                :routes="[
+                    'dashboard.testimoni.index', 
+                    'dashboard.testimoni.create', 
+                    'dashboard.testimoni.edit',
+                    // 'dashboard.berita.index', 
+                    // 'dashboard.berita.create', 
+                    // 'dashboard.berita.edit',
+                ]"
+                :items="[
+                    [
+                        'label' => 'Testimoni',
+                        'route' => 'dashboard.testimoni.index',
+                        'routes' => [
+                            'dashboard.testimoni.index', 
+                            'dashboard.testimoni.create', 
+                            'dashboard.testimoni.edit'
+                        ]
+                    ],
+                    // [
+                    //     'label' => 'Berita',
+                    //     'route' => 'dashboard.berita.index',
+                    //     'routes' => [
+                    //         'dashboard.berita.index', 
+                    //         'dashboard.berita.create', 
+                    //         'dashboard.berita.edit'
+                    //     ]
+                    // ],
+                ]"
+            />
+
+                {{-- <li>
                     <a data-bs-toggle="collapse" href="#akademik">
                         <i class="fas fa-th-list"></i>
                         <p>Akademik</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="akademik">
+                    <div id="akademik">
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="#">
@@ -103,10 +169,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('dashboard.kategory.index') }}">
                                     <span class="sub-item">Testimoni</span>
                                 </a>
                             </li>
+
                             <li>
                                 <a href="#">
                                     <span class="sub-item">Siswa Berprestasi</span>
@@ -114,7 +181,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <li class="nav-section">
                     <h4 class="text-section">Peserta Didik Baru</h4>

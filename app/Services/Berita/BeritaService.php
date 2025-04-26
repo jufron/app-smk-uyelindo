@@ -121,8 +121,10 @@ class BeritaService implements BeritaServiceInterface
         $posterPath = $berita->poster;
         $publishStatus = $berita->status;
 
-        if(isset($request->status)) {
+        if($request->filled('status')) {
             $publishStatus = true;
+        } else {
+            $publishStatus = false;
         }
 
         if ($request->hasFile('poster')) {

@@ -47,7 +47,7 @@ function showData (element, callback) {
     // * modal close
     modalCloseButton.addEventListener('click', () => {
         modal.hide();
-        buttonModal.focus();
+        // buttonShow.focus();
     });
 
 }
