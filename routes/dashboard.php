@@ -5,7 +5,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dashboard\{
     BeritaController,
+    GaleriFotoController,
+    GuruDanStafController,
     KategoryController,
+    PenerimaanSiswaBaruController,
+    PengaturanAplikasiController,
+    PertanyaanPenerimaanSiswaController,
+    SiswaBerprestasiController,
     TestimoniController
 };
 
@@ -16,6 +22,24 @@ Route::get('/', DashboardController::class)->name('dashboard');
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
+
+// todo ------------------------------------ pengaturan aplikasi -------------------------------------------------
+Route::controller(PengaturanAplikasiController::class)->group(function () {
+    Route::get('/pengaturan-aplikasi', 'index')->name('dashboard.pengaturan-aplikasi.index');
+});
+
+
+// todo ------------------------------------ galery foto -------------------------------------------------
+Route::resource('galery-foto', GaleriFotoController::class)
+    ->names([
+        'index'     => 'dashboard.galery-foto.index',
+        'create'    => 'dashboard.galery-foto.create',
+        'store'     => 'dashboard.galery-foto.store',
+        'show'      => 'dashboard.galery-foto.show',
+        'edit'      => 'dashboard.galery-foto.edit',
+        'update'    => 'dashboard.galery-foto.update',
+        'destroy'   => 'dashboard.galery-foto.destroy',
+    ]);
 
 // todo ------------------------------------ kategory -------------------------------------------------
 Route::resource('kategory', KategoryController::class)
@@ -44,6 +68,19 @@ Route::resource('berita', BeritaController::class)
         'destroy'   => 'dashboard.berita.destroy',
     ]);
 
+// todo ------------------------------------ guru & staf -------------------------------------------------
+Route::get('guru-&-staf/fetch', [GuruDanStafController::class, 'getLatest'])->name('dashboard.guru-staf.fetch');
+Route::resource('guru-&-staf', GuruDanStafController::class)
+    ->names([
+        'index'     => 'dashboard.guru-staf.index',
+        'create'    => 'dashboard.guru-staf.create',
+        'store'     => 'dashboard.guru-staf.store',
+        'show'      => 'dashboard.guru-staf.show',
+        'edit'      => 'dashboard.guru-staf.edit',
+        'update'    => 'dashboard.guru-staf.update',
+        'destroy'   => 'dashboard.guru-staf.destroy',
+    ]);
+
 // todo ------------------------------------ testimoni -------------------------------------------------
 Route::get('testimoni/fetch', [TestimoniController::class, 'getLatest'])->name('dashboard.testimoni.fetch');
 Route::resource('testimoni', TestimoniController::class)
@@ -56,3 +93,41 @@ Route::resource('testimoni', TestimoniController::class)
         'update'    => 'dashboard.testimoni.update',
         'destroy'   => 'dashboard.testimoni.destroy'
     ]);
+
+// todo ------------------------------------ siswa berprestasi -------------------------------------------------
+Route::get('siswa-berprestasi/fetch', [SiswaBerprestasiController::class, 'getLatest'])->name('dashboard.siswa-berprestasi.fetch');
+Route::resource('siswa-berprestasi', SiswaBerprestasiController::class)
+    ->names([
+        'index'     => 'dashboard.siswa-berprestasi.index',
+        'create'    => 'dashboard.siswa-berprestasi.create',
+        'store'     => 'dashboard.siswa-berprestasi.store',
+        'show'      => 'dashboard.siswa-berprestasi.show',
+        'edit'      => 'dashboard.siswa-berprestasi.edit',
+        'update'    => 'dashboard.siswa-berprestasi.update',
+        'destroy'   => 'dashboard.siswa-berprestasi.destroy'
+    ]);
+
+// todo ------------------------------------ PPDB -------------------------------------------------
+Route::resource('penerimaan-peserta-didik-baru', PenerimaanSiswaBaruController::class)
+    ->names([
+        'index'     => 'dashboard.penerimaan-peserta-didik-baru.index',
+        'create'    => 'dashboard.penerimaan-peserta-didik-baru.create',
+        'store'     => 'dashboard.penerimaan-peserta-didik-baru.store',
+        'show'      => 'dashboard.penerimaan-peserta-didik-baru.show',
+        'edit'      => 'dashboard.penerimaan-peserta-didik-baru.edit',
+        'update'    => 'dashboard.penerimaan-peserta-didik-baru.update',
+        'destroy'   => 'dashboard.penerimaan-peserta-didik-baru.destroy'
+    ]);
+
+// todo ------------------------------------ daftar pertanyaan ppdb -------------------------------------------------
+Route::resource('daftar-pertanyaan-ppdb', PertanyaanPenerimaanSiswaController::class)
+    ->names([
+        'index'     => 'dashboard.daftar-pertanyaan-ppdb.index',
+        'create'    => 'dashboard.daftar-pertanyaan-ppdb.create',
+        'store'     => 'dashboard.daftar-pertanyaan-ppdb.store',
+        'show'      => 'dashboard.daftar-pertanyaan-ppdb.show',
+        'edit'      => 'dashboard.daftar-pertanyaan-ppdb.edit',
+        'update'    => 'dashboard.daftar-pertanyaan-ppdb.update',
+        'destroy'   => 'dashboard.daftar-pertanyaan-ppdb.destroy'
+    ]);
+

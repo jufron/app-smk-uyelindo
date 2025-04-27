@@ -23,76 +23,37 @@
                 </li>
 
                 {{-- ? aplikasi --}}
-                <li class="nav-item">
-                    <a href="#">
+                <li @class([
+                    'nav-item',
+                    'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
+                ])>
+                    <a href="{{ route('dashboard.pengaturan-aplikasi.index') }}">
                         <i class="fas fa-th-list"></i>
                         <p>Aplikasi</p>
                     </a>
                 </li>
 
                 {{-- ? galeri foto --}}
-                <li class="nav-item">
-                    <a href="#">
+                    <li @class([
+                        'nav-item',
+                        'active' => request()->routeIs('dashboard.galery-foto.index')
+                    ])>
+                        <a href="{{ route('dashboard.galery-foto.index') }}">
                         <i class="fas fa-th-list"></i>
                         <p>Galeri Foto</p>
                     </a>
                 </li>
 
                 {{-- ? manajement berita --}}
-                {{-- <li @class([
-                    'nav-item',
-                    'active submenu' => request()->routeIs('dashboard.kategory.index') ||
-                                        request()->routeIs('dashboard.kategory.create') ||
-                                        request()->routeIs('dashboard.kategory.edit') ||
-                                        request()->routeIs('dashboard.berita.index') || 
-                                        request()->routeIs('dashboard.berita.create') || 
-                                        request()->routeIs('dashboard.berita.edit')
-                ])>
-                    <a data-bs-toggle="collapse" href="#manajement-berita">
-                        <i class="fas fa-th-list"></i>
-                        <p>Manajement Berita</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div @class([
-                        'collapse', 
-                        'show' => request()->routeIs('dashboard.kategory.index') ||
-                                  request()->routeIs('dashboard.kategory.create') ||
-                                  request()->routeIs('dashboard.kategory.edit') ||
-                                  request()->routeIs('dashboard.berita.index') || 
-                                  request()->routeIs('dashboard.berita.create') || 
-                                  request()->routeIs('dashboard.berita.edit')
-                        ])
-                        id="manajement-berita">
-                        <ul class="nav nav-collapse">
-                            <li @class(['active' => request()->routeIs('dashboard.kategory.index') ||
-                                                    request()->routeIs('dashboard.kategory.create') ||
-                                                    request()->routeIs('dashboard.kategory.edit')
-                            ])>
-                                <a href="{{ route('dashboard.kategory.index') }}">
-                                    <span class="sub-item">Kategory</span>
-                                </a>
-                            </li>
-                            <li @class(['active' => request()->routeIs('dashboard.berita.index') || 
-                                                    request()->routeIs('dashboard.berita.create') || 
-                                                    request()->routeIs('dashboard.berita.edit')
-                            ])>
-                                <a href="{{ route('dashboard.berita.index') }}">
-                                    <span class="sub-item">Berita</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> --}}
-
-                <x-dashboard.linkMenu-dropdown 
+                <x-dashboard.linkMenu-dropdown
                     id="manajement-berita"
                     title="Manajement Berita"
                     :routes="[
-                        'dashboard.kategory.index', 
-                        'dashboard.kategory.create', 
+                        'dashboard.kategory.index',
+                        'dashboard.kategory.create',
                         'dashboard.kategory.edit',
-                        'dashboard.berita.index', 
-                        'dashboard.berita.create', 
+                        'dashboard.berita.index',
+                        'dashboard.berita.create',
                         'dashboard.berita.edit',
                     ]"
                     :items="[
@@ -100,8 +61,8 @@
                             'label' => 'Kategory',
                             'route' => 'dashboard.kategory.index',
                             'routes' => [
-                                'dashboard.kategory.index', 
-                                'dashboard.kategory.create', 
+                                'dashboard.kategory.index',
+                                'dashboard.kategory.create',
                                 'dashboard.kategory.edit'
                             ]
                         ],
@@ -109,8 +70,8 @@
                             'label' => 'Berita',
                             'route' => 'dashboard.berita.index',
                             'routes' => [
-                                'dashboard.berita.index', 
-                                'dashboard.berita.create', 
+                                'dashboard.berita.index',
+                                'dashboard.berita.create',
                                 'dashboard.berita.edit'
                             ]
                         ],
@@ -122,94 +83,88 @@
                 </li>
 
                 {{-- ? akademik --}}
-                <x-dashboard.linkMenu-dropdown 
-                id="akademik"
-                title="Akademik"
-                :routes="[
-                    'dashboard.testimoni.index', 
-                    'dashboard.testimoni.create', 
-                    'dashboard.testimoni.edit',
-                    // 'dashboard.berita.index', 
-                    // 'dashboard.berita.create', 
-                    // 'dashboard.berita.edit',
-                ]"
-                :items="[
-                    [
-                        'label' => 'Testimoni',
-                        'route' => 'dashboard.testimoni.index',
-                        'routes' => [
-                            'dashboard.testimoni.index', 
-                            'dashboard.testimoni.create', 
-                            'dashboard.testimoni.edit'
+                <x-dashboard.linkMenu-dropdown
+                    id="akademik"
+                    title="Akademik"
+                    :routes="[
+                        'dashboard.guru-staf.index',
+                        'dashboard.guru-staf.create',
+                        'dashboard.guru-staf.edit',
+                        'dashboard.testimoni.index',
+                        'dashboard.testimoni.create',
+                        'dashboard.testimoni.edit',
+                        'dashboard.siswa-berprestasi.index',
+                        'dashboard.siswa-berprestasi.create',
+                        'dashboard.siswa-berprestasi.edit',
+                    ]"
+                    :items="[
+                        [
+                            'label' => 'Guru & Staf',
+                            'route' => 'dashboard.guru-staf.index',
+                            'routes' => [
+                                'dashboard.guru-staf.index',
+                                'dashboard.guru-staf.create',
+                                'dashboard.guru-staf.edit',
+                            ]
+                        ],
+                        [
+                            'label' => 'Testimoni',
+                            'route' => 'dashboard.testimoni.index',
+                            'routes' => [
+                                'dashboard.testimoni.index',
+                                'dashboard.testimoni.create',
+                                'dashboard.testimoni.edit'
+                            ]
+                        ],
+                        [
+                            'label' => 'Berita',
+                            'route' => 'dashboard.siswa-berprestasi.index',
+                            'routes' => [
+                                'dashboard.siswa-berprestasi.index',
+                                'dashboard.siswa-berprestasi.create',
+                                'dashboard.siswa-berprestasi.edit',
+                            ]
                         ]
-                    ],
-                    // [
-                    //     'label' => 'Berita',
-                    //     'route' => 'dashboard.berita.index',
-                    //     'routes' => [
-                    //         'dashboard.berita.index', 
-                    //         'dashboard.berita.create', 
-                    //         'dashboard.berita.edit'
-                    //     ]
-                    // ],
-                ]"
-            />
-
-                {{-- <li>
-                    <a data-bs-toggle="collapse" href="#akademik">
-                        <i class="fas fa-th-list"></i>
-                        <p>Akademik</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div id="akademik">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Guru & Staf</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('dashboard.kategory.index') }}">
-                                    <span class="sub-item">Testimoni</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Siswa Berprestasi</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> --}}
+                    ]"
+                />
 
                 <li class="nav-section">
                     <h4 class="text-section">Peserta Didik Baru</h4>
                 </li>
 
                 {{-- ? ppdb --}}
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#ppdb">
-                        <i class="fas fa-th-list"></i>
-                        <p>PPDB</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="ppdb">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Daftar Siswa Baru</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Daftar Pertanyaan PPDB</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </li>
+                <x-dashboard.linkMenu-dropdown
+                    id="ppdb"
+                    title="PPDB"
+                    :routes="[
+                        'dashboard.penerimaan-peserta-didik-baru.index',
+                        'dashboard.penerimaan-peserta-didik-baru.create',
+                        'dashboard.penerimaan-peserta-didik-baru.edit',
+                        'dashboard.daftar-pertanyaan-ppdb.index',
+                        'dashboard.daftar-pertanyaan-ppdb.create',
+                        'dashboard.daftar-pertanyaan-ppdb.edit',
+                    ]"
+                    :items="[
+                        [
+                            'label' => 'Daftar Siswa Baru',
+                            'route' => 'dashboard.penerimaan-peserta-didik-baru.index',
+                            'routes' => [
+                                'dashboard.penerimaan-peserta-didik-baru.index',
+                                'dashboard.penerimaan-peserta-didik-baru.create',
+                                'dashboard.penerimaan-peserta-didik-baru.edit'
+                            ]
+                        ],
+                        [
+                            'label' => 'Pertanyaan PPDB',
+                            'route' => 'dashboard.daftar-pertanyaan-ppdb.index',
+                            'routes' => [
+                                'dashboard.daftar-pertanyaan-ppdb.index',
+                                'dashboard.daftar-pertanyaan-ppdb.create',
+                                'dashboard.daftar-pertanyaan-ppdb.edit'
+                            ]
+                        ],
+                    ]"
+                />
 
             </ul>
         </div>
