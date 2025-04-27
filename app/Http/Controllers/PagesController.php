@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Testimoni;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -71,19 +72,22 @@ class PagesController extends Controller
 
     public function index () : View
     {
-        $testimonials = $this->dataTestimoni();
         // * cache 6 how
-        $berita_terbaru = Cache::remember('berita_terbaru', 60*60*6, function() {
-                    return Berita::with('user:id,name', 'kategory:id,nama')
-                                ->where('status', true)
-                                ->latest()
-                                ->limit(3)
-                                ->get();
-                });
+        $beritaCache = Cache::remember('berita_terbaru', 60*60*6, function() {
+            return Berita::with('user:id,name', 'kategory:id,nama')
+                    ->where('status', true)
+                    ->latest()
+                    ->limit(3)
+                    ->get();
+        });
+
+        $testimoniCache = Cache::remember('testimoni_terbaru', 60*60*6, function() {
+            return Testimoni::query()->latest()->limit(9)->get();
+        });
 
         return view('frond.index', [
-            'testimonials' => $testimonials,
-            'berita_terbaru' => $berita_terbaru
+            'berita_terbaru'    => $beritaCache,
+            'testimoni_terbaru' => $testimoniCache,
         ]);
     }
 
@@ -143,8 +147,15 @@ class PagesController extends Controller
 
     public function testimoni () : View
     {
-        $testimonials = $this->dataTestimoni();
-        return view('frond.testimoni', compact('testimonials'));
+        $daftarTestimoniCache = Cache::remember('daftar_testimoni', 60*60*6, function() {
+            return Testimoni::query()
+                        ->latest()
+                        ->cursorPaginate(20);
+        });
+
+        return view('frond.testimoni', [
+            'daftar_testimoni'  => $daftarTestimoniCache
+        ]);
     }
 
     public function siswaPrestasi () : View

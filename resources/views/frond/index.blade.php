@@ -53,9 +53,9 @@
                 </p>
             </div>
             <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-                <img 
-                    src="https://loremflickr.com/g/600/600/girl" 
-                    alt="Kepala Sekolah SMK Uyelindo Kupang" 
+                <img
+                    src="https://loremflickr.com/g/600/600/girl"
+                    alt="Kepala Sekolah SMK Uyelindo Kupang"
                     class="rounded-xl shadow-md max-h-[500px] object-cover"
                     loading="lazy"
                 />
@@ -141,9 +141,9 @@
             <ul class="grid gap-5 sm:grid-cols-2 md:gap-4">
                 <!-- Item -->
                 <li class="rounded-md bg-yellow-100">
-                    <img 
-                        src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" 
-                        alt="Teknik Komputer dan Jaringan" 
+                    <img
+                        src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                        alt="Teknik Komputer dan Jaringan"
                         class="w-full object-cover rounded-lg"
                         loading="lazy"
                     />
@@ -159,9 +159,9 @@
                 </li>
                 <!-- Item -->
                 <li class="rounded-md bg-yellow-100">
-                    <img 
-                        src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" 
-                        alt="Teknik Komputer dan Jaringan" 
+                    <img
+                        src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                        alt="Teknik Komputer dan Jaringan"
                         class="w-full object-cover rounded-lg"
                         loading="lazy"
                     />
@@ -185,37 +185,37 @@
         <div class="container mx-auto max-w-6xl px-4 py-10">
             <h3 class="text-gray-800 py-10 text-5xl text-center font-bold">Apa Kata Mereka?</h3>
             <div class="md:columns-2 lg:columns-3 gap-6 p-4 sm:p-1 mt-2">
-                @foreach ($testimonials as $testimoni)
+                @foreach ($testimoni_terbaru as $testimoni)
                 <div class="animate-in zoom-in duration-200">
                     <div class="ring-1 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white hover:ring-2 ring-yellow-200 hover:ring-yellow-300 transform duration-200 hover:shadow-yellow-300 hover:shadow-md z-0 relative">
                         <div class="flex flex-col break-inside-avoid-page z-0 relative">
                             <div class="flex justify-between">
                                 <div class="flex space-x-6">
                                     <div class="flex space-x-4 flex-shrink-0 w-52">
-                                        <img 
-                                            src="https://randomuser.me/api/portraits/men/51.jpg"
+                                        <img
+                                            src="{{ $testimoni->avatar_url }}"
                                             class="w-10 h-10 rounded-full"
                                             loading="lazy"
                                         />
                                         <div>
                                             <div class="font-semibold">
-                                                {{ $testimoni['name'] }}
+                                                {{ $testimoni->nama_lengkap }}
                                             </div>
                                             <div class="text-sm">
-                                                {{ $testimoni['position'] }}
+                                                {{ $testimoni->pekerjaan }}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-        
+
                             <p class="whitespace-pre-line break-inside-avoid-page">
-                                {{ $testimoni['message'] }}
+                                {{ $testimoni->content }}
                             </p>
                         </div>
                     </div>
                 </div>
-                @endforeach 
+                @endforeach
             </div>
             <div class="flex justify-center mt-10">
                 <a href="{{ route('testimoni') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
@@ -236,9 +236,9 @@
                 <div class="mb-6 grid gap-4 sm:grid-cols-2 sm:justify-items-stretch md:mb-10 md:grid-cols-3 lg:mb-12 lg:gap-6">
                     @foreach ($berita_terbaru as $berita)
                     <a href="{{ route('berita.detail', $berita) }}" class="flex flex-col gap-4 rounded-md border border-solid border-yellow-400 px-4 py-8 md:p-0">
-                        <img 
+                        <img
                             src="{{ $berita->poster ? asset("storage/$berita->poster") : asset('img/defaultsvg.svg') }}"
-                            alt="berita-poster" 
+                            alt="berita-poster"
                             class="h-60 object-cover"
                             loading="lazy"
                         />
@@ -291,7 +291,7 @@
                 <img src="https://images.unsplash.com/photo-1475518112798-86ae358241eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMHx8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080"/>
                 <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080"/>
             </div>
-    
+
             <div class="flex justify-center mt-10">
                 <a href="{{ route('galeri-foto') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
                     Lihat Semua di Galery Foto
@@ -309,7 +309,7 @@
           <p class="mx-auto mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
             Kenali para pendidik dan staf dedikasi kami yang berkomitmen untuk memberikan pendidikan berkualitas
           </p>
-      
+
           <!-- Swiper Container -->
           <div class="swiper guruStafSlider">
             <div class="swiper-wrapper">
@@ -346,7 +346,7 @@
                     </div>
                   </div>
               </div>
-      
+
               <div class="swiper-slide">
                 <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
                   <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
@@ -378,7 +378,7 @@
                     </div>
                   </div>
               </div>
-      
+
               <div class="swiper-slide">
                 <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
                   <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
@@ -410,7 +410,7 @@
                     </div>
                   </div>
               </div>
-      
+
               <div class="swiper-slide">
                 <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
                   <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
@@ -442,16 +442,16 @@
                     </div>
                   </div>
               </div>
-      
+
               <!-- Ulangi .swiper-slide untuk setiap item lainnya -->
               <!-- ... copy semua item lainnya di sini dalam .swiper-slide ... -->
-      
+
             </div>
-      
+
             <!-- Navigation (optional) -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-      
+
             <!-- Pagination (optional) -->
             <div class="my-10">
                 <div class="swiper-pagination"></div>
@@ -507,7 +507,7 @@
                 },
               },
             });
-        </script>  
+        </script>
 
     </x-slot:myScript>
 </x-layouts.frond.app>
