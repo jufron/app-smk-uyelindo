@@ -75,6 +75,7 @@ class PagesController extends Controller
         // * cache 6 how
         $berita_terbaru = Cache::remember('berita_terbaru', 60*60*6, function() {
                     return Berita::with('user:id,name', 'kategory:id,nama')
+                                ->where('status', true)
                                 ->latest()
                                 ->limit(3)
                                 ->get();
@@ -103,12 +104,15 @@ class PagesController extends Controller
 
     public function berita () : View
     {
-        $berita = Berita::with('user:id,name', 'kategory:id,nama')
-        ->latest()
-        ->cursorPaginate(10);
+        $beritaCache = Cache::remember('daftar_berita', 60*60*6, function() {
+            return Berita::with('user:id,name', 'kategory:id,nama')
+                    ->where('status', true)
+                    ->latest()
+                    ->cursorPaginate(10);
+        });
 
         return view('frond.berita', [
-            'berita_terbaru'    => $berita
+            'berita_terbaru'    => $beritaCache
         ]);
     }
 

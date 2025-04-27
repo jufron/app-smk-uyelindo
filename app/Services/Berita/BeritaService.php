@@ -6,6 +6,7 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
 use App\Services\Berita\BeritaServiceInterface;
@@ -61,11 +62,11 @@ class BeritaService implements BeritaServiceInterface
             // * date range
             if (request()->filled('start_date') && request()->filled('end_date')) {
                 $query->whereBetween('created_at', [request('start_date'), request('end_date')]);
-            } 
+            }
             //  todo : if only start date
             elseif (request()->filled('start_date')) {
                 $query->where('created_at', '>=', request('start_date'));
-            } 
+            }
             //  todo : if only end date
             elseif (request()->filled('end_date')) {
                 $query->where('created_at', '<=', request('end_date'));
@@ -75,7 +76,7 @@ class BeritaService implements BeritaServiceInterface
         ->toJson();
     }
 
-    public function storeBerita (Request $request) : void 
+    public function storeBerita (Request $request) : void
     {
         $posterPath = null;
         $publishStatus = false;
@@ -96,6 +97,9 @@ class BeritaService implements BeritaServiceInterface
         $requestData['status']      = $publishStatus;
 
         Berita::create($requestData);
+
+        Cache::forget('berita_terbaru');
+        Cache::forget('daftar_berita');
     }
 
     public function showBerita (Berita $berita) : JsonResponse
@@ -144,6 +148,9 @@ class BeritaService implements BeritaServiceInterface
         $requestData['status']      = $publishStatus;
 
         $berita->update($requestData);
+
+        Cache::forget('berita_terbaru');
+        Cache::forget('daftar_berita');
     }
 
     public function destroyBerita (Berita $berita) : void
@@ -152,5 +159,8 @@ class BeritaService implements BeritaServiceInterface
             Storage::disk('public')->delete($berita->poster);
         }
         $berita->delete();
+
+        Cache::forget('berita_terbaru');
+        Cache::forget('daftar_berita');
     }
 }
