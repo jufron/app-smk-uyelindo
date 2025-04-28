@@ -16,6 +16,8 @@ Route::controller(PagesController::class)->group( function () {
     Route::get('guru-staf', 'guruDanStaf')->name('guru-staf');
     Route::get('fasilitas', 'fasilitas')->name('fasilitas');
     Route::get('testimoni', 'testimoni')->name('testimoni');
+    Route::get('testimoni/create', 'createTestimoni')->name('testimoni.create');
+    Route::post('testimoni/create', 'storeTestimoni')->name('testimoni.store');
     Route::get('siswa-prestasi', 'siswaPrestasi')->name('siswa-prestasi');
     Route::get('ppdbb', 'ppdb')->name('ppdb');
     Route::get('kontak', 'kontak')->name('kontak');

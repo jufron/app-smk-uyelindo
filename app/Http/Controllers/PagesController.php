@@ -2,75 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TestimoniRequest;
 use App\Models\Berita;
 use App\Models\PertanyaanPendaftaran;
 use App\Models\Testimoni;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class PagesController extends Controller
 {
-    public function dataTestimoni ()
-    {
-        return (object)[
-           [
-               'image' => null,
-               'position' => 'Alumni 2019',
-               'message' => 'Sekolah ini memberikan pengalaman belajar yang luar biasa dan mempersiapkan saya untuk masa depan yang lebih baik. Saya sangat bersyukur bisa menempuh pendidikan di sekolah ini.',
-               'name' => 'Ahmad Rizki'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2020',
-               'message' => 'Para guru sangat kompeten.',
-               'name' => 'Sarah Amelia'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2021',
-               'message' => 'Fasilitas sekolah sangat mendukung proses pembelajaran dan pengembangan diri siswa. Kegiatan ekstrakurikuler yang beragam membuat saya bisa mengembangkan bakat dan minat dengan maksimal.',
-               'name' => 'Budi Santoso'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2018',
-               'message' => 'Lingkungan belajar yang nyaman.',
-               'name' => 'Dina Putri'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2022',
-               'message' => 'Saya mendapatkan banyak ilmu dan pengalaman berharga selama bersekolah disini. Terima kasih kepada semua guru yang telah membimbing dengan penuh kesabaran dan dedikasi tinggi.',
-               'name' => 'Reza Pratama'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2017',
-               'message' => 'Sekolah terbaik.',
-               'name' => 'Maya Sari'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2017',
-               'message' => 'Pengalaman belajar di sekolah ini sangat berkesan dan membentuk karakter saya menjadi pribadi yang lebih baik. Terima kasih atas semua ilmu dan nilai-nilai kehidupan yang diajarkan.',
-               'name' => 'Andi Permana'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2017',
-               'message' => 'Guru-guru yang profesional.',
-               'name' => 'Siti Nurhaliza'
-           ],
-           [
-               'image' => null,
-               'position' => 'Alumni 2017',
-               'message' => 'Sekolah ini memiliki standar pendidikan yang sangat tinggi dan berhasil mengantarkan para siswanya menuju kesuksesan. Saya bangga bisa menjadi bagian dari sejarah sekolah ini.',
-               'name' => 'Indra Kusuma'
-           ]
-       ];
-    }
-
     public function index () : View
     {
         // * cache 6 how
@@ -105,6 +47,31 @@ class PagesController extends Controller
     public function strukturOrganisasi () : View
     {
         return view('frond.struktur-organisasi');
+    }
+
+    public function createTestimoni () : View
+    {
+        return view('frond.testimoni-create');
+    }
+
+    public function storeTestimoni (TestimoniRequest $request) : RedirectResponse
+    {
+        $avatarPath = null;
+
+        if ($request->file('avatar')) {
+            $avatarPath = $request->file('avatar')->store('testimoni', 'public');
+        }
+
+        $requestData = $request->only('avatar', 'nama_lengkap', 'tahun_lulus', 'pekerjaan', 'content', 'status');
+        $requestData['avatar']      = $avatarPath;
+        $requestData['status']      = false;
+
+        Testimoni::create($requestData);
+
+        Cache::forget('testimoni_terbaru');
+        Cache::forget('daftar_testimoni');
+        
+        return redirect()->route('testimoni')->with('success', 'Terima Kasih Sudah Memberikan Pendapat Anda');
     }
 
     public function berita () : View
