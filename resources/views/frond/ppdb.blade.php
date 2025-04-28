@@ -653,10 +653,11 @@
 
             <div class="mt-20">
                 <ul class="">
+                    @foreach ($pertanyaan_pendaftaran as $pp)
                     <li class="text-left mb-10">
                         <div class="flex flex-row items-start mb-5">
                             <div
-                                class="hidden sm:flex items-center justify-center p-3 mr-3 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">
+                                class="hidden sm:flex items-center justify-center p-3 mr-3 rounded-full bg-yellow-400 text-white border-4 border-white text-xl font-semibold">
                                 <svg width="30px" fill="white" height="30px" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g data-name="Layer 2">
@@ -671,20 +672,20 @@
                                 </svg>
                             </div>
                             <div class="bg-gray-100 p-5 px-10 w-full flex items-center">
-                                <h4 class="text-md leading-6 font-medium text-gray-900">What could possibly be your first
-                                    question?</h4>
+                                <h4 class="text-md leading-6 font-medium text-gray-900">
+                                    {{ $pp->pertanyaan }}
+                                ?</h4>
                             </div>
                         </div>
 
                         <div class="flex flex-row items-start">
-                            <div class="bg-indigo-100 p-5 px-10 w-full flex items-center">
-                                <p class="text-gray-700 text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            <div class="bg-yellow-100 p-5 px-10 w-full flex items-center">
+                                <p class="text-gray-700 text-sm">
+                                    {{ $pp->jawaban }}
                                 </p>
                             </div>
                             <div
-                                class="hidden sm:flex items-center justify-center p-3 ml-3 rounded-full bg-indigo-500 text-white border-4 border-white text-xl font-semibold">
+                                class="hidden sm:flex items-center justify-center p-3 ml-3 rounded-full bg-yellow-400 text-white border-4 border-white text-xl font-semibold">
                                 <svg height="25px" fill="white" version="1.1" id="Layer_1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                                     y="0px" viewBox="0 0 295.238 295.238" style="enable-background:new 0 0 295.238 295.238;"
@@ -700,6 +701,7 @@
                             </div>
                         </div>
                     </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

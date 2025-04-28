@@ -6,7 +6,7 @@ const allButtonDelete = document.querySelectorAll('#button-delete');
 allButtonDelete.forEach((buttonDelete, index) => {
     buttonDelete.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         Swal.fire({
             title: "Apakah Anda Yakin?",
             text: "Yakin Ingin Menghapus File Tersebut!",
@@ -63,7 +63,7 @@ const getData = (dataUrl, callback) => {
         .then(data => {
             renderLoading(false);
             callback(
-                data, 
+                data,
                 modalContent
             );
         })

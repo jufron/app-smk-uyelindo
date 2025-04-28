@@ -2,30 +2,30 @@ import showDetail from "./getInfo.js";
 
 $(document).ready(function () {
 
-    $("#basic-datatables").DataTable({});
+    $("#pertanyaan-pendaftar-datatables").DataTable({});
 
 }); // ? ready document
 
 
 // ? button show
 showDetail(function (data, modalContent) {
-    // console.log(data);
+    console.log(data);
     const element = `
     <ul class="list-group list-group-flush">
         <li class="list-group-item">
             <div class="col-md-6 font-weight-bold">
-                Nama
+                Pertanyaan
             </div>
             <div class="col-md-6">
-                ${data.nama_kategory}
+                ${data.pertanyaan}
             </div>
         </li>
         <li class="list-group-item">
             <div class="col-md-6 font-weight-bold">
-                Deskripsi
+                Jawaban
             </div>
             <div class="col-md-6">
-                ${data.deskripsi}
+                ${data.jawaban}
             </div>
         </li>
         <li class="list-group-item">

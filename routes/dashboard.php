@@ -121,6 +121,7 @@ Route::resource('penerimaan-peserta-didik-baru', PenerimaanSiswaBaruController::
 
 // todo ------------------------------------ daftar pertanyaan ppdb -------------------------------------------------
 Route::resource('daftar-pertanyaan-ppdb', PertanyaanPenerimaanSiswaController::class)
+    ->parameters(['daftar-pertanyaan-ppdb' => 'pertanyaanPendaftaran'])
     ->names([
         'index'     => 'dashboard.daftar-pertanyaan-ppdb.index',
         'create'    => 'dashboard.daftar-pertanyaan-ppdb.create',

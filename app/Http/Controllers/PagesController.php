@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\PertanyaanPendaftaran;
 use App\Models\Testimoni;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -165,7 +166,13 @@ class PagesController extends Controller
 
     public function ppdb () : View
     {
-        return view('frond.ppdb');
+        $pertanyaanPendaftaran = Cache::remember('pertanyaan_pendaftaran', 60*60*6, function() {
+            return PertanyaanPendaftaran::query()->get();
+        });
+
+        return view('frond.ppdb', [
+            'pertanyaan_pendaftaran' => $pertanyaanPendaftaran
+        ]);
     }
 
     public function kontak () : View
