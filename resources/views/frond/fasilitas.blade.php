@@ -13,13 +13,13 @@
 
     <section id="features" class="px-2 space-y-6 py-8 md:py-12 lg:py-24 max-w-5xl mx-auto">
         <div class="mx-auto flex max-w-[58rem] flex-col items-center mb-20 space-y-4 text-center">
-            <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Fasilitas Lengkap untuk Masa Depan Cemerlang</h2>
-            <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+            <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl" data-aos="fade-up">Fasilitas Lengkap untuk Masa Depan Cemerlang</h2>
+            <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7" data-aos="fade-up" data-aos-delay="100">
                 Nikmati fasilitas modern dan lengkap yang akan mendukung setiap langkah pendidikan Anda di SMK Uyelindo Kupang
             </p>
         </div>
         <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Laboratorium Komputer Canggih</h3>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Perpustakaan Digital</h3>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Bengkel Praktik Modern</h3>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="300">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Ruang Multimedia</h3>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="400">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Fasilitas Olahraga</h3>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="500">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Area Kolaborasi</h3>

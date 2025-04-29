@@ -18,13 +18,13 @@
     {{-- ? Hero background to show transparent navbar --}}
     <section class="bg-gradient-to-r from-yellow-900 to-yellow-950 h-screen flex items-center justify-center">
         <div class="text-center text-white px-4">
-            <h1 class="md:mt-36 text-4xl font-extrabold sm:text-5xl md:text-6xl">
+            <h1 class="md:mt-36 text-4xl font-extrabold sm:text-5xl md:text-6xl" data-aos="fade-up" data-aos-duration="1000">
                 SMK Uyelino Kupang
             </h1>
-            <p class="mt-3 max-w-lg mx-auto text-base text-gray-200 sm:text-lg md:mt-5 md:text-xl">
+            <p class="mt-3 max-w-lg mx-auto text-base text-gray-200 sm:text-lg md:mt-5 md:text-xl" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 Selamat datang Web SMK Uyelindo Kupang – tempat di mana semangat belajar bertemu dengan keterampilan nyata.
             </p>
-            <div class="mt-10">
+            <div class="mt-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <a href="#" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10">
                     Daftar
                 </a>
@@ -36,7 +36,7 @@
     {{-- ? sambutan kepala sekolah --}}
     <section class="flex pt-12 px-6 md:px-20 items-center justify-center bg-hero md:h-screen overflow-hidden">
         <div class="flex flex-col gap-6 md:flex-row items-center max-w-8xl">
-            <div class="w-full md:w-1/2 lg:pr-32">
+            <div class="w-full md:w-1/2 lg:pr-32" data-aos="fade-right" data-aos-duration="1000">
                 <h2 class="text-4xl lg:text-5xl text-center md:text-left text-yellow-300 leading-tight font-semibold">
                     Sambutan Kepala Sekolah
                 </h2>
@@ -52,7 +52,7 @@
                     <span class="block">Kepala SMK Uyelindo Kupang</span>
                 </p>
             </div>
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="fade-left" data-aos-duration="1000">
                 <img
                     src="https://loremflickr.com/g/600/600/girl"
                     alt="Kepala Sekolah SMK Uyelindo Kupang"
@@ -66,14 +66,14 @@
 
     {{-- ? keunggulan --}}
     <section id="features" class="px-2 space-y-6 py-8 md:py-12 lg:py-24 max-w-5xl mx-auto">
-        <div class="mx-auto flex max-w-[58rem] flex-col items-center mb-20 space-y-4 text-center">
+        <div class="mx-auto flex max-w-[58rem] flex-col items-center mb-20 space-y-4 text-center" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl">Keunggulan Kami</h2>
             <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
                 SMK Uyelindo Kupang memiliki berbagai keunggulan yang menjadikan kami pilihan tepat untuk pendidikan kejuruan Anda
             </p>
         </div>
         <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Fasilitas Modern</h3>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Tenaga Pengajar Profesional</h3>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Kerjasama Industri</h3>
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Program Sertifikasi</h3>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Ekstrakurikuler Beragam</h3>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2">
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
                         <h3 class="font-bold">Lingkungan Kondusif</h3>
@@ -129,7 +129,7 @@
     <section>
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <!-- Title -->
-            <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+            <div class="mx-auto flex max-w-3xl flex-col items-center text-center" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-3xl font-bold md:text-5xl">
                 Program Keahlian Unggulan SMK
                 </h2>
@@ -140,7 +140,7 @@
             <!-- Content -->
             <ul class="grid gap-5 sm:grid-cols-2 md:gap-4">
                 <!-- Item -->
-                <li class="rounded-md bg-yellow-100">
+                <li class="rounded-md bg-yellow-100" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <img
                         src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
                         alt="Teknik Komputer dan Jaringan"
@@ -158,7 +158,7 @@
                     </div>
                 </li>
                 <!-- Item -->
-                <li class="rounded-md bg-yellow-100">
+                <li class="rounded-md bg-yellow-100" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="400">
                     <img
                         src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
                         alt="Teknik Komputer dan Jaringan"
@@ -183,10 +183,10 @@
     {{-- ? testimonial --}}
     <section class="bg-slate-50">
         <div class="container mx-auto max-w-6xl px-4 py-10">
-            <h3 class="text-gray-800 py-10 text-5xl text-center font-bold">Apa Kata Mereka?</h3>
+            <h3 class="text-gray-800 py-10 text-5xl text-center font-bold" data-aos="fade-up" data-aos-duration="1000">Apa Kata Mereka?</h3>
             <div class="md:columns-2 lg:columns-3 gap-6 p-4 sm:p-1 mt-2">
                 @foreach ($testimoni_terbaru as $testimoni)
-                <div class="animate-in zoom-in duration-200">
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="{{ $loop->index * 200 }}">
                     <div class="ring-1 rounded-lg flex flex-col space-y-2 p-4 break-inside-avoid mb-6 bg-white hover:ring-2 ring-yellow-200 hover:ring-yellow-300 transform duration-200 hover:shadow-yellow-300 hover:shadow-md z-0 relative">
                         <div class="flex flex-col break-inside-avoid-page z-0 relative">
                             <div class="flex justify-between">
@@ -217,7 +217,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="flex justify-center mt-10">
+            <div class="flex justify-center mt-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <a href="{{ route('testimoni') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
                     Lihat Semua Testimoni
                 </a>
@@ -230,12 +230,12 @@
     <section>
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <div class="flex flex-col items-center">
-            <h2 class="text-center text-3xl font-bold md:text-5xl">Berita Terbaru Sekolah</h2>
-              <p class="mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">Informasi dan kegiatan terkini seputar sekolah kami</p>
+                <h2 class="text-center text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">Berita Terbaru Sekolah</h2>
+                <p class="mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Informasi dan kegiatan terkini seputar sekolah kami</p>
                 <!-- Content -->
                 <div class="mb-6 grid gap-4 sm:grid-cols-2 sm:justify-items-stretch md:mb-10 md:grid-cols-3 lg:mb-12 lg:gap-6">
                     @foreach ($berita_terbaru as $berita)
-                    <a href="{{ route('berita.detail', $berita) }}" class="flex flex-col gap-4 rounded-md border border-solid border-yellow-400 px-4 py-8 md:p-0">
+                    <a href="{{ route('berita.detail', $berita) }}" class="flex flex-col gap-4 rounded-md border border-solid border-yellow-400 px-4 py-8 md:p-0" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="{{ $loop->index * 200 }}">
                         <img
                             src="{{ $berita->poster ? asset("storage/$berita->poster") : asset('img/defaultsvg.svg') }}"
                             alt="berita-poster"
@@ -270,10 +270,10 @@
                     @endforeach
                 </div>
                 <!-- Button -->
-                <a href="{{ route('berita') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
+                <a href="{{ route('berita') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     Berita Lebih
                 </a>
-            </div>
+            </div>   
         </div>
     </section>
     {{-- ? berita --}}
@@ -281,182 +281,182 @@
     {{-- ? galeri foto --}}
     <section class="bg-slate-50">
         <div class="container mx-auto max-w-6xl px-4 py-10">
-            <h3 class="text-gray-800 py-10 text-5xl text-center font-bold">Galery Foto</h3>
+            <h3 class="text-gray-800 py-10 text-5xl text-center font-bold" data-aos="fade-up" data-aos-duration="1000">Galery Foto</h3>
             <div class="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-                <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080"/>
-                <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080"/>
-                <img src="https://images.unsplash.com/photo-1668491195456-9341d9cf3977?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXQlMjB3aGl0ZXxlbnwwfDF8fHwxNzIxODIyMzU3fDA&ixlib=rb-4.0.3&q=80&w=1080"/>
-                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080"/>
-                <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080"/>
-                <img src="https://images.unsplash.com/photo-1475518112798-86ae358241eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMHx8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080"/>
-                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080"/>
+                <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000"/>
+                <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200"/>
+                <img src="https://images.unsplash.com/photo-1668491195456-9341d9cf3977?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXQlMjB3aGl0ZXxlbnwwfDF8fHwxNzIxODIyMzU3fDA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400"/>
+                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600"/>
+                <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800"/>
+                <img src="https://images.unsplash.com/photo-1475518112798-86ae358241eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMHx8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000"/>
+                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1200"/>
             </div>
 
             <div class="flex justify-center mt-10">
-                <a href="{{ route('galeri-foto') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
+                <a href="{{ route('galeri-foto') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">
                     Lihat Semua di Galery Foto
                 </a>
             </div>
-        </div>
+        </div>   
     </section>
     {{-- ? galeri foto --}}
 
     {{-- ? guru & staf --}}
     <section>
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
-          <!-- Title -->
-          <h2 class="text-center text-3xl font-bold md:text-5xl">Guru & Staf Kami</h2>
-          <p class="mx-auto mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
-            Kenali para pendidik dan staf dedikasi kami yang berkomitmen untuk memberikan pendidikan berkualitas
-          </p>
+            <!-- Title -->
+            <h2 class="text-center text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">Guru & Staf Kami</h2>
+            <p class="mx-auto mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                Kenali para pendidik dan staf dedikasi kami yang berkomitmen untuk memberikan pendidikan berkualitas
+            </p>
 
-          <!-- Swiper Container -->
-          <div class="swiper guruStafSlider">
-            <div class="swiper-wrapper">
-              <!-- Setiap .swiper-slide adalah satu card -->
-              <!-- Contoh slide -->
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                    alt=""
-                    class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                  <p class="font-bold">John Robert</p>
-                  <p class="text-center text-sm text-gray-500">Webflow Developer</p>
-                  <div class="mt-4 flex">
-                    <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
-                    <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
-                    <p class="font-bold">Annisyah Matah</p>
-                    <p class="text-center text-sm text-gray-500">
-                      Webflow Developer
-                    </p>
-                    <div class="mt-4 flex">
-                      <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
-                      <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
+            <!-- Swiper Container -->
+            <div class="swiper guruStafSlider">
+                <div class="swiper-wrapper">
+                    <!-- Setiap .swiper-slide adalah satu card -->
+                    <!-- Contoh slide -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                            alt=""
+                            class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+                        <p class="font-bold">John Robert</p>
+                        <p class="text-center text-sm text-gray-500">Webflow Developer</p>
+                        <div class="mt-4 flex">
+                            <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
+                            <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
+                        </div>
+                        </div>
                     </div>
-                  </div>
-              </div>
 
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                    alt=""
-                    class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                  <p class="font-bold">John Robert</p>
-                  <p class="text-center text-sm text-gray-500">Webflow Developer</p>
-                  <div class="mt-4 flex">
-                    <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
-                    <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
-                    <p class="font-bold">Annisyah Matah</p>
-                    <p class="text-center text-sm text-gray-500">
-                      Webflow Developer
-                    </p>
-                    <div class="mt-4 flex">
-                      <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
-                      <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
+                            <p class="font-bold">Annisyah Matah</p>
+                            <p class="text-center text-sm text-gray-500">
+                            Webflow Developer
+                            </p>
+                            <div class="mt-4 flex">
+                            <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-              </div>
 
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                    alt=""
-                    class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                  <p class="font-bold">John Robert</p>
-                  <p class="text-center text-sm text-gray-500">Webflow Developer</p>
-                  <div class="mt-4 flex">
-                    <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
-                    <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
-                    <p class="font-bold">Annisyah Matah</p>
-                    <p class="text-center text-sm text-gray-500">
-                      Webflow Developer
-                    </p>
-                    <div class="mt-4 flex">
-                      <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
-                      <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                            alt=""
+                            class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+                        <p class="font-bold">John Robert</p>
+                        <p class="text-center text-sm text-gray-500">Webflow Developer</p>
+                        <div class="mt-4 flex">
+                            <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
+                            <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
+                        </div>
+                        </div>
                     </div>
-                  </div>
-              </div>
 
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
-                    alt=""
-                    class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                  <p class="font-bold">John Robert</p>
-                  <p class="text-center text-sm text-gray-500">Webflow Developer</p>
-                  <div class="mt-4 flex">
-                    <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
-                    <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
-                    <p class="font-bold">Annisyah Matah</p>
-                    <p class="text-center text-sm text-gray-500">
-                      Webflow Developer
-                    </p>
-                    <div class="mt-4 flex">
-                      <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
-                      <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                      </a>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
+                            <p class="font-bold">Annisyah Matah</p>
+                            <p class="text-center text-sm text-gray-500">
+                            Webflow Developer
+                            </p>
+                            <div class="mt-4 flex">
+                            <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-              </div>
 
-              <!-- Ulangi .swiper-slide untuk setiap item lainnya -->
-              <!-- ... copy semua item lainnya di sini dalam .swiper-slide ... -->
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                            alt=""
+                            class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+                        <p class="font-bold">John Robert</p>
+                        <p class="text-center text-sm text-gray-500">Webflow Developer</p>
+                        <div class="mt-4 flex">
+                            <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
+                            <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
+                        </div>
+                        </div>
+                    </div>
 
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
+                            <p class="font-bold">Annisyah Matah</p>
+                            <p class="text-center text-sm text-gray-500">
+                            Webflow Developer
+                            </p>
+                            <div class="mt-4 flex">
+                            <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                            alt=""
+                            class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
+                        <p class="font-bold">John Robert</p>
+                        <p class="text-center text-sm text-gray-500">Webflow Developer</p>
+                        <div class="mt-4 flex">
+                            <a href="#" class="mr-2 inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" /></a>
+                            <a href="#" class="inline-block h-8 w-8"><img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" /></a>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">
+                        <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
+                            <p class="font-bold">Annisyah Matah</p>
+                            <p class="text-center text-sm text-gray-500">
+                            Webflow Developer
+                            </p>
+                            <div class="mt-4 flex">
+                            <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
+                                <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ulangi .swiper-slide untuk setiap item lainnya -->
+                    <!-- ... copy semua item lainnya di sini dalam .swiper-slide ... -->
+
+                </div>
+
+                <!-- Navigation (optional) -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Pagination (optional) -->
+                <div class="my-10">
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
-
-            <!-- Navigation (optional) -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Pagination (optional) -->
-            <div class="my-10">
-                <div class="swiper-pagination"></div>
-            </div>
-          </div>
 
             <div class="flex justify-center mt-10">
                 <a href="{{ route('guru-staf') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">

@@ -14,14 +14,14 @@
     {{-- ? hero section --}}
     <section>
         <div class="mx-auto w-full max-w-7xl overflow-hidden px-5 py-10 md:px-10 lg:px-20 lg:py-20">
-        <!-- Component -->
-        <div class="flex flex-col items-center gap-y-16 py-10 sm:gap-y-20 lg:py-20">
-            <!-- Hero Title -->
-            <div class="max-w-3xl">
-            <h1 class="m-5 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran {{ now()->format('Y') }}/{{ now()->addYear()->format('Y') }} </h1>
-            <p class="mx-auto mb-6 text-center text-sm text-[#636262] sm:px-8 sm:text-xl md:px-24 lg:mb-8">Jadilah bagian dari generasi unggul dengan pendidikan vokasi berkualitas. Kami siapkan kamu menjadi tenaga profesional yang siap bersaing di dunia kerja dengan keahlian teknologi terkini.</p>
+            <!-- Component -->
+            <div class="flex flex-col items-center gap-y-16 py-10 sm:gap-y-20 lg:py-20">
+                <!-- Hero Title -->
+                <div class="max-w-3xl">
+                    <h1 class="m-5 text-center text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl" data-aos="fade-up" data-aos-duration="1000">Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran {{ now()->format('Y') }}/{{ now()->addYear()->format('Y') }} </h1>
+                    <p class="mx-auto mb-6 text-center text-sm text-[#636262] sm:px-8 sm:text-xl md:px-24 lg:mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Jadilah bagian dari generasi unggul dengan pendidikan vokasi berkualitas. Kami siapkan kamu menjadi tenaga profesional yang siap bersaing di dunia kerja dengan keahlian teknologi terkini.</p>
+                </div>
             </div>
-        </div>
         </div>
     </section>
     {{-- ? hero section --}}
@@ -31,17 +31,17 @@
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <!-- Title -->
             <div class="flex flex-col items-center text-center">
-                <h2 class="text-3xl font-bold md:text-5xl">
-                Gelombang Pendaftaran
+                <h2 class="text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">
+                    Gelombang Pendaftaran
                 </h2>
-                <p class="mb-8 mt-4 max-w-lg text-base text-gray-500 md:mb-12 md:text-lg">
-                Daftarkan diri Anda sekarang dan pilih gelombang pendaftaran yang sesuai dengan jadwal Anda
+                <p class="mb-8 mt-4 max-w-lg text-base text-gray-500 md:mb-12 md:text-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    Daftarkan diri Anda sekarang dan pilih gelombang pendaftaran yang sesuai dengan jadwal Anda
                 </p>
             </div>
             <!-- Content -->
             <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
                 <!-- Item -->
-                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10">
+                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000">
                     <div class="h-16 w-16 rounded-full bg-orange-950 flex items-center justify-center">
                         <span class="text-2xl font-bold text-yellow-300">1</span>
                     </div>
@@ -53,7 +53,7 @@
                     </p>
                 </div>
                 <!-- Item -->
-                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10">
+                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class=" h-16 w-16 rounded-full bg-orange-950 flex items-center justify-center">
                         <span class="text-2xl font-bold text-yellow-300">2</span>
                     </div>
@@ -65,7 +65,7 @@
                     </p>
                 </div>
                 <!-- Features Item -->
-                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10">
+                <div class="grid gap-6 rounded-md border border-solid border-yellow-500 p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="h-16 w-16 rounded-full bg-orange-950 flex items-center justify-center">
                         <span class="text-2xl font-bold text-yellow-300">3</span>
                     </div>
@@ -86,16 +86,16 @@
         <!-- Container -->
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <!-- Title -->
-            <h2 class="text-center text-3xl font-bold md:text-5xl">
+            <h2 class="text-center text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">
                 Alur Pendaftaran
             </h2>
-            <p class="mx-auto mb-8 mt-4 max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
+            <p class="mx-auto mb-8 mt-4 max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 Ikuti langkah-langkah pendaftaran berikut untuk menjadi calon siswa SMK Uyelindo Kupang
             </p>
             <!-- Content -->
             <div class="mx-auto grid max-w-xl gap-6">
                 <!-- Item -->
-                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4">
+                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4" data-aos="fade-up" data-aos-duration="1000">
                     <div class="mr-6 flex h-14 w-14 flex-none items-center justify-center rounded-sm bg-white">
                         <p class="text-sm font-bold sm:text-xl">1</p>
                     </div>
@@ -104,7 +104,7 @@
                     </p>
                 </div>
                 <!-- Item -->
-                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4">
+                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <div class="mr-6 flex h-14 w-14 flex-none items-center justify-center rounded-sm bg-white">
                         <p class="text-sm font-bold sm:text-xl">2</p>
                     </div>
@@ -113,7 +113,7 @@
                     </p>
                 </div>
                 <!-- Item -->
-                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4">
+                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="mr-6 flex h-14 w-14 flex-none items-center justify-center rounded-sm bg-white">
                         <p class="text-sm font-bold sm:text-xl">3</p>
                     </div>
@@ -122,7 +122,7 @@
                     </p>
                 </div>
                 <!-- Item -->
-                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4">
+                <div class="flex items-center justify-center rounded-sm bg-gray-100 px-6 py-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <div class="mr-6 flex h-14 w-14 flex-none items-center justify-center rounded-sm bg-white">
                         <p class="text-sm font-bold sm:text-xl">4</p>
                     </div>
@@ -138,13 +138,14 @@
     {{-- ? presyaratan --}}
     <section class="container relative mx-auto py-12 px-2 ">
 
-        <h2 class="text-center text-3xl font-bold md:text-5xl">
+        <h2 class="text-center text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">
             Persyaratan
         </h2>
-        <p class="mx-auto mb-8 mt-4 max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
+        <p class="mx-auto mb-8 mt-4 max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             Berikut adalah persyaratan yang harus dipenuhi untuk mendaftar sebagai calon siswa SMK Uyelindo Kupang. Pastikan Anda telah mempersiapkan semua dokumen yang dibutuhkan sebelum melakukan pendaftaran.
         </p>
-        <div class="my-6">
+
+        <div class="my-6" data-aos="fade-up" data-aos-duration="1000">
             <div
                 class="rounded-t-2xl bg-yellow-500/80  w-full cursor-pointer select-none border-2 px-4 py-4 text-gray-100 transition duration-300 hover:text-white">
                 <h4 class="text-lg font-medium">Persyaratan Administrasi</h4>
@@ -166,7 +167,7 @@
                 </h5>
             </div>
         </div>
-        <div class="my-6">
+        <div class="my-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <div
                 class="rounded-t-2xl bg-yellow-500/80 w-full cursor-pointer select-none border-2 px-4 py-4 text-gray-100 transition duration-300 hover:text-white">
                 <h4 class="text-lg font-medium">Persyaratan Usia</h4>
@@ -180,7 +181,7 @@
                 </h5>
             </div>
         </div>
-        <div class="my-6">
+        <div class="my-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <div
                 class="rounded-t-2xl bg-yellow-500/80 w-full cursor-pointer select-none border-2 px-4 py-4 text-gray-100 transition duration-300 hover:text-white">
                 <h4 class="text-lg font-medium">Persyaratan Akademik</h4>
@@ -196,6 +197,7 @@
                 </h5>
             </div>
         </div>
+
     </section>
     {{-- ? presyaratan --}}
 
@@ -203,18 +205,18 @@
     <section>
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
             <!-- Title -->
-            <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+            <div class="mx-auto flex max-w-3xl flex-col items-center text-center" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-3xl font-bold md:text-5xl">
-                Program Keahlian Unggulan SMK
+                    Program Keahlian Unggulan SMK
                 </h2>
                 <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12">
-                Pilih program keahlian yang sesuai dengan minat dan bakatmu untuk meraih masa depan yang cerah. Kami menyediakan program keahlian yang relevan dengan kebutuhan industri.
+                    Pilih program keahlian yang sesuai dengan minat dan bakatmu untuk meraih masa depan yang cerah. Kami menyediakan program keahlian yang relevan dengan kebutuhan industri.
                 </p>
             </div>
             <!-- Content -->
-            <ul class="grid gap-5 sm:grid-cols-2 md:gap-4">
+            <ul class="grid gap-5 sm:grid-cols-2 md:gap-4" data-aos="fade-up" data-aos-duration="1000">
                 <!-- Item -->
-                <li class="rounded-md bg-yellow-100 p-8 md:p-10">
+                <li class="rounded-md bg-yellow-100 p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <!-- Divider -->
                     <p class="mb-3 text-2xl font-semibold">
                         Teknik Komputer dan Jaringan
@@ -224,7 +226,7 @@
                     </p>
                 </li>
                 <!-- Item -->
-                <li class="rounded-md bg-yellow-100 p-8 md:p-10">
+                <li class="rounded-md bg-yellow-100 p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <!-- Divider -->
                     <p class="mb-3 text-2xl font-semibold">
                         Rekayasa Perangkat Lunak
@@ -241,14 +243,14 @@
     {{-- ? biaya pendaftaran --}}
     <section class="bg-yellow-100 py-10">
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
-            <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
-                <h2 class="text-3xl font-bold md:text-5xl">Biaya Pendaftaran</h2>
-                <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12">
+            <div class="mx-auto flex max-w-3xl flex-col items-center text-center" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">Biaya Pendaftaran</h2>
+                <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12" data-aos="fade-up" data-aos-duration="1000">
                     Informasi rincian biaya pendaftaran untuk calon peserta didik baru
                 </p>
             </div>
             <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
-                <div class="rounded-md bg-white p-8 md:p-10">
+                <div class="rounded-md bg-white p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <p class="mb-3 text-2xl font-semibold">Biaya Formulir</p>
                     <p class="text-3xl font-bold text-yellow-400 mb-4">Rp. 100.000</p>
                     <ul class="text-sm text-gray-500 space-y-2">
@@ -257,7 +259,7 @@
                         <li>✓ Kartu Peserta Test</li>
                     </ul>
                 </div>
-                <div class="rounded-md bg-white p-8 md:p-10">
+                <div class="rounded-md bg-white p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <p class="mb-3 text-2xl font-semibold">Uang Gedung</p>
                     <p class="text-3xl font-bold text-yellow-400 mb-4">Rp. 2.500.000</p>
                     <ul class="text-sm text-gray-500 space-y-2">
@@ -266,7 +268,7 @@
                         <li>✓ Pengembangan Sarana</li>
                     </ul>
                 </div>
-                <div class="rounded-md bg-white p-8 md:p-10">
+                <div class="rounded-md bg-white p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <p class="mb-3 text-2xl font-semibold">SPP Bulanan</p>
                     <p class="text-3xl font-bold text-yellow-400 mb-4">Rp. 300.000</p>
                     <ul class="text-sm text-gray-500 space-y-2">
@@ -276,7 +278,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 text-center">
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
                 <p class="text-sm text-gray-500">* Biaya dapat dibayarkan secara tunai atau cicilan</p>
                 <p class="text-sm text-gray-500">* Tersedia beasiswa untuk siswa berprestasi dan tidak mampu</p>
             </div>
@@ -287,8 +289,8 @@
     {{--? form pendaftaran --}}
     <section class="py-20 container mx-auto">
         <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
-            <h2 class="text-3xl font-bold md:text-5xl">Form Pendaftaran Online</h2>
-            <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12">
+            <h2 class="text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">Form Pendaftaran Online</h2>
+            <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12" data-aos="fade-up" data-aos-duration="1000">
                 Silahkan lengkapi data diri Anda dengan benar untuk melanjutkan proses pendaftaran sebagai calon peserta didik baru
             </p>
         </div>
@@ -442,9 +444,9 @@
                     <label for="tinggal_dengan" class="mb-3 block text-base font-medium text-[#07074D]">
                         Tinggal Dengan
                     </label>
-                    <select 
-                        name="tinggal_dengan" 
-                        id="tinggal_dengan" 
+                    <select
+                        name="tinggal_dengan"
+                        id="tinggal_dengan"
                         class="w-full rounded-md border border-yellow-200 bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:ring-yellow-300 focus:border-yellow-300 focus:shadow-md appearance-none"
                         x-model="tinggalDengan"
                         >
@@ -456,9 +458,9 @@
             </div>
 
             {{-- ? orang tua --}}
-            <label 
-                class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl" 
-                x-show="tinggalDengan === 'orang_tua' " 
+            <label
+                class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl"
+                x-show="tinggalDengan === 'orang_tua' "
                 x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
@@ -469,9 +471,9 @@
                 >
                 Orang Tua
             </label>
-            <div 
-                class="grid grid-cols-2 lg:grid-cols-12 gap-4" 
-                x-show="tinggalDengan === 'orang_tua' " 
+            <div
+                class="grid grid-cols-2 lg:grid-cols-12 gap-4"
+                x-show="tinggalDengan === 'orang_tua' "
                 x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
@@ -562,11 +564,11 @@
                     />
                 </div>
             </div>
-            
+
             {{-- ? input wali siswa --}}
-            <label 
-                class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl" 
-                x-show="tinggalDengan === 'wali_murid'" 
+            <label
+                class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl"
+                x-show="tinggalDengan === 'wali_murid'"
                 x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
@@ -577,9 +579,9 @@
                 >
                 Wali Siswa
             </label>
-            <div 
-                class="grid grid-cols-2 lg:grid-cols-12 gap-4" 
-                x-show="tinggalDengan === 'wali_murid'" 
+            <div
+                class="grid grid-cols-2 lg:grid-cols-12 gap-4"
+                x-show="tinggalDengan === 'wali_murid'"
                 x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
@@ -636,7 +638,7 @@
             </div>
 
             <button class="mt-10 hover:shadow-form rounded-md bg-yellow-300 py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                Kirim 
+                Kirim
             </button>
         </form>
     </section>
@@ -646,7 +648,7 @@
     <div class="py-10">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
             <div class="text-center">
-                <h3 class="text-5xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+                <h3 class="text-5xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900" data-aos="fade-up" data-aos-duration="1000">
                     Pertanyaan yang Sering <span class="text-yellow-300">Ditanyakan</span>
                 </h3>
             </div>
@@ -654,7 +656,7 @@
             <div class="mt-20">
                 <ul class="">
                     @foreach ($pertanyaan_pendaftaran as $pp)
-                    <li class="text-left mb-10">
+                    <li class="text-left mb-10" data-aos="fade-up" data-aos-duration="1000">
                         <div class="flex flex-row items-start mb-5">
                             <div
                                 class="hidden sm:flex items-center justify-center p-3 mr-3 rounded-full bg-yellow-400 text-white border-4 border-white text-xl font-semibold">

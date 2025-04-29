@@ -15,16 +15,16 @@
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20 mt-10">
             <!-- Component -->
             <div class="flex flex-col items-center">
-                <h2 class="text-center text-3xl font-bold md:text-5xl">
-                Berita & Informasi SMK Uyelindo Kupang
+                <h2 class="text-center text-3xl font-bold md:text-5xl" data-aos="fade-up">
+                    Berita & Informasi SMK Uyelindo Kupang
                 </h2>
-                <p class="mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16">
-                Temukan berita terkini, prestasi, dan kegiatan sekolah kami
+                <p class="mb-8 mt-4 text-center text-sm text-gray-500 sm:text-base md:mb-12 lg:mb-16" data-aos="fade-up" data-aos-delay="100">
+                    Temukan berita terkini, prestasi, dan kegiatan sekolah kami
                 </p>
                 <!-- Content -->
                 <div class="mb-6 grid gap-4 sm:grid-cols-2 sm:justify-items-stretch md:mb-10 md:grid-cols-3 lg:mb-12 lg:gap-6">
                     @foreach ($berita_terbaru as $berita)
-                    <a href="{{ route('berita.detail', $berita) }}" class="flex flex-col gap-4 rounded-md border border-solid border-yellow-400 px-4 py-8 md:p-0">
+                    <a href="{{ route('berita.detail', $berita) }}" class="flex flex-col gap-4 rounded-md border border-solid border-yellow-400 px-4 py-8 md:p-0" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                         <img
                             src="{{ $berita->poster ? asset("storage/$berita->poster") : asset('img/defaultsvg.svg') }}"
                             alt="berita-poster"

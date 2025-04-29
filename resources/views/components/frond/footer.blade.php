@@ -2,16 +2,16 @@
     <div class="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-                <div class="flex text-teal-600 sm:justify-starttext-teal-300">
+                <div class="flex text-teal-600 sm:justify-starttext-teal-300" data-aos="fade-up" data-aos-delay="100">
                     <img src="{{ asset('img/logo.png') }}" alt="Logo" class="h-28" loading="lazy">
                 </div>
 
-                <p class="mt-6 max-w-md leading-relaxed sm:max-w-xs sm:text-left text-gray-200">
+                <p class="mt-6 max-w-md leading-relaxed sm:max-w-xs sm:text-left text-gray-200" data-aos="fade-up" data-aos-delay="200">
                     SMK Uyelindo Kupang - Membentuk generasi unggul dalam teknologi yang siap
                     menghadapi tantangan global.
                 </p>
 
-                <ul class="mt-8 flex gap-6 sm:justify-start md:gap-8">
+                <ul class="mt-8 flex gap-6 sm:justify-start md:gap-8" data-aos="fade-up" data-aos-delay="300">
                     <li>
                         <a
                             href="#"
@@ -69,12 +69,11 @@
                             <i class="fa-brands fa-tiktok"></i>
                         </a>
                     </li>
-
                 </ul>
             </div>
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
-                <div class="text-left">
+                <div class="text-left" data-aos="fade-up">
                     <p class="text-lg font-medium text-white">Profil</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
@@ -96,7 +95,7 @@
                     </ul>
                 </div>
 
-                <div class="text-left">
+                <div class="text-left" data-aos="fade-up" data-aos-delay="100">
                     <p class="text-lg font-medium text-white">Akademik</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
@@ -115,7 +114,7 @@
                     </ul>
                 </div>
 
-                <div class="text-left">
+                <div class="text-left" data-aos="fade-up" data-aos-delay="200">
                     <p class="text-lg font-medium text-white">Tautan Penting</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
@@ -134,7 +133,7 @@
                     </ul>
                 </div>
 
-                <div class="text-left">
+                <div class="text-left" data-aos="fade-up" data-aos-delay="300">
                     <p class="text-lg font-medium text-white">Hubungi</p>
 
                     <ul class="mt-8 space-y-4 text-sm">

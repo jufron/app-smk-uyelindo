@@ -13,18 +13,18 @@
 
     <section>
         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
-            <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
+            <div class="max-w-2xl lg:max-w-4xl mx-auto text-center" data-aos="fade-up">
                 <h2 class="mt-10 text-3xl font-extrabold text-gray-900">Kontak</h2>
                 <p class="mt-4 text-lg text-gray-500">Hubungi kami untuk informasi lebih lanjut tentang SMK Uyelindo Kupang. Kami siap membantu menjawab pertanyaan Anda.</p>
             </div>
             <div class="mt-16 lg:mt-20">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="rounded-lg overflow-hidden">
+                    <div class="rounded-lg overflow-hidden" data-aos="fade-up">
                         <iframe
                             src="https://maps.google.com/maps?q=smk+uyelindo+kupang&output=embed"
                             width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <div>
+                    <div data-aos="fade-down">
                         <div class="max-w-full mx-auto rounded-lg overflow-hidden">
                             <div class="px-6 py-4">
                                 <h3 class="text-lg font-medium text-gray-900">Alamat</h3>
