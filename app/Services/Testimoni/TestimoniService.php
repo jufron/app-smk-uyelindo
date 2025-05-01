@@ -106,9 +106,6 @@ class TestimoniService implements TestimoniServiceInterface
         $requestData['status']      = $publishStatus;
 
         Testimoni::create($requestData);
-
-        Cache::forget('testimoni_terbaru');
-        Cache::forget('daftar_testimoni');
     }
 
     public function showTestimoni (Testimoni $testimoni)
@@ -154,9 +151,6 @@ class TestimoniService implements TestimoniServiceInterface
         $requestData['status']      = $publishStatus;
 
         $testimoni->update($requestData);
-
-        Cache::forget('testimoni_terbaru');
-        Cache::forget('daftar_testimoni');
     }
 
     public function destroyTestimoni (Testimoni $testimoni) : void
@@ -165,8 +159,5 @@ class TestimoniService implements TestimoniServiceInterface
             Storage::disk('public')->delete($testimoni->avatar);
         }
         $testimoni->delete();
-
-        Cache::forget('testimoni_terbaru');
-        Cache::forget('daftar_testimoni');
     }
 }

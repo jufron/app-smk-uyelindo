@@ -8,7 +8,6 @@ use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Models\PertanyaanPendaftaran;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\PertanyaanPendaftaranRequest;
 
 class PertanyaanPenerimaanSiswaController extends Controller
@@ -37,7 +36,6 @@ class PertanyaanPenerimaanSiswaController extends Controller
     public function store(PertanyaanPendaftaranRequest $request) : RedirectResponse
     {
         PertanyaanPendaftaran::create($request->all());
-        Cache::forget('pertanyaan_pendaftaran');
         notify()->success('Berhasil Menambahkan Data');
         return redirect()->route('dashboard.daftar-pertanyaan-ppdb.index');
     }
@@ -73,7 +71,6 @@ class PertanyaanPenerimaanSiswaController extends Controller
     public function update(PertanyaanPendaftaranRequest $request, PertanyaanPendaftaran $pertanyaanPendaftaran) : RedirectResponse
     {
         $pertanyaanPendaftaran->update($request->all());
-        Cache::forget('pertanyaan_pendaftaran');
         notify()->success('Berhasil Memperbaharui Data');
         return redirect()->route('dashboard.daftar-pertanyaan-ppdb.index');
     }
@@ -84,7 +81,6 @@ class PertanyaanPenerimaanSiswaController extends Controller
     public function destroy(PertanyaanPendaftaran $pertanyaanPendaftaran) : RedirectResponse
     {
         $pertanyaanPendaftaran->delete();
-        Cache::forget('pertanyaan_pendaftaran');
         notify()->success('Berhasil Menghapus Data');
         return redirect()->route('dashboard.daftar-pertanyaan-ppdb.index');
     }

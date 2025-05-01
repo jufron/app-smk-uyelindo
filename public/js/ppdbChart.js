@@ -3,7 +3,7 @@ var ppdbConfig = {
         data: [21, 22, 10, 28, 16]
     }],
     chart: {
-        height: 350,
+        height: '100%',
         type: 'bar',
         events: {
             click: function(chart, w, e) {
@@ -11,6 +11,17 @@ var ppdbConfig = {
             }
         }
     },
+    responsive: [{
+        breakpoint: 480,
+        options: {
+            chart: {
+                width: '100%'
+            },
+            legend: {
+                position: 'bottom'
+            }
+        }
+    }],
     colors: ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0'],
     plotOptions: {
         bar: {

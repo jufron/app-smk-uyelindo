@@ -336,7 +336,7 @@
                     />
                 </div>
                 {{-- ? tempat tanggal lahir (date input) --}}
-                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                <div class="col-span-2 sm:col-span-1 lg:col-span-3">
                     <x-frond.input
                         name="tanggal_lahir"
                         label="Tanggal Lahir"
@@ -347,7 +347,7 @@
                 {{-- ? jenis kelamin (select input) --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="jenis_kelamin" label="Jenis Kelamin">
-                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                        <option value="" disabled selected>Pilih</option>
                         <option value="L">Laki-laki</option>
                         <option value="P">Perempuan</option>
                     </x-frond.input-select>
@@ -389,7 +389,7 @@
                     />
                 </div>
                 {{-- ? anak ke brp (select input) --}}
-                <div class="col-span-2 sm:col-span-1 lg:col-span-1">
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="anamk_ke" label="Anak Ke">
                         <option value="" disabled selected>Pilih</option>
                         <option value="1">1</option>
@@ -418,13 +418,13 @@
                 <div class="col-span-2 sm:col-span-1 lg:col-span-3">
                     <x-frond.input
                         name="nomor_hp_siswa"
-                        label="No Hp Siswa"
+                        label="No Hp Siswa (Whatsaap)"
                         placeholder="contoh 081..."
                         type="number"
                     />
                 </div>
                 {{-- ? jumlah saudara kandung --}}
-                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                <div class="col-span-2 sm:col-span-1 lg:col-span-3">
                     <x-frond.input-select name="jumlah_saudara_kandung" label="Jumlah Saudara Kandung">
                         <option value="" disabled selected>Pilih</option>
                         <option value="1">1</option>

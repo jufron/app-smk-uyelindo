@@ -117,7 +117,7 @@
                             ]
                         ],
                         [
-                            'label' => 'Berita',
+                            'label' => 'Siswa Berprestasi',
                             'route' => 'dashboard.siswa-berprestasi.index',
                             'routes' => [
                                 'dashboard.siswa-berprestasi.index',

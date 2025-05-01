@@ -1,5 +1,5 @@
 <div class="fixed bottom-10 right-8 z-[99]">
-    <button id="toTop" onclick="scrollToTop()" class="bg-yellow-400 hover:bg-primary-dark text-white px-4 py-3 rounded-md shadow-lg hidden">
+    <button id="toTop" onclick="scrollToTop()" class="bg-yellow-400 hover:bg-primary-dark text-white px-4 py-3 rounded-md shadow-lg hidden" data-aos="fade-up">
         <i class="fa-solid fa-angle-up"></i>
     </button>
     <a href="https://wa.me/+6281234567890" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3.5 rounded-md shadow-lg flex justify-center mt-4">

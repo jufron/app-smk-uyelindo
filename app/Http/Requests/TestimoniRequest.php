@@ -26,7 +26,7 @@ class TestimoniRequest extends FormRequest
         return [
             'nama_lengkap'      => ['required', 'string', 'max:191', $testimoni ? "unique:testimoni,nama_lengkap,$testimoni->id" : 'unique:testimoni,nama_lengkap'],
             'avatar'            => ['nullable', 'image', 'mimes:jpeg,JPEG,png,PNG,jpg,JPG', 'max:500'],
-            'tahun_lulus'       => ['required', 'numeric', 'digits:4'],
+            'tahun_lulus'       => ['required', 'numeric', 'digits:4', 'min:2005', 'max:' . date('Y')],
             'pekerjaan'         => ['required', 'string', 'max:191'],
             'content'           => ['required', 'string'],
             'status'            => ['nullable'],
@@ -51,6 +51,8 @@ class TestimoniRequest extends FormRequest
             'tahun_lulus.required'      => 'Tahun lulus wajib diisi',
             'tahun_lulus.numeric'       => 'Tahun lulus harus berupa angka',
             'tahun_lulus.digits'        => 'Tahun lulus harus 4 digit',
+            'tahun_lulus.min'           => 'Tahun lulus minimal dari 2005',
+            'tahun_lulus.max'           => 'Tahun lulus maksimal tahun sekarang atau lebih dari ' . date('Y'),
             'pekerjaan.required'        => 'Pekerjaan wajib diisi',
             'pekerjaan.string'          => 'Pekerjaan harus berupa teks',
             'pekerjaan.max'             => 'Pekerjaan maksimal 191 karakter',

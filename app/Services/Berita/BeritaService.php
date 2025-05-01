@@ -6,7 +6,6 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
 use App\Services\Berita\BeritaServiceInterface;
@@ -97,9 +96,6 @@ class BeritaService implements BeritaServiceInterface
         $requestData['status']      = $publishStatus;
 
         Berita::create($requestData);
-
-        Cache::forget('berita_terbaru');
-        Cache::forget('daftar_berita');
     }
 
     public function showBerita (Berita $berita) : JsonResponse
@@ -148,9 +144,6 @@ class BeritaService implements BeritaServiceInterface
         $requestData['status']      = $publishStatus;
 
         $berita->update($requestData);
-
-        Cache::forget('berita_terbaru');
-        Cache::forget('daftar_berita');
     }
 
     public function destroyBerita (Berita $berita) : void
@@ -159,8 +152,5 @@ class BeritaService implements BeritaServiceInterface
             Storage::disk('public')->delete($berita->poster);
         }
         $berita->delete();
-
-        Cache::forget('berita_terbaru');
-        Cache::forget('daftar_berita');
     }
 }

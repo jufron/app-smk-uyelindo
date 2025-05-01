@@ -219,7 +219,7 @@
             </div>
             <div class="flex justify-center mt-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                 <a href="{{ route('testimoni') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
-                    Lihat Semua Testimoni
+                    Tampilkan Lebih
                 </a>
             </div>
         </div>
@@ -271,9 +271,9 @@
                 </div>
                 <!-- Button -->
                 <a href="{{ route('berita') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                    Berita Lebih
+                    Tampilkan Lebih
                 </a>
-            </div>   
+            </div>
         </div>
     </section>
     {{-- ? berita --}}
@@ -294,10 +294,10 @@
 
             <div class="flex justify-center mt-10">
                 <a href="{{ route('galeri-foto') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">
-                    Lihat Semua di Galery Foto
+                    Tampilkan Lebih
                 </a>
             </div>
-        </div>   
+        </div>
     </section>
     {{-- ? galeri foto --}}
 
@@ -460,7 +460,7 @@
 
             <div class="flex justify-center mt-10">
                 <a href="{{ route('guru-staf') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
-                    Lihat Semua Foto
+                    Tampilkan Lebih
                 </a>
             </div>
         </div>
