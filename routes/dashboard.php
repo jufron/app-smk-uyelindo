@@ -24,8 +24,15 @@ Route::get('/', DashboardController::class)->name('dashboard');
 // });
 
 // todo ------------------------------------ pengaturan aplikasi -------------------------------------------------
-Route::controller(PengaturanAplikasiController::class)->group(function () {
-    Route::get('/pengaturan-aplikasi', 'index')->name('dashboard.pengaturan-aplikasi.index');
+Route::prefix('pengaturan-aplikasi')->controller(PengaturanAplikasiController::class)->group(function () {
+    Route::get('/', 'index')->name('dashboard.pengaturan-aplikasi.index');
+    Route::get('/umum', 'createUmum')->name('dashboard.pengaturan-aplikasi-umum.create');
+    Route::get('/kontak', 'createKontak')->name('dashboard.pengaturan-aplikasi-kontak.create');
+    Route::get('/ppdb', 'createPpdb')->name('dashboard.pengaturan-aplikasi-ppdb.create');
+
+    Route::post('/umum', 'storeUmum')->name('dashboard.pengaturan-aplikasi-umum.store');
+    Route::post('/kontak', 'storeKontak')->name('dashboard.pengaturan-aplikasi-kontak.store');
+    Route::post('/ppdb', 'storePpdb')->name('dashboard.pengaturan-aplikasi-ppdb.store');
 });
 
 

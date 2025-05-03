@@ -29,7 +29,7 @@
                 ])>
                     <a href="{{ route('dashboard.pengaturan-aplikasi.index') }}">
                         <i class="fas fa-th-list"></i>
-                        <p>Aplikasi</p>
+                        <p>Pengaturan Aplikasi</p>
                     </a>
                 </li>
 
