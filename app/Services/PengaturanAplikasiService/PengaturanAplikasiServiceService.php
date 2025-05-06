@@ -3,6 +3,7 @@
 namespace App\Services\PengaturanAplikasiService;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Models\PengaturanAplikasi;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Collection;
@@ -22,6 +23,38 @@ class PengaturanAplikasiServiceService implements PengaturanAplikasiServiceServi
         return $this->getAllPengaturanAplikasi()->where('key', $query)->first()->value;
     }
 
+    public function getPengaturanDateWhere ($query) : ?string
+    {
+        return $this->getAllPengaturanAplikasi()->where('key', $query)->first()->value
+            ? Carbon::parse(
+                    $this->getAllPengaturanAplikasi()->where('key', $query)->first()->value
+              )->format('d F Y')
+            : null;
+    }
+
+    private function uploadFile ($request, $key, $path = 'pengaturan-aplikasi')
+    {
+        if ($request->hasFile($key)) {
+            // Get existing file
+            $existingSetting = PengaturanAplikasi::where('key', $key)->first();
+
+            // Delete old file if exists
+            if ($existingSetting && $existingSetting->value) {
+                if (file_exists(storage_path('app/public/' . $existingSetting->value))) {
+                    unlink(storage_path('app/public/' . $existingSetting->value));
+                }
+            }
+
+            // Upload new file
+            $file = $request->file($key)->store($path, 'public');
+            PengaturanAplikasi::updateOrCreate(
+                ['key' => $key],
+                ['value' => $file]
+            );
+        }
+    }
+
+
     public function storePengaturanAplikasiUmum (Request $request) : void
     {
         $pengaturanKeys = [
@@ -32,23 +65,8 @@ class PengaturanAplikasiServiceService implements PengaturanAplikasiServiceServi
         ];
 
         // ? file upload foto kepala sekolah
-        if ($request->hasFile('foto_kepala_sekolah')) {
-            $foto_kepala_sekolah = $request->file('foto_kepala_sekolah')->store('pengaturan-aplikasi', 'public');
-        }
-        // ? file upload struktur organisasi
-        if ($request->hasFile('struktur_organisasi')) {
-            $struktur_organisasi = $request->file('struktur_organisasi')->store('pengaturan-aplikasi', 'public');
-        }
-
-        // ? upload file path
-        PengaturanAplikasi::updateOrCreate(
-            ['key' => 'foto_kepala_sekolah'],
-            ['value' => $foto_kepala_sekolah]
-        );
-        PengaturanAplikasi::updateOrCreate(
-            ['key' => 'struktur_organisasi'],
-            ['value' => $struktur_organisasi]
-        );
+        $this->uploadFile($request, 'foto_kepala_sekolah');
+        $this->uploadFile($request, 'struktur_organisasi');
 
         foreach ($pengaturanKeys as $key) {
             PengaturanAplikasi::updateOrCreate(
@@ -89,15 +107,7 @@ class PengaturanAplikasiServiceService implements PengaturanAplikasiServiceServi
             'tanggal_pendaftaran_gelombang_3_akhir'
         ];
         // ? upload file brosur pendaftaran
-        if ($request->hasFile('brosur_pendaftaran')) {
-            $brosur_pendaftaran = $request->file('brosur_pendaftaran')->store('pengaturan-aplikasi', 'public');
-        }
-
-        // ? upload file path
-        PengaturanAplikasi::updateOrCreate(
-            ['key' => 'brosur_pendaftaran'],
-            ['value' => $brosur_pendaftaran]
-        );
+        $this->uploadFile($request, 'brosur_pendaftaran');
 
         foreach ($pengaturanKeys as $key) {
             PengaturanAplikasi::updateOrCreate(

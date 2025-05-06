@@ -37,12 +37,12 @@ class PengaturanAplikasiController extends Controller
             'tik_tok'                   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tik_tok'),
             //? pengaturan ppdb
             'brosur_pendaftaran'                     => $this->pengaturanAplikasiServiceService->getPengaturanWhere('brosur_pendaftaran'),
-            'tanggal_pendaftaran_gelombang_1_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_awal'),
-            'tanggal_pendaftaran_gelombang_1_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_akhir'),
-            'tanggal_pendaftaran_gelombang_2_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_2_awal'),
-            'tanggal_pendaftaran_gelombang_2_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_2_akhir'),
-            'tanggal_pendaftaran_gelombang_3_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_3_awal'),
-            'tanggal_pendaftaran_gelombang_3_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_3_akhir'),
+            'tanggal_pendaftaran_gelombang_1_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_1_awal'),
+            'tanggal_pendaftaran_gelombang_1_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_1_akhir'),
+            'tanggal_pendaftaran_gelombang_2_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_2_awal'),
+            'tanggal_pendaftaran_gelombang_2_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_2_akhir'),
+            'tanggal_pendaftaran_gelombang_3_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_3_awal'),
+            'tanggal_pendaftaran_gelombang_3_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_3_akhir'),
         ]);
     }
 

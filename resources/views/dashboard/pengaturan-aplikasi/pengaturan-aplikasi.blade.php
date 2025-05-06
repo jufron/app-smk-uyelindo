@@ -157,7 +157,7 @@
                 </div>
                 <div class="col-md-6 col-xl-8">
                     <img
-                        src="{{ asset('img/defaultsvg.svg') }}"
+                        src="{{ $brosur_pendaftaran ? asset('storage/' . $brosur_pendaftaran) : asset('img/defaultsvg.svg') }}"
                         width="200px"
                         alt="foto-kepala-sekola"
                         loading="lazy"
@@ -171,10 +171,10 @@
                 </div>
                 <div class="col-md-6 col-xl-8">
                     <div>
-                        {{ \Carbon\Carbon::now()->format('d F Y') }},
+                        {{ $tanggal_pendaftaran_gelombang_1_awal ?? 'Data Tidak Ada' }}
                     </div>
                     <div>
-                        {{ \Carbon\Carbon::now()->format('d F Y') }},
+                        {{ $tanggal_pendaftaran_gelombang_1_akhir ?? 'Data Tidak Ada' }}
                     </div>
                 </div>
             </div>
@@ -185,10 +185,10 @@
                 </div>
                 <div class="col-md-6 col-xl-8">
                     <div>
-                        {{ \Carbon\Carbon::now()->format('d F Y') }},
+                        {{ $tanggal_pendaftaran_gelombang_2_awal ?? 'Data Tidak Ada' }}
                     </div>
                     <div>
-                        {{ \Carbon\Carbon::now()->format('d F Y') }},
+                        {{ $tanggal_pendaftaran_gelombang_2_akhir ?? 'Data Tidak Ada' }}
                     </div>
                 </div>
             </div>
@@ -199,10 +199,10 @@
                 </div>
                 <div class="col-md-6 col-xl-8">
                     <div>
-                        {{ \Carbon\Carbon::now()->format('d F Y') }},
+                        {{ $tanggal_pendaftaran_gelombang_3_awal ?? 'Data Tidak Ada' }}
                     </div>
                     <div>
-                        {{ \Carbon\Carbon::now()->format('d F Y') }},
+                        {{ $tanggal_pendaftaran_gelombang_3_akhir ?? 'Data Tidak Ada' }}
                     </div>
                 </div>
             </div>

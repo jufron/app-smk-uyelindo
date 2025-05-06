@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="card-action">
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="submit" class="btn btn-success">Perbaharui</button>
             </div>
         </form>
     </div>
@@ -116,7 +116,17 @@
 
     {{-- * my script --}}
     <x-slot:myScript>
-
+        <script>
+            function previewImage(event, elementIdPreviewTarget) {
+                const reader = new FileReader();
+                reader.onload = function(){
+                    // const preview = document.getElementById('photo_preview');
+                    const preview = document.getElementById(elementIdPreviewTarget);
+                    preview.src = reader.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
     </x-slot:myScript>
     {{-- * my script --}}
 </x-layouts.dashboard>

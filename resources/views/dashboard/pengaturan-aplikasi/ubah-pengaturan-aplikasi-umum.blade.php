@@ -42,7 +42,7 @@
                 {{-- ? preview foto kepala sekolah --}}
                 <div class="col-md-5">
                     <img
-                        src="{{ asset('img/defaultsvg.svg') }}"
+                        src="{{ $foto_kepala_sekolah ? asset('storage/' . $foto_kepala_sekolah) : asset('img/defaultsvg.svg') }}"
                         id="foto_kepala_sekolah_preview"
                         alt="Preview-foto-kepala-sekolah"
                         width="200px"
@@ -101,9 +101,9 @@
                 {{-- ? struktur_organisasi --}}
                 <div class="col-md-5">
                     <img
-                        src="{{ asset('img/defaultsvg.svg') }}"
+                        src="{{ $struktur_organisasi ? asset('storage/' . $struktur_organisasi) : asset('img/defaultsvg.svg') }}"
                         id="struktur_organisasi_preview"
-                        alt="Preview-poster-image"
+                        alt="Preview-struktur-organisasi-image"
                         width="400px"
                         loading="lazy"
                     />
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="card-action">
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="submit" class="btn btn-success">Perbaharui</button>
             </div>
         </form>
     </div>

@@ -9,6 +9,8 @@ interface PengaturanAplikasiServiceServiceInterface
 {
     public function getPengaturanWhere($query) : ?string;
 
+    public function getPengaturanDateWhere ($query) : ?string;
+
     public function storePengaturanAplikasiUmum (Request $request) : void;
 
     public function storePengaturanAplikasiKontak (Request $request) : void;
