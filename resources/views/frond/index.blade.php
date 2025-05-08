@@ -41,20 +41,17 @@
                     Sambutan Kepala Sekolah
                 </h2>
                 <h3 class="mt-10 md:mt-10 text-md lg:text-xl md:text-left text-gray-700 font-light tracking-wider leading-relaxed">
-                    Selamat datang di website resmi SMK Uyelindo Kupang. Sebagai kepala sekolah, saya merasa bangga
-                    menyambut Anda untuk mengenal lebih dekat lingkungan pembelajaran kami yang berbasis vokasi dan
-                    berorientasi pada dunia kerja. Kami berkomitmen mencetak lulusan yang unggul, terampil, dan siap bersaing
-                    di era industri modern.
+                    {{ $sambutan_kepala_sekolah ?? 'Belum Diset' }}
                 </h3>
                 <p class="mt-10 text-gray-800 font-medium text-md">
                     <span class="block">Hormat kami,</span>
-                    <span class="block mt-1">Suryani Benga Tokan S.Kom</span>
-                    <span class="block">Kepala SMK Uyelindo Kupang</span>
+                    <span class="block mt-1">{{ $nama_kepala_sekolah ?? 'Nama Kepala Sekolah' }}</span>
+                    <span class="block">Kepala Sekolah SMK Uyelindo Kupang</span>
                 </p>
             </div>
             <div class="w-full md:w-1/2 flex justify-center md:justify-end" data-aos="fade-left" data-aos-duration="1000">
                 <img
-                    src="https://loremflickr.com/g/600/600/girl"
+                    src="{{ $foto_kepala_sekolah ? asset('storage/' . $foto_kepala_sekolah) : asset('img/defaultsvg.svg') }}"
                     alt="Kepala Sekolah SMK Uyelindo Kupang"
                     class="rounded-xl shadow-md max-h-[500px] object-cover"
                     loading="lazy"

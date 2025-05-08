@@ -12,9 +12,10 @@
                 </p>
 
                 <ul class="mt-8 flex gap-6 sm:justify-start md:gap-8" data-aos="fade-up" data-aos-delay="300">
+                    {{-- ? facebook --}}
                     <li>
                         <a
-                            href="#"
+                            href="{{ $facebook ?? '#' }}"
                             rel="noreferrer"
                             target="_blank"
                             class="transition text-yellow-400 hover:text-yellow-400/75"
@@ -29,10 +30,10 @@
                             </svg>
                         </a>
                     </li>
-
+                    {{-- ? instagram --}}
                     <li>
                         <a
-                            href="#"
+                            href="{{ $instagram ?? '#' }}"
                             rel="noreferrer"
                             target="_blank"
                             class="transition text-yellow-400 hover:text-yellow-400/75"
@@ -47,10 +48,10 @@
                             </svg>
                         </a>
                     </li>
-
+                    {{-- ? youtube --}}
                     <li>
                         <a
-                            href="#"
+                            href="{{ $youtube ?? '#' }}"
                             rel="noreferrer"
                             target="_blank"
                             class="transition text-yellow-400 hover:text-yellow-400/75"
@@ -58,10 +59,10 @@
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </li>
-
+                    {{-- ? tik tok --}}
                     <li>
                         <a
-                            href="#"
+                            href="{{ $tik_tok ?? '#' }}"
                             rel="noreferrer"
                             target="_blank"
                             class="transition text-yellow-400 hover:text-yellow-400/75"
@@ -73,6 +74,7 @@
             </div>
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
+                {{-- ? profil --}}
                 <div class="text-left" data-aos="fade-up">
                     <p class="text-lg font-medium text-white">Profil</p>
 
@@ -95,6 +97,7 @@
                     </ul>
                 </div>
 
+                {{-- ? akademik --}}
                 <div class="text-left" data-aos="fade-up" data-aos-delay="100">
                     <p class="text-lg font-medium text-white">Akademik</p>
 
@@ -114,6 +117,7 @@
                     </ul>
                 </div>
 
+                {{-- ? tautan penting --}}
                 <div class="text-left" data-aos="fade-up" data-aos-delay="200">
                     <p class="text-lg font-medium text-white">Tautan Penting</p>
 
@@ -133,6 +137,7 @@
                     </ul>
                 </div>
 
+                {{-- ? hubungi --}}
                 <div class="text-left" data-aos="fade-up" data-aos-delay="300">
                     <p class="text-lg font-medium text-white">Hubungi</p>
 
@@ -140,7 +145,7 @@
                     <li>
                         <a
                         class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                        href="#"
+                        href="mailto: {{ $email ?? 'example@mail.com' }}"
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -157,14 +162,14 @@
                             />
                         </svg>
 
-                        <span class="flex-1 text-gray-300 "> john@doe.com </span>
+                        <span class="flex-1 text-gray-300 ">{{ $email ?? 'example@mail.com' }}</span>
                         </a>
                     </li>
 
                     <li>
                         <a
                         class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                        href="#"
+                        href="tel: {{ $telepon ?? '+6281234567890' }}"
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +186,7 @@
                             />
                         </svg>
 
-                        <span class="flex-1 text-gray-300">0123456789</span>
+                        <span class="flex-1 text-gray-300">{{ $telepon ?? '+6281234567890' }}</span>
                         </a>
                     </li>
 
@@ -209,7 +214,7 @@
                         </svg>
 
                         <address class="-mt-0.5 flex-1 not-italic text-gray-300">
-                        213 Lane, London, United Kingdom
+                        Jl. Perintis Kemerdekaan I No.9, Oebufu, Kec. Oebobo, Kota Kupang, Nusa Tenggara Tim. 85228
                         </address>
                     </li>
                     </ul>

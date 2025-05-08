@@ -2,20 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TestimoniRequest;
 use App\Models\Berita;
-use App\Models\PertanyaanPendaftaran;
 use App\Models\Testimoni;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Models\PengaturanAplikasi;
+use App\Models\PertanyaanPendaftaran;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Cache;
+use App\Http\Requests\TestimoniRequest;
 
 class PagesController extends Controller
 {
+
+    private function cachePengaturanAplikasi ()
+    {
+        // * cache 6 hour
+        return Cache::remember('pengaturan_aplikasi', 60*60*6, function() {
+            return PengaturanAplikasi::all();
+        });
+    }
+
     public function index () : View
     {
-        // * cache 6 how
+        // * cache 6 hor
         $beritaCache = Cache::remember('berita_terbaru', 60*60*6, function() {
             return Berita::with('user:id,name', 'kategory:id,nama')
                     ->where('status', true)
@@ -24,18 +34,23 @@ class PagesController extends Controller
                     ->get();
         });
 
+        // * cache 6 hour
         $testimoniCache = Cache::remember('testimoni_terbaru', 60*60*6, function() {
             return Testimoni::query()->latest()->limit(9)->get();
         });
 
         return view('frond.index', [
-            'berita_terbaru'    => $beritaCache,
-            'testimoni_terbaru' => $testimoniCache,
+            'berita_terbaru'            => $beritaCache,
+            'testimoni_terbaru'         => $testimoniCache,
+            'nama_kepala_sekolah'       => $this->cachePengaturanAplikasi()->where('key', 'nama_kepala_sekolah')->first()->value,
+            'sambutan_kepala_sekolah'   => $this->cachePengaturanAplikasi()->where('key', 'sambutan_kepala_sekolah')->first()->value,
+            'foto_kepala_sekolah'       => $this->cachePengaturanAplikasi()->where('key', 'foto_kepala_sekolah')->first()->value,
         ]);
     }
 
     public function sejarah () : View
     {
+
         return view('frond.sejarah');
     }
 
@@ -70,7 +85,7 @@ class PagesController extends Controller
 
         Cache::forget('testimoni_terbaru');
         Cache::forget('daftar_testimoni');
-        
+
         return redirect()->route('testimoni')->with('success', 'Terima Kasih Sudah Memberikan Pendapat Anda');
     }
 
