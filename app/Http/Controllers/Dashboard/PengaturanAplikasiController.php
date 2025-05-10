@@ -36,6 +36,7 @@ class PengaturanAplikasiController extends Controller
             'youtube'                   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('youtube'),
             'tik_tok'                   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tik_tok'),
             //? pengaturan ppdb
+            'popup_pendaftaran'                      => $this->pengaturanAplikasiServiceService->getPengaturanWhere('popup_pendaftaran'), 
             'brosur_pendaftaran'                     => $this->pengaturanAplikasiServiceService->getPengaturanWhere('brosur_pendaftaran'),
             'tanggal_pendaftaran_gelombang_1_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_1_awal'),
             'tanggal_pendaftaran_gelombang_1_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_1_akhir'),
@@ -90,6 +91,7 @@ class PengaturanAplikasiController extends Controller
     public function createPpdb () : View
     {
         return view('dashboard.pengaturan-aplikasi.ubah-pengaturan-aplikasi-ppdb', [
+            'popup_pendaftaran'                      => $this->pengaturanAplikasiServiceService->getPengaturanWhere('popup_pendaftaran'), 
             'brosur_pendaftaran'                     => $this->pengaturanAplikasiServiceService->getPengaturanWhere('brosur_pendaftaran'),
             'tanggal_pendaftaran_gelombang_1_awal'   => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_awal'),
             'tanggal_pendaftaran_gelombang_1_akhir'  => $this->pengaturanAplikasiServiceService->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_akhir'),

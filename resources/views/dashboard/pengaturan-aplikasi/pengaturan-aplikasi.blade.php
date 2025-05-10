@@ -1,7 +1,109 @@
 <x-layouts.dashboard.app title="pertanyaan pendaftaran">
     {{-- * my style --}}
     <x-slot:myStyle>
+        <style>
+            .summernote-content ul,
+            .summernote-content ol {
+                margin: 10px 0 10px 20px;
+            }
 
+            .summernote-content ol {
+                list-style-type: decimal !important;
+                margin-left: 20px !important;
+            }
+
+            .summernote-content ul {
+                list-style-type: disc !important;
+                margin-left: 20px !important;
+            }
+
+            .summernote-content li {
+                margin-bottom: 5px;
+            }
+
+            .summernote-content table {
+                border-collapse: collapse;
+                width: 100%;
+                max-width: 100%;
+                margin: 10px 0;
+            }
+
+            /* class="table table-bordered" */
+            .summernote-content .table.table-bordered {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .summernote-content th,
+            .summernote-content td {
+                border: 1px solid #a4a1a1;
+                padding: 8px;
+                white-space: nowrap; /* Mencegah teks dalam sel tabel turun ke baris berikutnya */
+            }
+
+            .summernote-content th {
+                background-color: #f4f4f4;
+                font-weight: bold;
+            }
+
+            .summernote-content h1,
+            .summernote-content h2,
+            .summernote-content h3,
+            .summernote-content h4,
+            .summernote-content h5,
+            .summernote-content h6 {
+                margin-bottom: 0.5em;
+            }
+
+            /* Pastikan heading tetap terlihat */
+            .summernote-content h1 {
+                font-size: 2em;
+                font-weight: bold;
+            }
+
+            .summernote-content h2 {
+                font-size: 1.75em;
+                font-weight: bold;
+            }
+
+            .summernote-content h3 {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            .summernote-content h4 {
+                font-size: 1.25em;
+                font-weight: bold;
+            }
+
+            .summernote-content h5 {
+                font-size: 1.125em;
+                font-weight: bold;
+            }
+
+            .summernote-content h6 {
+                font-size: 1em;
+                font-weight: bold;
+            }
+
+            .summernote-content p {
+                margin-bottom: 1em;
+            }
+
+            /* Style untuk teks besar/kecil tetap sesuai */
+            .summernote-content small {
+                font-size: 0.875em;
+            }
+
+            .summernote-content big {
+                font-size: 1.25em;
+            }
+
+            .summernote-content img {
+                margin: 10px;
+            }
+
+        </style>
     </x-slot:myStyle>
     {{-- * my style --}}
 
@@ -51,7 +153,9 @@
                     Sejarah
                 </div>
                 <div class="col-md-6 col-xl-8">
-                    {{ $sejarah ?? 'Data Tidak Ada' }}
+                    <div class="summernote-content">
+                        {!! $sejarah ?? 'Data Tidak Ada' !!}
+                    </div>
                 </div>
             </div>
             {{-- ? visi misi --}}
@@ -60,7 +164,9 @@
                     Visi Misi
                 </div>
                 <div class="col-md-6 col-xl-8">
-                    {{ $visi_misi ?? 'Data Tidak Ada' }}
+                    <div class="summernote-content">
+                        {!! $visi_misi ?? 'Data Tidak Ada' !!}
+                    </div>
                 </div>
             </div>
             {{-- ? struktur organisasi --}}
@@ -151,6 +257,17 @@
             <h1 class="fw-bold text-uppercase mt-5">PPDB</h1>
             <hr class="border-primary opacity-75 my-2">
             {{-- ? Brosur Pendaftaran --}}
+            <div class="row my-3">
+                <div class="col-md-6 col-xl-4 fw-bold">
+                    Pop Up Brosur & Pendaftaran
+                </div>
+                <div class="col-md-6 col-xl-8">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="popup_pendaftaran" {{ $popup_pendaftaran ? 'checked' : '' }} disabled>
+                        <label class="form-check-label" for="popup_pendaftaran">{{ $popup_pendaftaran ? 'Enable' : 'Disable' }}</label>
+                    </div>
+                </div>
+            </div>
             <div class="row my-3">
                 <div class="col-md-6 col-xl-4 fw-bold">
                     Brosur Pendaftaran

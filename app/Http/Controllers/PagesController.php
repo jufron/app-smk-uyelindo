@@ -50,18 +50,23 @@ class PagesController extends Controller
 
     public function sejarah () : View
     {
-
-        return view('frond.sejarah');
+        return view('frond.sejarah', [
+            'sejarah'                   => $this->cachePengaturanAplikasi()->where('key', 'sejarah')->first()->value,
+        ]);
     }
 
     public function visiMisi () : View
     {
-        return view('frond.visi-misi');
+        return view('frond.visi-misi', [
+            'visi_misi'                 => $this->cachePengaturanAplikasi()->where('key', 'visi_misi')->first()->value,
+        ]);
     }
 
     public function strukturOrganisasi () : View
     {
-        return view('frond.struktur-organisasi');
+        return view('frond.struktur-organisasi', [
+            'struktur_organisasi'       => $this->cachePengaturanAplikasi()->where('key', 'struktur_organisasi')->first()->value,
+        ]);
     }
 
     public function createTestimoni () : View

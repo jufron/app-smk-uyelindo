@@ -22,6 +22,7 @@ class PengaturanAplikasiPpdbRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'popup_pendaftaran'                         => ['nullable', 'boolean'],
             'brosur_pendaftaran'                        => ['nullable', 'image', 'mimes:jpeg,JPEG,png,PNG,jpg,JPG', 'max:500'],
             'tanggal_pendaftaran_gelombang_1_awal'      => ['required', 'date'],
             'tanggal_pendaftaran_gelombang_1_akhir'     => ['required', 'date', 'after:tanggal_pendaftaran_gelombang_1_awal'],
@@ -40,6 +41,8 @@ class PengaturanAplikasiPpdbRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'popup_pendaftaran.boolean'                         => 'Status popup pendaftaran harus berupa boolean',
+            
             'brosur_pendaftaran.image'                          => 'File brosur pendaftaran harus berupa gambar',
             'brosur_pendaftaran.mimes'                          => 'Format file brosur pendaftaran harus jpeg/jpg/png',
             'brosur_pendaftaran.max'                            => 'Ukuran file brosur pendaftaran maksimal 500KB',

@@ -94,6 +94,10 @@ class PengaturanAplikasiSeeder extends Seeder
                 'key'   => 'tanggal_pendaftaran_gelombang_3_akhir',
                 'value' => null
             ],
+            [
+                'key'   => 'popup_pendaftaran',
+                'value' => null
+            ],
         ])->each( function ($item) {
             PengaturanAplikasi::create($item);
         });

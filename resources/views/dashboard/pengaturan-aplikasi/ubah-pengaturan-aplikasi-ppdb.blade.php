@@ -14,6 +14,14 @@
         <form action="{{ route('dashboard.pengaturan-aplikasi-ppdb.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
+                {{-- ? Pop Up Brosur & Pendaftaran --}}
+                <div class="col-md-5">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" name="popup_pendaftaran" id="popup_pendaftaran" value="1" {{ old('popup_pendaftaran', $popup_pendaftaran) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="popup_pendaftaran">Pop Up Brosur & Pendaftaran</label>
+                    </div>
+                </div>
+                
                 {{-- ? preview foto banner --}}
                 <div class="col-md-5">
                     <img

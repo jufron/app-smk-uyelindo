@@ -108,6 +108,11 @@ class PengaturanAplikasiServiceService implements PengaturanAplikasiServiceServi
         ];
         // ? upload file brosur pendaftaran
         $this->uploadFile($request, 'brosur_pendaftaran');
+        
+        PengaturanAplikasi::updateOrCreate(
+            ['key' => 'popup_pendaftaran'],
+            ['value' => $request->popup_pendaftaran ?? null]
+        );
 
         foreach ($pengaturanKeys as $key) {
             PengaturanAplikasi::updateOrCreate(
