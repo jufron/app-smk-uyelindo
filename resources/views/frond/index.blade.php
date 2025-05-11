@@ -474,7 +474,9 @@
 
     {{-- ? banner --}}
     <x-frond.mini-banner />
-
+    {{-- ? pop up banner --}}
+    <x-frond.popup-brosur-pendaftaran />
+    
     <x-slot:myScript>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

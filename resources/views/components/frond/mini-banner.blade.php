@@ -1,8 +1,6 @@
-@props(['scrollPosition' => 500])
-
-<section class="relative z-50" x-data="{ showBanner: false, dismissed: false }" @scroll.window="if(!dismissed) showBanner = window.pageYOffset > {{ $scrollPosition }}">
+<section class="relative z-50" x-data="{ showBanner: false, dismissed: false }" @scroll.window="if(!dismissed) showBanner = window.pageYOffset > {{ $scrollPosition ?? 500 }}">
      <!-- Component -->
-     <div x-show="showBanner" 
+     <div x-show="showBanner"
           x-cloak
           x-transition:enter="transition ease-out duration-300"
           x-transition:enter-start="opacity-0 transform translate-y-full"

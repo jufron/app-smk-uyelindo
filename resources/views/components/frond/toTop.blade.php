@@ -1,4 +1,4 @@
-<div class="fixed bottom-10 right-8 z-[99]">
+<div class="fixed bottom-10 right-8 z-50">
     <button id="toTop" onclick="scrollToTop()" class="bg-yellow-400 hover:bg-primary-dark text-white px-4 py-3 rounded-md shadow-lg hidden" data-aos="fade-up">
         <i class="fa-solid fa-angle-up"></i>
     </button>

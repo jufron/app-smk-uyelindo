@@ -46,7 +46,7 @@
     <meta name="theme-color" content="#cade14">
 
     {{-- ? CSS --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-BP29xd82.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app-D-8FCMOO.css') }}">
 
     {{-- ? JavaScript --}}
     <script src="{{ asset('build/assets/app-CfYR13pi.js') }}" defer></script>

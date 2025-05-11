@@ -45,6 +45,7 @@ class PagesController extends Controller
             'nama_kepala_sekolah'       => $this->cachePengaturanAplikasi()->where('key', 'nama_kepala_sekolah')->first()->value,
             'sambutan_kepala_sekolah'   => $this->cachePengaturanAplikasi()->where('key', 'sambutan_kepala_sekolah')->first()->value,
             'foto_kepala_sekolah'       => $this->cachePengaturanAplikasi()->where('key', 'foto_kepala_sekolah')->first()->value,
+            'popup_pendaftaran'         => $this->cachePengaturanAplikasi()->where('key', 'popup_pendaftaran')->first()->value,
         ]);
     }
 

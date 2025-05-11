@@ -25,7 +25,7 @@
                 {{-- ? preview foto banner --}}
                 <div class="col-md-5">
                     <img
-                        src="{{ asset('img/defaultsvg.svg') }}"
+                        src="{{ $brosur_pendaftaran ? asset('storage/' . $brosur_pendaftaran) : asset('img/defaultsvg.svg') }}"
                         id="brosur_pendaftaran_preview"
                         alt="Preview-brosur-pendaftaran"
                         width="300px"
