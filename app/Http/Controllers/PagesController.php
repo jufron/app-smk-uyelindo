@@ -6,67 +6,50 @@ use App\Models\Berita;
 use App\Models\Testimoni;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Models\PengaturanAplikasi;
 use App\Models\PertanyaanPendaftaran;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\TestimoniRequest;
+use App\Services\Pages\PagesServiceInterface;
 
 class PagesController extends Controller
 {
-
-    private function cachePengaturanAplikasi ()
-    {
-        // * cache 6 hour
-        return Cache::remember('pengaturan_aplikasi', 60*60*6, function() {
-            return PengaturanAplikasi::all();
-        });
-    }
+    public function __construct (
+        protected PagesServiceInterface $pagesService
+    ) {}
 
     public function index () : View
     {
-        // * cache 6 hor
-        $beritaCache = Cache::remember('berita_terbaru', 60*60*6, function() {
-            return Berita::with('user:id,name', 'kategory:id,nama')
-                    ->where('status', true)
-                    ->latest()
-                    ->limit(3)
-                    ->get();
-        });
-
-        // * cache 6 hour
-        $testimoniCache = Cache::remember('testimoni_terbaru', 60*60*6, function() {
-            return Testimoni::query()->latest()->limit(9)->get();
-        });
-
         return view('frond.index', [
-            'berita_terbaru'            => $beritaCache,
-            'testimoni_terbaru'         => $testimoniCache,
-            'nama_kepala_sekolah'       => $this->cachePengaturanAplikasi()->where('key', 'nama_kepala_sekolah')->first()->value,
-            'sambutan_kepala_sekolah'   => $this->cachePengaturanAplikasi()->where('key', 'sambutan_kepala_sekolah')->first()->value,
-            'foto_kepala_sekolah'       => $this->cachePengaturanAplikasi()->where('key', 'foto_kepala_sekolah')->first()->value,
-            'popup_pendaftaran'         => $this->cachePengaturanAplikasi()->where('key', 'popup_pendaftaran')->first()->value,
+            'berita_terbaru'            => $this->pagesService->getBeritaLatestLimit(3),
+            'testimoni_terbaru'         => $this->pagesService->getTestimoniLatestLimit(9),
+            'nama_kepala_sekolah'       => $this->pagesService->getPengaturanWhere('nama_kepala_sekolah'),
+            'sambutan_kepala_sekolah'   => $this->pagesService->getPengaturanWhere('sambutan_kepala_sekolah'),
+            'sambutan_kepala_sekolah'   => $this->pagesService->getPengaturanWhere('sambutan_kepala_sekolah'),
+            'foto_kepala_sekolah'       => $this->pagesService->getPengaturanWhere('foto_kepala_sekolah'),
         ]);
     }
 
     public function sejarah () : View
     {
         return view('frond.sejarah', [
-            'sejarah'                   => $this->cachePengaturanAplikasi()->where('key', 'sejarah')->first()->value,
+            'sejarah'                   => $this->pagesService->getPengaturanWhere('sejarah'),
         ]);
     }
 
     public function visiMisi () : View
     {
         return view('frond.visi-misi', [
-            'visi_misi'                 => $this->cachePengaturanAplikasi()->where('key', 'visi_misi')->first()->value,
+            'visi_misi'                 => $this->pagesService->getPengaturanWhere('visi_misi'),
         ]);
     }
 
     public function strukturOrganisasi () : View
     {
         return view('frond.struktur-organisasi', [
-            'struktur_organisasi'       => $this->cachePengaturanAplikasi()->where('key', 'struktur_organisasi')->first()->value,
+            'struktur_organisasi'       => $this->pagesService->getPengaturanWhere('struktur_organisasi'),
         ]);
     }
 
@@ -77,35 +60,14 @@ class PagesController extends Controller
 
     public function storeTestimoni (TestimoniRequest $request) : RedirectResponse
     {
-        $avatarPath = null;
-
-        if ($request->file('avatar')) {
-            $avatarPath = $request->file('avatar')->store('testimoni', 'public');
-        }
-
-        $requestData = $request->only('avatar', 'nama_lengkap', 'tahun_lulus', 'pekerjaan', 'content', 'status');
-        $requestData['avatar']      = $avatarPath;
-        $requestData['status']      = false;
-
-        Testimoni::create($requestData);
-
-        Cache::forget('testimoni_terbaru');
-        Cache::forget('daftar_testimoni');
-
+        $this->pagesService->createTestimoni($request);
         return redirect()->route('testimoni')->with('success', 'Terima Kasih Sudah Memberikan Pendapat Anda');
     }
 
     public function berita () : View
     {
-        $beritaCache = Cache::remember('daftar_berita', 60*60*6, function() {
-            return Berita::with('user:id,name', 'kategory:id,nama')
-                    ->where('status', true)
-                    ->latest()
-                    ->cursorPaginate(10);
-        });
-
         return view('frond.berita', [
-            'berita_terbaru'    => $beritaCache
+            'berita_terbaru'    => $this->pagesService->getBeritaLatest()
         ]);
     }
 
@@ -136,14 +98,8 @@ class PagesController extends Controller
 
     public function testimoni () : View
     {
-        $daftarTestimoniCache = Cache::remember('daftar_testimoni', 60*60*6, function() {
-            return Testimoni::query()
-                        ->latest()
-                        ->cursorPaginate(20);
-        });
-
         return view('frond.testimoni', [
-            'daftar_testimoni'  => $daftarTestimoniCache
+            'daftar_testimoni'  => $this->pagesService->getTestimoniLatest(),
         ]);
     }
 
@@ -154,17 +110,29 @@ class PagesController extends Controller
 
     public function ppdb () : View
     {
-        $pertanyaanPendaftaran = Cache::remember('pertanyaan_pendaftaran', 60*60*6, function() {
-            return PertanyaanPendaftaran::query()->get();
-        });
-
         return view('frond.ppdb', [
-            'pertanyaan_pendaftaran' => $pertanyaanPendaftaran
+            'pertanyaan_pendaftaran' => $this->pagesService->getPertanyaanPendaftaranLatest(),
+            'pendaftaran_dibuka'     => $this->pagesService->penerimaanPesertaDidikBaru('pendaftaran_dibuka'),
+            'gelombang_aktif'        => $this->pagesService->penerimaanPesertaDidikBaru('gelombang_aktif'),
+            'tanggal_berikutnya'     => $this->pagesService->penerimaanPesertaDidikBaru('tanggal_berikutnya'),
+            'tanggal_pendaftaran_gelombang_1_awal'  => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_1_awal'),
+            'tanggal_pendaftaran_gelombang_1_akhir' => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_1_akhir'),
+            'tanggal_pendaftaran_gelombang_2_awal'  => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_2_awal'),
+            'tanggal_pendaftaran_gelombang_2_akhir' => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_2_akhir'),
+            'tanggal_pendaftaran_gelombang_3_awal'  => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_3_awal'),
+            'tanggal_pendaftaran_gelombang_3_akhir' => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_3_akhir'),
         ]);
     }
 
     public function kontak () : View
     {
-        return view('frond.kontak');
+        return view('frond.kontak', [
+            'email'               => $this->pagesService->getPengaturanWhere('email'),
+            'telepon'             => '+62' . substr($this->pagesService->getPengaturanWhere('telepon'), 1),
+            'facebook'            => $this->pagesService->getPengaturanWhere('facebook'),
+            'instagram'           => $this->pagesService->getPengaturanWhere('instagram'),
+            'youtube'             => $this->pagesService->getPengaturanWhere('youtube'),
+            'tik_tok'             => $this->pagesService->getPengaturanWhere('tik_tok'),
+        ]);
     }
 }

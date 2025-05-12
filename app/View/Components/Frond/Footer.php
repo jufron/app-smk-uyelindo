@@ -31,7 +31,6 @@ class Footer extends Component
         return view('components.frond.footer', [
             'email'             => $pengaturanCache->where('key', 'email')->first()->value,
             'telepon'           => '+62' . substr($pengaturanCache->where('key', 'telepon')->first()->value, 1),
-            'telepon_whatsapp'  => $pengaturanCache->where('key', 'telepon_whatsapp')->first()->value,
             'facebook'          => $pengaturanCache->where('key', 'facebook')->first()->value,
             'instagram'         => $pengaturanCache->where('key', 'instagram')->first()->value,
             'youtube'           => $pengaturanCache->where('key', 'youtube')->first()->value,

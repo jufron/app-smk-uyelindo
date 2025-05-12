@@ -33,16 +33,30 @@
                             <div class="border-t border-gray-200 px-6 py-4">
                                 <h3 class="text-lg font-medium text-gray-900">Social Media</h3>
                                     <div class="flex space-x-4 mt-5">
-                                        <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-facebook-square text-2xl"></i></a>
-                                        <a href="#" class="text-gray-600 hover:text-pink-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-instagram text-2xl"></i></a>
-                                        <a href="#" class="text-gray-600 hover:text-red-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-youtube text-2xl"></i></a>
-                                        <a href="#" class="text-gray-600 hover:text-black px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-tiktok text-2xl"></i></a>
+                                        <a target="_blank" href="{{ $facebook ?? '#' }}" class="text-gray-600 hover:text-blue-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-facebook-square text-2xl"></i></a>
+                                        <a target="_blank" href="{{ $instagram ?? '#' }}" class="text-gray-600 hover:text-pink-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-instagram text-2xl"></i></a>
+                                        <a target="_blank" href="{{ $youtube ?? '#' }}" class="text-gray-600 hover:text-red-600 px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-youtube text-2xl"></i></a>
+                                        <a target="_blank" href="{{ $tik_tok ?? '#' }}" class="text-gray-600 hover:text-black px-3 py-2 bg-slate-100 rounded-lg"><i class="fab fa-tiktok text-2xl"></i></a>
                                     </div>
                                 </div>
                                 <div class="border-t border-gray-200 px-6 py-4">
                                 <h3 class="text-lg font-medium text-gray-900">Contact</h3>
-                                <p class="mt-1 text-gray-600">Email: info@example.com</p>
-                                <p class="mt-1 text-gray-600">Phone: +1 23494 34993</p>
+                                <p class="mt-1 text-gray-600">
+                                    <a
+                                        href="mailto: {{ $email ?? 'example@mail.com' }}"
+                                        target="_blank"
+                                    >
+                                        {{ $email ?? 'example@mail.com' }}
+                                    </a>
+                                </p>
+                                <p class="mt-1 text-gray-600">
+                                    <a
+                                        href="tel: {{ $telepon ?? '+6281234567890' }}"
+                                        target="_blank"
+                                        >
+                                        Phone: {{ $telepon ?? '+6281234567890' }}
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>

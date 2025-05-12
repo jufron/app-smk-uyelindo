@@ -144,9 +144,10 @@
                     <ul class="mt-8 space-y-4 text-sm">
                     <li>
                         <a
-                        class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                        href="mailto: {{ $email ?? 'example@mail.com' }}"
-                        >
+                            class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
+                            href="mailto: {{ $email ?? 'example@mail.com' }}"
+                            target="_blank"
+                            >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             class="size-5 shrink-0 shadow-sm text-white"
@@ -168,8 +169,9 @@
 
                     <li>
                         <a
-                        class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                        href="tel: {{ $telepon ?? '+6281234567890' }}"
+                            class="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
+                            href="tel: {{ $telepon ?? '+6281234567890' }}"
+                            target="_blank"
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

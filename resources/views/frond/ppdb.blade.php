@@ -47,7 +47,7 @@
                     </div>
                     <h3 class="text-xl font-semibold">Gelombang I</h3>
                     <p class="text-sm text-gray-500">
-                        Pendaftaran: 1 Januari - 31 Maret 2024<br>
+                        Pendaftaran: {{ $tanggal_pendaftaran_gelombang_1_awal }} - {{ $tanggal_pendaftaran_gelombang_1_akhir }}<br>
                         Biaya Pendaftaran: Rp 200.000<br>
                         Dapatkan potongan biaya pendaftaran 20%
                     </p>
@@ -59,7 +59,7 @@
                     </div>
                     <h3 class="text-xl font-semibold">Gelombang II</h3>
                     <p class="text-sm text-gray-500">
-                        Pendaftaran: 1 April - 30 Juni 2024<br>
+                        Pendaftaran: {{ $tanggal_pendaftaran_gelombang_2_awal }} - {{ $tanggal_pendaftaran_gelombang_2_akhir }}<br>
                         Biaya Pendaftaran: Rp 200.000<br>
                         Dapatkan potongan biaya pendaftaran 10%
                     </p>
@@ -71,7 +71,7 @@
                     </div>
                     <h3 class="text-xl font-semibold">Gelombang III</h3>
                     <p class="text-sm text-gray-500">
-                        Pendaftaran: 1 Juli - 31 Agustus 2024<br>
+                        Pendaftaran: {{ $tanggal_pendaftaran_gelombang_3_awal }} - {{ $tanggal_pendaftaran_gelombang_3_akhir }}<br>
                         Biaya Pendaftaran: Rp 200.000<br>
                         Kuota terbatas!
                     </p>
@@ -287,11 +287,22 @@
     {{-- ? biaya pendaftaran --}}
 
     {{--? form pendaftaran --}}
+    @if (!$pendaftaran_dibuka && $tanggal_berikutnya)
+    <section class="py-28 container mx-auto">
+        <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+            <h2 class="text-3xl font-bold md:text-4xl mb-8" data-aos="fade-up" data-aos-duration="1000">Pendaftaran akan dibuka dalam:</h2>
+            <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12" data-aos="fade-up" data-aos-duration="1000">
+                Silahkan lengkapi data diri Anda dengan benar untuk melanjutkan proses pendaftaran sebagai calon peserta didik baru
+            </p>
+            <div id="countdown" data-aos="fade-up" data-aos-duration="1000" class="text-5xl font-bold text-yellow-500 mt-14"></div>
+        </div>
+    </section>
+    @else
     <section class="py-20 container mx-auto">
         <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
             <h2 class="text-3xl font-bold md:text-5xl" data-aos="fade-up" data-aos-duration="1000">Form Pendaftaran Online</h2>
-            <p class="mx-auto mb-8 mt-4 text-gray-500 md:mb-12" data-aos="fade-up" data-aos-duration="1000">
-                Silahkan lengkapi data diri Anda dengan benar untuk melanjutkan proses pendaftaran sebagai calon peserta didik baru
+            <p class="mx-auto mb-8 mt-2 text-gray-500 md:mb-12" data-aos="fade-up" data-aos-duration="1000">
+                Mohon maaf, pendaftaran belum dibuka untuk saat ini. Silahkan tunggu hingga waktu pendaftaran dimulai. Kami akan memberikan informasi lebih lanjut melalui website ini.
             </p>
         </div>
 
@@ -642,6 +653,7 @@
             </button>
         </form>
     </section>
+    @endif
     {{--? form pendaftaran --}}
 
     {{-- ? pertanyaan yang sering ditanyakan --}}
@@ -711,4 +723,30 @@
     {{-- ? pertanyaan yang sering ditanyakan --}}
 
     <x-frond.footer />
+
+    @if (!$pendaftaran_dibuka && $tanggal_berikutnya)
+    <x-slot:myScript>
+        <script>
+            const countdownDate = new Date("{{ \Carbon\Carbon::parse($tanggal_berikutnya)->toIso8601String() }}").getTime();
+
+            const countdownInterval = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "Pendaftaran telah dibuka!, Silahkan Di refresh Halamanya";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+            }, 1000);
+        </script>
+    </x-slot:myScript>
+    @endif
 </x-layouts.frond.app>
