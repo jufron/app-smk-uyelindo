@@ -7,6 +7,8 @@ use App\Services\Berita\BeritaService;
 use Illuminate\Support\ServiceProvider;
 use App\Services\Dashboard\DashboardService;
 use App\Services\Testimoni\TestimoniService;
+use App\Services\Galeri\GaleriService;
+use App\Services\Galeri\GaleriServiceInterface;
 use App\Services\Pages\PagesServiceInterface;
 use App\Services\Berita\BeritaServiceInterface;
 use App\Services\Dashboard\DashboardServiceInterface;
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         PengaturanAplikasiServiceServiceInterface::class => PengaturanAplikasiServiceService::class,
         DashboardServiceInterface::class => DashboardService::class,
         BeritaServiceInterface::class => BeritaService::class,
+        GaleriServiceInterface::class => GaleriService::class,
         TestimoniServiceInterface::class => TestimoniService::class,
         PagesServiceInterface::class => PagesService::class,
     ];

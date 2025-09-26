@@ -2,17 +2,31 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Models\Galeri;
+use App\Services\Galeri\GaleriServiceInterface;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class GaleriFotoController extends Controller
 {
+    public function __construct(
+        protected GaleriServiceInterface $galeriService,
+    ) {}
+
+    public function getLatest () : JsonResponse
+    {
+        return $this->galeriService->getAll();
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('dashboard.galeri.galeri');
     }
 
     /**
@@ -20,15 +34,17 @@ class GaleriFotoController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.galeri.tambah');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
-        //
+        $this->galeriService->storeGaleri($request);
+        notify()->success('Berhasil Menambahkan Data');
+        return redirect()->route('dashboard.galery-foto.index');
     }
 
     /**
@@ -42,9 +58,9 @@ class GaleriFotoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Galeri $galeri) : View
     {
-        //
+        return view('dashboard.galeri.edit', compact('galeri'));
     }
 
     /**

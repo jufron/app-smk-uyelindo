@@ -1,4 +1,4 @@
-<footer class="bg-gray-900">
+<footer class="bg-[#1B2D6B]">
     <div class="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
@@ -224,9 +224,9 @@
             </div>
         </div>
 
-        <div class="mt-12 border-t pt-8 border-gray-800">
+        <div class="mt-12 border-t pt-8 border-gray-200">
             <div class="text-center sm:flex sm:justify-between sm:text-left">
-                <p class="mt-4 text-sm sm:order-first sm:mt-0 text-gray-400">
+                <p class="mt-4 text-sm sm:order-first sm:mt-0 text-gray-200">
                     © {{ date('Y') }} SMK Uyelindo Kupang
                 </p>
             </div>
