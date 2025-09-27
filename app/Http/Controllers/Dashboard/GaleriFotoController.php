@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GaleriFotoRequest;
 use App\Models\Galeri;
 use App\Services\Galeri\GaleriServiceInterface;
 use Illuminate\Contracts\View\View;
@@ -24,7 +25,7 @@ class GaleriFotoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : View
     {
         return view('dashboard.galeri.galeri');
     }
@@ -32,7 +33,7 @@ class GaleriFotoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create() : View
     {
         return view('dashboard.galeri.tambah');
     }
@@ -40,7 +41,7 @@ class GaleriFotoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) : RedirectResponse
+    public function store(GaleriFotoRequest $request) : RedirectResponse
     {
         $this->galeriService->storeGaleri($request);
         notify()->success('Berhasil Menambahkan Data');
@@ -50,7 +51,7 @@ class GaleriFotoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Galeri $galeri)
     {
         //
     }
@@ -66,16 +67,20 @@ class GaleriFotoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(GaleriFotoRequest $request, Galeri $galeri) : RedirectResponse
     {
-        //
+        $this->galeriService->updateGaleri($request, $galeri);
+        notify()->success('Berhasil Mengubah Data');
+        return redirect()->route('dashboard.galery-foto.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Galeri $galeri) : RedirectResponse
     {
-        //
+        $this->galeriService->destroyGaleri($galeri);
+        notify()->success('Berhasil Menghapus Data');
+        return redirect()->route('dashboard.galery-foto.index');
     }
 }

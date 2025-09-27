@@ -39,6 +39,7 @@ Route::prefix('pengaturan-aplikasi')->controller(PengaturanAplikasiController::c
 // todo ------------------------------------ galery foto -------------------------------------------------
 Route::get('galery-foto/fetch', [GaleriFotoController::class, 'getLatest'])->name('dashboard.galery-foto.fetch');
 Route::resource('galery-foto', GaleriFotoController::class)
+    ->parameters(['galery-foto' => 'galeri'])
     ->names([
         'index'     => 'dashboard.galery-foto.index',
         'create'    => 'dashboard.galery-foto.create',

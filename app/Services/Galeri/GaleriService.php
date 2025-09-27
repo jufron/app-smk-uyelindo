@@ -5,6 +5,7 @@ namespace App\Services\Galeri;
 use App\Models\Galeri;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\EloquentDataTable;
 use App\Services\Galeri\GaleriServiceInterface;
 
@@ -71,13 +72,27 @@ class GaleriService implements GaleriServiceInterface
 
     }
 
-    public function updateGaleri ($request, $berita) : void
+    public function updateGaleri ($request, $galeri) : void
     {
-        //
+        $data = $request->only(['deskripsi', 'status']);
+
+        if ($request->hasFile('foto')) {
+            // delete old photo
+            if ($galeri->foto && Storage::disk('public')->exists($galeri->foto)) {
+                Storage::disk('public')->delete($galeri->foto);
+            }
+            // store new photo
+            $data['foto'] = $request->file('foto')->store('galeri', 'public');
+        }
+
+        $galeri->update($data);
     }
 
-    public function destroyGaleri (Galeri $berita) : void
+    public function destroyGaleri (Galeri $galeri) : void
     {
-        //
+        if ($galeri->foto && Storage::disk('public')->exists($galeri->foto)) {
+            Storage::disk('public')->delete($galeri->foto);
+        }
+        $galeri->delete();
     }
 }
