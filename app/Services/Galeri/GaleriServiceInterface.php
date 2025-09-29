@@ -12,7 +12,7 @@ interface GaleriServiceInterface
 
     public function storeGaleri (Request $request) : void;
 
-    // public function showBerita (Berita $berita) : JsonResponse;
+    public function showGaleri (Galeri $galeri) : JsonResponse;
 
     public function updateGaleri ($request, $berita) : void;
 

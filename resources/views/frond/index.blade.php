@@ -280,17 +280,20 @@
         <div class="container mx-auto max-w-6xl px-4 py-10">
             <h3 class="text-gray-800 py-10 text-5xl text-center font-bold" data-aos="fade-up" data-aos-duration="1000">Galery Foto</h3>
             <div class="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-                <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000"/>
-                <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw1fHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200"/>
-                <img src="https://images.unsplash.com/photo-1668491195456-9341d9cf3977?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXQlMjB3aGl0ZXxlbnwwfDF8fHwxNzIxODIyMzU3fDA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400"/>
-                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600"/>
-                <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTcyMTgyMjE3OXww&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800"/>
-                <img src="https://images.unsplash.com/photo-1475518112798-86ae358241eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMHx8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000"/>
-                <img src="https://images.unsplash.com/photo-1515002246390-7bf7e8f87b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxM3x8Y2F0fGVufDB8MHx8fDE3MjE4MjIxNzl8MA&ixlib=rb-4.0.3&q=80&w=1080" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1200"/>
+                @forelse ($galeri_foto_limit as $galeri_foto)
+                <img
+                    alt="galeri-foto"
+                    src="{{ $galeri_foto->foto ? asset('storage/' . $galeri_foto->foto) : asset('img/defaultsvg.svg') }}"
+                    data-aos="zoom-in"
+                    data-aos-duration="1000"
+                />
+                @empty
+                <p class="text-center text-gray-500">Belum ada foto di galeri.</p>
+                @endforelse
             </div>
 
             <div class="flex justify-center mt-10">
-                <a href="{{ route('galeri-foto') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">
+                <a href="{{ route('galeri-foto') }}" class="bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" data-aos="fade-up">
                     Tampilkan Lebih
                 </a>
             </div>
@@ -314,7 +317,7 @@
                     <!-- Contoh slide -->
                     <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000">
                         <div class="rounded-xl bg-slate-50 mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                            <img 
+                            <img
                                 src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
                                 alt=""
                                 class="mb-4 inline-block h-40 w-40 rounded-full object-cover"
@@ -380,10 +383,10 @@
 
                     <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
                         <div class="rounded-xl bg-slate-50 mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                            <img 
+                            <img
                                 src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
                                 alt=""
-                                class="mb-4 inline-block h-40 w-40 rounded-full object-cover" 
+                                class="mb-4 inline-block h-40 w-40 rounded-full object-cover"
                             />
                             <p class="font-bold">John Robert</p>
                             <p class="text-center text-sm text-gray-500">Webflow Developer</p>
@@ -414,10 +417,10 @@
 
                     <div class="swiper-slide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
                         <div class="rounded-xl bg-slate-50 mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12">
-                            <img 
+                            <img
                                 src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
                                 alt=""
-                                class="mb-4 inline-block h-40 w-40 rounded-full object-cover" 
+                                class="mb-4 inline-block h-40 w-40 rounded-full object-cover"
                             />
                             <p class="font-bold">John Robert</p>
                             <p class="text-center text-sm text-gray-500">Webflow Developer</p>
@@ -476,7 +479,7 @@
     <x-frond.mini-banner />
     {{-- ? pop up banner --}}
     <x-frond.popup-brosur-pendaftaran />
-    
+
     <x-slot:myScript>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

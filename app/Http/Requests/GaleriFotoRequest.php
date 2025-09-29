@@ -22,23 +22,21 @@ class GaleriFotoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'judul'     => 'required|string|max:255',
-            'foto'      => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'keterangan'=> 'nullable|string',
+            'foto'      => $this->isMethod('post')
+                            ? 'required|image|mimes:jpeg,png,jpg,gif|max:5000'
+                            : 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000', // max 2MB
+            'deskripsi'=> 'nullable|string',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'judul.required'    => 'Judul wajib diisi.',
-            'judul.string'      => 'Judul harus berupa teks.',
-            'judul.max'         => 'Judul maksimal 255 karakter.',
             'foto.required'     => 'Foto wajib diunggah.',
             'foto.image'        => 'File harus berupa gambar.',
             'foto.mimes'        => 'Format gambar harus jpeg, png, jpg, gif, atau svg.',
             'foto.max'          => 'Ukuran gambar maksimal 2MB.',
-            'keterangan.string' => 'Keterangan harus berupa teks.',
+            'deskripsi.string' => 'Deskripsi harus berupa teks.',
         ];
     }
 }

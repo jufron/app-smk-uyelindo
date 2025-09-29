@@ -22,6 +22,10 @@ interface PagesServiceInterface
 
     public function createTestimoni (Request $request) : void;
 
+    public function getGaleryFotoLimit (int $limit = 6) : Collection;
+
+    public function getGaleryFotoLatest () : CursorPaginator;
+
     public function getPertanyaanPendaftaranLatest () : Collection;
 
     public function penerimaanPesertaDidikBaru ($value) ;

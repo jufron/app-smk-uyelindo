@@ -3,6 +3,7 @@
 namespace App\Services\Pages;
 
 use App\Models\Berita;
+use App\Models\Galeri;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -91,6 +92,25 @@ class PagesService implements PagesServiceInterface
         Testimoni::create($requestData);
     }
 
+    public function getGaleryFotoLimit (int $limit = 7) : Collection
+    {
+        return Cache::remember('galery_foto', 60*60*6, function() use ($limit) {
+            return Galeri::where('status', true)
+                    ->latest()
+                    ->limit($limit)
+                    ->get();
+        });
+    }
+
+    public function getGaleryFotoLatest () : CursorPaginator
+    {
+        return Cache::remember('daftar_galery_foto', 60*60*6, function() {
+            return Galeri::where('status', true)
+                    ->latest()
+                    ->cursorPaginate(12);
+        });
+    }
+
     public function getPertanyaanPendaftaranLatest () : Collection
     {
         return Cache::remember('pertanyaan_pendaftaran', 60*60*6, function() {
@@ -98,7 +118,7 @@ class PagesService implements PagesServiceInterface
         });
     }
 
-    public function penerimaanPesertaDidikBaru ($value) 
+    public function penerimaanPesertaDidikBaru ($value)
     {
         // * pendaftaran
         $now = now();
@@ -147,7 +167,7 @@ class PagesService implements PagesServiceInterface
                 return $item;
             }
         }
-        
+
         return null;
     }
 }

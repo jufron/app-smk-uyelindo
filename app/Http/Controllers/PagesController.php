@@ -29,6 +29,7 @@ class PagesController extends Controller
             'sambutan_kepala_sekolah'   => $this->pagesService->getPengaturanWhere('sambutan_kepala_sekolah'),
             'sambutan_kepala_sekolah'   => $this->pagesService->getPengaturanWhere('sambutan_kepala_sekolah'),
             'foto_kepala_sekolah'       => $this->pagesService->getPengaturanWhere('foto_kepala_sekolah'),
+            'galeri_foto_limit'         => $this->pagesService->getGaleryFotoLimit(7),
         ]);
     }
 
@@ -83,7 +84,9 @@ class PagesController extends Controller
 
     public function galeriFoto () : View
     {
-        return view('frond.galeri-foto');
+        return view('frond.galeri-foto', [
+            'daftar_galeri_foto' => $this->pagesService->getGaleryFotoLatest(),
+        ]);
     }
 
     public function guruDanStaf () : View

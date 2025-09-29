@@ -51,9 +51,9 @@ class GaleriFotoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Galeri $galeri)
+    public function show(Galeri $galeri) : JsonResponse
     {
-        //
+        return $this->galeriService->showGaleri($galeri);
     }
 
     /**
@@ -61,7 +61,7 @@ class GaleriFotoController extends Controller
      */
     public function edit(Galeri $galeri) : View
     {
-        return view('dashboard.galeri.edit', compact('galeri'));
+        return view('dashboard.galeri.ubah', compact('galeri'));
     }
 
     /**

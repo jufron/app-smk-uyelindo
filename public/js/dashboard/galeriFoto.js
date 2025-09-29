@@ -47,58 +47,10 @@ $(document).ready(function () {
 
                 const element = `
                     <img
-                        src="${data.poster}"
+                        src="${data.foto}"
                         alt="User Photo" class="img-fluid mb-3"
                         loading="lazy"
-                        width="300px"
                     />
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
-                                Judul
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.judul}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
-                                Status
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.status
-                                    ? '<span class="badge badge-success">Publish</span>'
-                                    : '<span class="badge badge-danger">Draft</span>'}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
-                                Content
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.content}
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
-                                Tanggal Buat
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                : ${data.created_at}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4 col-xl-3">
-                                Tanggal Perbaharui
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.updated_at}
-                            </div>
-                        </li>
-                    </ul>
                 `;
                 modalBody.innerHTML = element;
             });
