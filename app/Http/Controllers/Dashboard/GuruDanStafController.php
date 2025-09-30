@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Services\GuruDanStaf\GuruDanStafServiceInterface;
 use Illuminate\Http\Request;
 
 class GuruDanStafController extends Controller
 {
+    public function __construct(
+        protected GuruDanStafServiceInterface $guruDanStafService,
+    ) {}
+
     /**
      * Display a listing of the resource.
      */
