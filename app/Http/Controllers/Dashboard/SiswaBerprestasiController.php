@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Services\SiswaBerprestasi\SiswaBerprestasiServiceInterface;
 
@@ -12,12 +13,17 @@ class SiswaBerprestasiController extends Controller
         protected SiswaBerprestasiServiceInterface $siswaBerprestasiService,
     ) {}
 
+    public function getLatest () : JsonResponse
+    {
+        return $this->siswaBerprestasiService->getAll();
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('dashboard.siswa-berprestasi.siswa-berprestasi');
     }
 
     /**
