@@ -14,6 +14,8 @@ interface DashboardServiceInterface
 
     public function beritaDraftCount () : int;
 
+    public function galeriFotoAllCount () : int;
+
     public function testimoniAllCount () : int;
 
     public function testimoniWhereMonthCount () : int;

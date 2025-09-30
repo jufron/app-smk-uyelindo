@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    
+
     public function __construct(
         protected DashboardServiceInterface $dashboardService
     ) {}
@@ -25,7 +25,7 @@ class DashboardController extends Controller
         return view('dashboard.index', [
             'kategory'                  => $this->dashboardService->kategoryAllCount(),
             'pertanyaan_ppdb'           => $this->dashboardService->pertanyaanPpdbAllCount(),
-            'foto_galery'               => 1,
+            'foto_galery'               => $this->dashboardService->galeriFotoAllCount(),
             'guru_dan_staf'             => 1,
             'siswa_prestasi'            => 1,
             'berita'                    => $this->dashboardService->beritaAllCount(),

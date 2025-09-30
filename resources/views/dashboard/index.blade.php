@@ -24,7 +24,7 @@
         <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
           <div class="card">
             <div class="card-body p-3 text-center">
-              <div class="h1 m-0">17</div>
+              <div class="h1 m-0">{{ $foto_galery }}</div>
               <div class="text-muted mb-3">Foto Galeri</div>
             </div>
           </div>
@@ -33,7 +33,7 @@
         <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
           <div class="card">
             <div class="card-body p-3 text-center">
-              <div class="h1 m-0">15</div>
+              <div class="h1 m-0">{{ $guru_dan_staf }}</div>
               <div class="text-muted mb-3">Guru & Staf</div>
             </div>
           </div>
@@ -42,7 +42,7 @@
         <div class="col-6 col-sm-4 col-lg-2 col-xl-3">
           <div class="card">
             <div class="card-body p-3 text-center">
-              <div class="h1 m-0">15</div>
+              <div class="h1 m-0">{{ $siswa_prestasi }}</div>
               <div class="text-muted mb-3">Siswa Prestasi</div>
             </div>
           </div>
@@ -302,7 +302,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">  
+        <div class="col-md-4">
             {{-- ? chart 3 --}}
             <div class="card card-round">
                 <div class="card-header">

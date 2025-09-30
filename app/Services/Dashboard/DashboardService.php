@@ -3,6 +3,7 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Berita;
+use App\Models\Galeri;
 use App\Models\Kategory;
 use App\Models\Testimoni;
 use App\Models\PertanyaanPendaftaran;
@@ -48,6 +49,14 @@ class DashboardService implements DashboardServiceInterface
         // 3 hour
         return Cache::remember('berita_draft_count', 10800, function () {
             return Berita::where('status', 0)->count();
+        });
+    }
+
+    public function galeriFotoAllCount () : int
+    {
+        // 3 hour
+        return Cache::remember('galeri_foto_count', 10800, function () {
+            return Galeri::query()->count();
         });
     }
 
