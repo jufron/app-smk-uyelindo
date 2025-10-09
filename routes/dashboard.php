@@ -106,6 +106,7 @@ Route::resource('testimoni', TestimoniController::class)
 // todo ------------------------------------ siswa berprestasi -------------------------------------------------
 Route::get('siswa-berprestasi/fetch', [SiswaBerprestasiController::class, 'getLatest'])->name('dashboard.siswa-berprestasi.fetch');
 Route::resource('siswa-berprestasi', SiswaBerprestasiController::class)
+    ->parameters(['siswa-berprestasi' => 'siswaBerprestasi'])
     ->names([
         'index'     => 'dashboard.siswa-berprestasi.index',
         'create'    => 'dashboard.siswa-berprestasi.create',

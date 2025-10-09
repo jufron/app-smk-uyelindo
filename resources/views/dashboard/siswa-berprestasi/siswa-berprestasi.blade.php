@@ -23,12 +23,6 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-3">
-                    <x-dashboard.input-select label="Status Berita" name="status">
-                        <option value="1">Publish</option>
-                        <option value="0">Draft</option>
-                    </x-dashboard.input-select>
-                </div>
-                <div class="col-md-3">
                     <x-dashboard.input
                         label="Tanggal Awal"
                         type="date"
@@ -84,7 +78,8 @@
                                         <th style="width: 50px;">Nama Penyelenggara</th>
                                         <th style="width: 100px">Tanggal Buat</th>
                                         <th style="width: 100px;">Tanggal Perbaharui</th>
-                                        <th style="width: 120px;">Aksi</th></tr>
+                                        <th style="width: 120px;">Aksi</th>
+                                    </tr>
                                 </tfoot>
                             </table>
                         </div>
@@ -108,7 +103,7 @@
         {{-- ? toastify library  --}}
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         {{-- ? myscript --}}
-        {{-- <script type="module" src="{{ asset('js/dashboard/galeriFoto.js') }}"></script> --}}
+        <script type="module" src="{{ asset('js/dashboard/siswaBerprestasi.js') }}"></script>
     </x-slot:myScript>
     {{-- * my script --}}
 </x-layouts.dashboard>
