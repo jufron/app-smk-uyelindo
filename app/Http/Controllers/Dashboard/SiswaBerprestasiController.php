@@ -61,7 +61,7 @@ class SiswaBerprestasiController extends Controller
      */
     public function edit(SiswaBerprestasi $siswaBerprestasi) : View
     {
-        return view('dashboard.siswa-berprestasi.edit', compact('siswaBerprestasi'));
+        return view('dashboard.siswa-berprestasi.ubah', compact('siswaBerprestasi'));
     }
 
     /**
