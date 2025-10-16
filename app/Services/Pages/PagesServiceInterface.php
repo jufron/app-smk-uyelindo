@@ -29,4 +29,6 @@ interface PagesServiceInterface
     public function getPertanyaanPendaftaranLatest () : Collection;
 
     public function penerimaanPesertaDidikBaru ($value) ;
+
+    public function getSiswaBerprestasiLatest () : CursorPaginator;
 }

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\PengaturanAplikasi;
 use App\Models\PertanyaanPendaftaran;
+use App\Models\SiswaBerprestasi;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Pagination\CursorPaginator;
 use Illuminate\Database\Eloquent\Collection;
@@ -169,5 +170,14 @@ class PagesService implements PagesServiceInterface
         }
 
         return null;
+    }
+
+    public function getSiswaBerprestasiLatest () : CursorPaginator
+    {
+        return Cache::remember('siswa_berprestasi_latest', 60*60*6, function() {
+            return SiswaBerprestasi::query()
+                    ->latest()
+                    ->cursorPaginate(12);
+        });
     }
 }

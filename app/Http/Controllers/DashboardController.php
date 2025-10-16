@@ -27,7 +27,7 @@ class DashboardController extends Controller
             'pertanyaan_ppdb'           => $this->dashboardService->pertanyaanPpdbAllCount(),
             'foto_galery'               => $this->dashboardService->galeriFotoAllCount(),
             'guru_dan_staf'             => 1,
-            'siswa_prestasi'            => 1,
+            'siswa_prestasi'            => $this->dashboardService->siswaBerprestasiCount(),
             'berita'                    => $this->dashboardService->beritaAllCount(),
             'berita_publish'            => $this->dashboardService->beritaPublishCount(),
             'berita_draft'              => $this->dashboardService->beritaDraftCount(),

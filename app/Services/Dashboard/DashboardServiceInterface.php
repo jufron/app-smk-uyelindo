@@ -23,4 +23,6 @@ interface DashboardServiceInterface
     public function testimoniPublishCount () : int;
 
     public function testimoniDraftCount () : int;
+
+    public function siswaBerprestasiCount () : int;
 }

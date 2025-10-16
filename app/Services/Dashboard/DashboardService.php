@@ -7,6 +7,7 @@ use App\Models\Galeri;
 use App\Models\Kategory;
 use App\Models\Testimoni;
 use App\Models\PertanyaanPendaftaran;
+use App\Models\SiswaBerprestasi;
 use Illuminate\Support\Facades\Cache;
 use App\Services\Dashboard\DashboardServiceInterface;
 
@@ -89,6 +90,14 @@ class DashboardService implements DashboardServiceInterface
         // 3 hour
         return Cache::remember('testimoni_draft_count', 10800, function () {
             return Testimoni::where('status', 0)->count();
+        });
+    }
+
+    public function siswaBerprestasiCount(): int
+    {
+        // 3 hour
+        return Cache::remember('siswa_berprestasi_count', 10800, function () {
+            return SiswaBerprestasi::where('status', 0)->count();
         });
     }
 }

@@ -108,7 +108,9 @@ class PagesController extends Controller
 
     public function siswaPrestasi () : View
     {
-        return view('frond.siswa-prestasi');
+        return view('frond.siswa-prestasi', [
+            'siswa_berprestasi_latest'  => $this->pagesService->getSiswaBerprestasiLatest()
+        ]);
     }
 
     public function ppdb () : View

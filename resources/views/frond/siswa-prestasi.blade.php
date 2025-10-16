@@ -22,54 +22,17 @@
             </p>
             <!-- Content -->
             <div class="mx-auto grid justify-items-center gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:grid-cols-4 lg:justify-items-stretch">
-                <!-- Item -->
+                @foreach ($siswa_berprestasi_latest as $siswa_berprestasi)
                 <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">John</p>
-                    <p class="text-sm text-gray-500">Webflow Developer</p>
+                    <img
+                        src="{{ $siswa_berprestasi->foto ? asset('storage/' . $siswa_berprestasi->foto) : asset('img/defaultsvg.svg') }}"
+                        alt="foto-siswa-berprestasi"
+                        class="mb-4 inline-block h-52 w-full object-cover"
+                    />
+                    <p class="font-bold">{{ $siswa_berprestasi->nama_lengkap }}</p>
+                    <p class="text-sm text-gray-500">{{ $siswa_berprestasi->tahun }}</p>
                 </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">Annisyah</p>
-                    <p class="text-sm text-gray-500">Webflow Developer</p>
-                </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">Tamara</p>
-                    <p class="text-sm text-gray-500">UI/UX Designer</p>
-                </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">Kevin</p>
-                    <p class="text-sm text-gray-500">Product Manager</p>
-                </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">John</p>
-                    <p class="text-sm text-gray-500">Webflow Developer</p>
-                </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">Annisyah</p>
-                    <p class="text-sm text-gray-500">Webflow Developer</p>
-                </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">Tamara</p>
-                    <p class="text-sm text-gray-500">UI/UX Designer</p>
-                </div>
-                <!-- Item -->
-                <div class="flex max-w-sm flex-col items-center gap-4 rounded-md border border-solid border-yellow-300 px-8 py-6 md:max-w-full" data-aos="fade-up" data-aos-delay="700">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-52 w-full object-cover" />
-                    <p class="font-bold">Kevin</p>
-                    <p class="text-sm text-gray-500">Product Manager</p>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
