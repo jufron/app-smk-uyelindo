@@ -80,6 +80,7 @@ Route::resource('berita', BeritaController::class)
 // todo ------------------------------------ guru & staf -------------------------------------------------
 Route::get('guru-&-staf/fetch', [GuruDanStafController::class, 'getLatest'])->name('dashboard.guru-staf.fetch');
 Route::resource('guru-&-staf', GuruDanStafController::class)
+    ->parameters(['guru-&-staf' => 'GuruAndStaf'])
     ->names([
         'index'     => 'dashboard.guru-staf.index',
         'create'    => 'dashboard.guru-staf.create',
@@ -118,7 +119,9 @@ Route::resource('siswa-berprestasi', SiswaBerprestasiController::class)
     ]);
 
 // todo ------------------------------------ PPDB -------------------------------------------------
+Route::get('penerimaan-peserta-didik-baru/fetch', [PenerimaanSiswaBaruController::class, 'getLatest'])->name('dashboard.penerimaan-peserta-didik-baru.fetch');
 Route::resource('penerimaan-peserta-didik-baru', PenerimaanSiswaBaruController::class)
+    ->parameters(['penerimaan-peserta-didik-baru' => 'daftarSiswaBaru'])
     ->names([
         'index'     => 'dashboard.penerimaan-peserta-didik-baru.index',
         'create'    => 'dashboard.penerimaan-peserta-didik-baru.create',

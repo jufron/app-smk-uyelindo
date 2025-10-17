@@ -67,7 +67,7 @@ class SiswaBerprestasiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SiswaBerprestasi $siswaBerprestasi) : RedirectResponse
+    public function update(SiswaBerprestasiRequest $request, SiswaBerprestasi $siswaBerprestasi) : RedirectResponse
     {
         $this->siswaBerprestasiService->updateSiswaBerprestasi($request, $siswaBerprestasi);
         notify()->success('Berhasil Mengubah Data');

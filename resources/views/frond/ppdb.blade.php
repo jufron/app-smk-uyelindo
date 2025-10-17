@@ -346,13 +346,21 @@
                         type="number"
                     />
                 </div>
-                {{-- ? tempat tanggal lahir (date input) --}}
+                {{-- ? tanggal lahir (date input) --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-3">
                     <x-frond.input
                         name="tanggal_lahir"
                         label="Tanggal Lahir"
                         placeholder="Masukan Tanggal Lahur Anda"
                         type="date"
+                    />
+                </div>
+                {{-- ? tempat lahir --}}
+                <div class="col-span-2 sm:col-span-1 lg:col-span-2">
+                    <x-frond.input
+                        name="tempat_lahir"
+                        label="Tempat Lahir"
+                        placeholder="Masukan tempat lahir"
                     />
                 </div>
                 {{-- ? jenis kelamin (select input) --}}

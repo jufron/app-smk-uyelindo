@@ -97,7 +97,7 @@ class DashboardService implements DashboardServiceInterface
     {
         // 3 hour
         return Cache::remember('siswa_berprestasi_count', 10800, function () {
-            return SiswaBerprestasi::where('status', 0)->count();
+            return SiswaBerprestasi::query()->count();
         });
     }
 }

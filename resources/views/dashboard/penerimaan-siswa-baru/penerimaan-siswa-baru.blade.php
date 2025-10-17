@@ -1,4 +1,4 @@
-<x-layouts.dashboard.app title="guru & staf">
+<x-layouts.dashboard.app title="penerimaan siswa baru">
     {{-- * my style --}}
     <x-slot:myStyle>
         {{-- ? sweetalert 2 lib --}}
@@ -18,7 +18,7 @@
     {{-- todo content ... --}}
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Daftar Guru dan Staf</h4>
+            <h4 class="card-title">Daftar Siswa Baru</h4>
         </div>
         <div class="card-body">
             <div class="row">
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="my-4">
-                <a href="{{ route('dashboard.guru-staf.create') }}" class="btn btn-success">Tambah</A>
+                <a href="{{ route('dashboard.penerimaan-peserta-didik-baru.create') }}" class="btn btn-success">Tambah Siswa Baru</A>
                 <button id="button-filter-reset" class="btn btn-secondary">Reset Filter</button>
             </div>
 
@@ -53,17 +53,18 @@
                                 id="berita-datatable"
                                 class="display table table-striped table-hover dataTable"
                                 role="grid"
-                                data-url="{{ route('dashboard.guru-staf.fetch') }}"
+                                data-url="{{ route('dashboard.penerimaan-peserta-didik-baru.fetch') }}"
                                 >
                                 <thead>
                                     <tr role="row">
                                         <th style="width: 20%;">No</th>
-                                        <th style="width: 100%;">Foto</th>
                                         <th style="width: 100%;">Nama Lengkap</th>
-                                        <th style="width: 50px;">Telepon</th>
+                                        <th style="width: 100%;">Nama Panggilan</th>
                                         <th style="width: 50px;">Email</th>
-                                        <th style="width: 50px;">Alamat</th>
+                                        <th style="width: 50px;">Nisn</th>
+                                        <th style="width: 50px;">Jenis Kelamin</th>
                                         <th style="width: 50px;">Agama</th>
+                                        <th style="width: 50px;">Nomor Telepon Siswa</th>
                                         <th style="width: 100px">Tanggal Buat</th>
                                         <th style="width: 100px;">Tanggal Perbaharui</th>
                                         <th style="width: 120px;">Aksi</th>
@@ -72,12 +73,13 @@
                                 <tfoot>
                                     <tr role="row">
                                         <th style="width: 20%;">No</th>
-                                        <th style="width: 100%;">Foto</th>
                                         <th style="width: 100%;">Nama Lengkap</th>
-                                        <th style="width: 50px;">Telepon</th>
+                                        <th style="width: 100%;">Nama Panggilan</th>
                                         <th style="width: 50px;">Email</th>
-                                        <th style="width: 50px;">Alamat</th>
+                                        <th style="width: 50px;">Nisn</th>
+                                        <th style="width: 50px;">Jenis Kelamin</th>
                                         <th style="width: 50px;">Agama</th>
+                                        <th style="width: 50px;">Nomor Telepon Siswa</th>
                                         <th style="width: 100px">Tanggal Buat</th>
                                         <th style="width: 100px;">Tanggal Perbaharui</th>
                                         <th style="width: 120px;">Aksi</th>
@@ -93,7 +95,7 @@
     {{-- todo content ... --}}
 
     {{-- ? modal --}}
-    <x-dashboard.modal modalLabel="Detail Guru dan Staf" modalSize="lg" />
+    <x-dashboard.modal modalLabel="Detail Siswa Baru" modalSize="lg" />
     {{-- ? modal --}}
 
     {{-- * my script --}}
@@ -105,7 +107,7 @@
         {{-- ? toastify library  --}}
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         {{-- ? myscript --}}
-        <script type="module" src="{{ asset('js/dashboard/guruAndStaf.js') }}"></script>
+        <script type="module" src="{{ asset('js/dashboard/penerimaanSiswaBaru.js') }}"></script>
     </x-slot:myScript>
     {{-- * my script --}}
 </x-layouts.dashboard>
