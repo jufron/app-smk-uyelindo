@@ -10,7 +10,6 @@
         <div class="card-header">
             <div class="card-title">Ubah Guru & Staf</div>
         </div>
-        @dump($errors->all())
         <form action="{{ route('dashboard.guru-staf.update', $guruAndStaf) }}" method="post" enctype="multipart/form-data">
             @method('patch')
             @csrf
