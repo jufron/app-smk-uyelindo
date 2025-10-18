@@ -4,6 +4,7 @@ namespace App\Services\Pages;
 
 use App\Models\Berita;
 use App\Models\Galeri;
+use App\Models\GuruAndStaf;
 use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -99,6 +100,15 @@ class PagesService implements PagesServiceInterface
             return Galeri::where('status', true)
                     ->latest()
                     ->limit($limit)
+                    ->get();
+        });
+    }
+
+    public function guruDanStafLatest () : Collection
+    {
+        return Cache::remember('guru_dan_staf_latest', 60*60*6, function() {
+            return GuruAndStaf::query()
+                    ->latest()
                     ->get();
         });
     }

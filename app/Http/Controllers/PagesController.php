@@ -30,6 +30,7 @@ class PagesController extends Controller
             'sambutan_kepala_sekolah'   => $this->pagesService->getPengaturanWhere('sambutan_kepala_sekolah'),
             'foto_kepala_sekolah'       => $this->pagesService->getPengaturanWhere('foto_kepala_sekolah'),
             'galeri_foto_limit'         => $this->pagesService->getGaleryFotoLimit(7),
+            'guru_dan_staf_latest'      => $this->pagesService->guruDanStafLatest(),
         ]);
     }
 
@@ -91,7 +92,9 @@ class PagesController extends Controller
 
     public function guruDanStaf () : View
     {
-        return view('frond.guru-&-staf');
+        return view('frond.guru-&-staf', [
+            'guru_dan_staf_latest'      => $this->pagesService->guruDanStafLatest()
+        ]);
     }
 
     public function fasilitas () : View

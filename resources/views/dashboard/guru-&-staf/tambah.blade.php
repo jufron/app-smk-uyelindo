@@ -1,7 +1,7 @@
 <x-layouts.dashboard.app title="Tambah guru & staf">
     {{-- * my style --}}
     <x-slot:myStyle>
-        
+
     </x-slot:myStyle>
     {{-- * my style --}}
 

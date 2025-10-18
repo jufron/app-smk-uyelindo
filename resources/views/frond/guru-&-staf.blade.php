@@ -27,11 +27,16 @@
         <!-- Content -->
         <div class="grid grid-cols-1 justify-items-center gap-5 sm:grid-cols-2 sm:justify-items-stretch md:grid-cols-3 lg:grid-cols-4 md:gap-4 lg:gap-6">
             <!-- Item -->
+            @foreach ($guru_dan_staf_latest as $guruDanStaf)
             <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12" data-aos="fade-up">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                <p class="font-bold">John Robert</p>
+                <img
+                    src="{{ $guruDanStaf->foto ? asset('storage/' . $guruDanStaf->foto) : asset('img/defaultsvg.svg') }}"
+                    alt="foto guru dan staf"
+                    class="mb-4 inline-block h-40 w-40 rounded-full object-cover"
+                />
+                <p class="font-bold">{{ $guruDanStaf->nama_lengkap }}</p>
                 <p class="text-center text-sm text-gray-500">
-                    Webflow Developer
+                    {{ $guruDanStaf->nama_lengkap }}
                 </p>
                 <div class="mt-4 flex">
                     <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
@@ -42,82 +47,7 @@
                     </a>
                 </div>
             </div>
-            <!-- Item -->
-            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover " />
-                <p class="font-bold">Annisyah Matah</p>
-                <p class="text-center text-sm text-gray-500">
-                    Webflow Developer
-                </p>
-                <div class="mt-4 flex">
-                    <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                    <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                </div>
-            </div>
-            <!-- Item -->
-            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                <p class="font-bold">Tamara Lind</p>
-                <p class="text-center text-sm text-gray-500">
-                    UI//UX Designer
-                </p>
-                <div class="mt-4 flex">
-                    <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                    <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                </div>
-            </div>
-            <!-- Item -->
-            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12" data-aos="fade-up" data-aos-delay="300">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                <p class="font-bold">Kevin Mason</p>
-                <p class="text-center text-sm text-gray-500">Product Manager</p>
-                <div class="mt-4 flex">
-                    <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                    <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                </div>
-            </div>
-            <!-- Item -->
-            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12" data-aos="fade-up" data-aos-delay="400">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                <p class="font-bold">Amy Parker</p>
-                <p class="text-center text-sm text-gray-500">
-                    Webflow Developer
-                </p>
-                <div class="mt-4 flex">
-                    <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                    <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                </div>
-            </div>
-            <!-- Item -->
-            <div class="mx-auto flex w-full flex-col items-center gap-4 py-8 text-center md:px-8 md:py-4 lg:px-12" data-aos="fade-up" data-aos-delay="500">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074" alt="" class="mb-4 inline-block h-40 w-40 rounded-full object-cover" />
-                <p class="font-bold">Ben Watson</p>
-                <p class="text-center text-sm text-gray-500">CEO</p>
-                <div class="mt-4 flex">
-                    <a href="javascript:void(0);" class="mr-2 inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a947193e6cf6a_FacebookLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                    <a href="javascript:void(0);" class="inline-block h-8 w-8 max-w-full text-black">
-                        <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/6458c625291a94e916e6cf66_InstagramLogo%20(4).svg" alt="" class="inline-block" />
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
 
     </section>

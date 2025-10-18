@@ -1,7 +1,7 @@
 <x-layouts.dashboard.app title="Ubah guru & staf">
     {{-- * my style --}}
     <x-slot:myStyle>
-        
+
     </x-slot:myStyle>
     {{-- * my style --}}
 
@@ -206,7 +206,7 @@
                         <x-dashboard.input
                             label="Nama Ibu Kandung"
                             name="nama_ibu_kandung"
-                            value="{{ old('nama_iub_kandung', $guruAndStaf->nama_iub_kandung) }}"
+                            value="{{ old('nama_iub_kandung', $guruAndStaf->nama_ibu_kandung) }}"
                             placeholder="Masukan Nama Ibu Kandung"
                         />
                     </div>

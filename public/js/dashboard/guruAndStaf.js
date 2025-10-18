@@ -43,99 +43,116 @@ $(document).ready(function () {
 
             // * action show
             showData(row, function (data, modalBody) {
-
+                console.log(data);
                 const element = `
-                    <img
-                        src="${data.foto}"
-                        alt="User Photo" class="img-fluid mb-3"
-                        loading="lazy"
-                        width="300px"
-                    />
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Nama Lengkap
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.nama_lengkap}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Kelas
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.kelas}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Jenis Prestasi
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.jenis_prestasi}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Peringkat
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.peringkat}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Tahun
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.tahun}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Tingkat
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.tingkat}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Nama Penyelenggara
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.nama_penyelenggara}
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Keterangan
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.keterangan}
-                            </div>
-                        </li>
-                    </ul>
+                <div class="container-fluid p-3">
+                    <div class="row align-items-center mb-4 border-bottom pb-3">
+                        <div class="col-auto">
+                            <img
+                                src="${data.foto}"
+                                alt="Foto Profil"
+                                class="rounded-circle border"
+                                style="width: 100px; height: 100px; object-fit: cover;"
+                            >
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-0 fw-bold">${data.nama_lengkap}</h4>
+                            <p class="text-muted">NIP : ${data.nip}</p>
+                        </div>
+                    </div>
 
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Tanggal Buat
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <h5 class="mb-3 text-primary border-bottom pb-1">Informasi Kepegawaian & Identitas</h5>
+                            <div class="row g-2">
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">NUPTX/PTX:</div>
+                                    <div class="col-7">${data.nuptx} / ${data.ptx}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">SK Pengangkatan:</div>
+                                    <div class="col-7">${data.sk_pengangkatan}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Lembaga Pengangkatan:</div>
+                                    <div class="col-7">${data.lembaga_pengangkatan}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Sumber Gaji:</div>
+                                    <div class="col-7">${data.sumber_gaji}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Warga Negara/NIK:</div>
+                                    <div class="col-7">${data.status_kewarganegaraan} / ${data.nik}</div>
+                                </div>
+
                             </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                : ${data.created_at}
+                        </div>
+
+                        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+                            <h5 class="mb-3 text-primary border-bottom pb-1">Informasi Pribadi & Kontak</h5>
+
+                            <div class="row g-2">
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Agama/Status Kawin:</div>
+                                    <div class="col-7">${data.agama} / ${data.status_perkawinan}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Nama Ibu Kandung:</div>
+                                    <div class="col-7">${data.nama_ibu_kandung}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Telepon:</div>
+                                    <div class="col-7">${data.telepon}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-5 text-muted fw-bold">Email:</div>
+                                    <div class="col-7">${data.email}</div>
+                                </div>
+
                             </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="col-6 col-sm-6 col-md-4">
-                                Tanggal Perbaharui
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="mb-3 text-primary border-bottom pb-1">Informasi Alamat</h5>
+
+                            <div class="row g-2">
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-lg-2 col-4 text-muted fw-bold">Alamat:</div>
+                                    <div class="col-lg-10 col-8">${data.alamat}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-lg-2 col-4 text-muted fw-bold">RT/RW/Dusun:</div>
+                                    <div class="col-lg-10 col-8">${data.rt} / ${data.rw} / ${data.nama_dusun}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-lg-2 col-4 text-muted fw-bold">Desa/Kecamatan:</div>
+                                    <div class="col-lg-10 col-8">${data.desa_kelurahan} / ${data.kecamatan}</div>
+                                </div>
+
+                                <div class="col-12 d-flex mb-2">
+                                    <div class="col-lg-2 col-4 text-muted fw-bold">Kode Pos:</div>
+                                    <div class="col-lg-10 col-8">${data.kode_pos}</div>
+                                </div>
+
                             </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-xl-9">
-                                ${data.updated_at}
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+                </div>
                 `;
                 modalBody.innerHTML = element;
             });

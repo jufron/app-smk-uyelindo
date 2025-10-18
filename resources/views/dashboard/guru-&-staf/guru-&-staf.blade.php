@@ -93,7 +93,7 @@
     {{-- todo content ... --}}
 
     {{-- ? modal --}}
-    <x-dashboard.modal modalLabel="Detail Guru dan Staf" modalSize="lg" />
+    <x-dashboard.modal modalLabel="Detail Guru dan Staf" modalSize="xl" />
     {{-- ? modal --}}
 
     {{-- * my script --}}

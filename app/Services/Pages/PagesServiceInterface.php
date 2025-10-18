@@ -26,6 +26,8 @@ interface PagesServiceInterface
 
     public function getGaleryFotoLatest () : CursorPaginator;
 
+    public function guruDanStafLatest () : Collection;
+
     public function getPertanyaanPendaftaranLatest () : Collection;
 
     public function penerimaanPesertaDidikBaru ($value) ;
