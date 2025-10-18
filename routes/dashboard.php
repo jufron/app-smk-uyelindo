@@ -80,7 +80,7 @@ Route::resource('berita', BeritaController::class)
 // todo ------------------------------------ guru & staf -------------------------------------------------
 Route::get('guru-&-staf/fetch', [GuruDanStafController::class, 'getLatest'])->name('dashboard.guru-staf.fetch');
 Route::resource('guru-&-staf', GuruDanStafController::class)
-    ->parameters(['guru-&-staf' => 'GuruAndStaf'])
+    ->parameters(['guru-&-staf' => 'guruAndStaf'])
     ->names([
         'index'     => 'dashboard.guru-staf.index',
         'create'    => 'dashboard.guru-staf.create',

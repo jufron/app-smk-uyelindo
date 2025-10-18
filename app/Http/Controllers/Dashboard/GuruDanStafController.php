@@ -67,7 +67,7 @@ class GuruDanStafController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GuruAndStaf $guruAndStaf) : RedirectResponse
+    public function update(GuruDanStafRequest $request, GuruAndStaf $guruAndStaf) : RedirectResponse
     {
         $this->guruDanStafService->updateGuruAndStaf($request, $guruAndStaf);
         notify()->success('Berhasil Mengubah Data');

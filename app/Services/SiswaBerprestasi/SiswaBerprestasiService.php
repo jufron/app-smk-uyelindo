@@ -46,18 +46,9 @@ class SiswaBerprestasiService implements SiswaBerprestasiServiceInterface
             return view('yajra-datatable.siswa-berprestasi.action', compact('siswaBerprestasi'))->render();
         })
         ->filter( function ($query) {
-            // * search just judul
-            // $search = request('search')['value'] ?? null;
-            // if ($search !== null && $search !== '') {
-            //     // Hanya cari di data yang deskripsi-nya tidak null
-            //     $query->whereNotNull('deskripsi')
-            //         ->where('deskripsi', 'like', "%$search%");
-            // }
-
-            // if (request()->has('search')) {
-            //     $query->where('deskripsi', 'like', "%".request('search')['value']."%");
-            // }
-
+            if (request()->has('search')) {
+                $query->where('nama_lengkap', 'like', "%".request('search')['value']."%");
+            }
             // * date range
             if (request()->filled('start_date') && request()->filled('end_date')) {
                 $query->whereBetween('created_at', [request('start_date'), request('end_date')]);

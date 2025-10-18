@@ -11,7 +11,7 @@
         class="btn btn-icon btn-round btn-info"
         >
         <i class="fas fa-info-circle"></i>
-    </button>
+    </button> 
     <a href="{{ route('dashboard.guru-staf.edit', $guruAndStaf) }}" type="button" class="btn btn-icon btn-round btn-warning">
         <i class="fas fa-edit text-white"></i>
     </a>
