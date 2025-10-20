@@ -19,7 +19,7 @@
     <section class="bg-gradient-to-r from-yellow-900 to-yellow-950 h-screen flex items-center justify-center">
         <div class="text-center text-white px-4">
             <h1 class="md:mt-36 text-4xl font-extrabold sm:text-5xl md:text-6xl" data-aos="fade-up" data-aos-duration="1000">
-                SMK Uyelino Kupang
+                SMK Uyelindo Kupang
             </h1>
             <p class="mt-3 max-w-lg mx-auto text-base text-gray-200 sm:text-lg md:mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                 Selamat datang Web SMK Uyelindo Kupang – tempat di mana semangat belajar bertemu dengan keterampilan nyata.
