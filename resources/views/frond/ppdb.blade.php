@@ -671,7 +671,7 @@
                     />
                 </div>
             </div>
-            @dump($errors->all())
+            {{-- @dump($errors->all()) --}}
             <button class="mt-10 hover:shadow-form rounded-md bg-yellow-300 py-3 px-8 text-center text-base font-semibold text-white outline-none">
                 Kirim
             </button>
