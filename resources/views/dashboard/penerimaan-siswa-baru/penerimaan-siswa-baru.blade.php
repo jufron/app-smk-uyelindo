@@ -95,7 +95,7 @@
     {{-- todo content ... --}}
 
     {{-- ? modal --}}
-    <x-dashboard.modal modalLabel="Detail Siswa Baru" modalSize="lg" />
+    <x-dashboard.modal modalLabel="Detail Siswa Baru" modalSize="xl" />
     {{-- ? modal --}}
 
     {{-- * my script --}}

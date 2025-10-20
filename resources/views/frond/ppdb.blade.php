@@ -306,24 +306,26 @@
             </p>
         </div>
 
-        <form class="mx-5 md:mx-0" action="" method="POST" x-data="{ tinggalDengan: '' }">
+        <form class="mx-5 md:mx-0" action="{{ route('ppdb.store') }}" method="POST" x-data="{ tinggalDengan: '' }">
             @csrf
             <label class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
                 Biodata Siswa Baru
             </label>
             <div class="grid grid-cols-2 lg:grid-cols-12 gap-4">
-                {{-- ? nama lengkap --}}
+                {{-- ? nama_lengkap --}}
                 <div class="col-span-2 lg:col-span-4">
                     <x-frond.input
                         name="nama_lengkap"
+                        value="{{ old('nama_lengkap') }}"
                         label="Nama Lengkap"
                         placeholder="Masukan Nama Lengkap Anda"
                     />
                 </div>
-                {{-- ? nama panggilan --}}
+                {{-- ? nama_panggilan --}}
                 <div class="col-span-2 lg:col-span-3">
                     <x-frond.input
                         name="nama_panggilan"
+                        value="{{ old('nama_panggilan') }}"
                         label="Nama Panggilan"
                         placeholder="Masukan Nama Panggilan Anda"
                     />
@@ -333,15 +335,17 @@
                     <x-frond.input
                         name="email"
                         label="Email"
+                        value="{{ old('email') }}"
                         placeholder="Masukan Email Anda"
                         type="email"
                     />
                 </div>
-                {{-- ? nisn (number input) --}}
+                {{-- ? nisn --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input
                         name="nisn"
                         label="NISN"
+                        value="{{ old('nisn') }}"
                         placeholder="Masukan NISN Anda"
                         type="number"
                     />
@@ -351,114 +355,114 @@
                     <x-frond.input
                         name="tanggal_lahir"
                         label="Tanggal Lahir"
+                        value="{{ old('tanggal_lahir') }}"
                         placeholder="Masukan Tanggal Lahur Anda"
                         type="date"
                     />
                 </div>
-                {{-- ? tempat lahir --}}
+                {{-- ? tempat_lahir --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input
                         name="tempat_lahir"
+                        value="{{ old('tempat_lahir') }}"
                         label="Tempat Lahir"
                         placeholder="Masukan tempat lahir"
                     />
                 </div>
-                {{-- ? jenis kelamin (select input) --}}
+                {{-- ? jenis_kelamin --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="jenis_kelamin" label="Jenis Kelamin">
                         <option value="" disabled selected>Pilih</option>
-                        <option value="L">Laki-laki</option>
-                        <option value="P">Perempuan</option>
+                        <option value="laki-laki" @if (old('jenis_kelamin') == 'laki-laki') selected @endif>Laki-Laki</option>
+                        <option value="perempuan" @if (old('jenis_kelamin') == 'perempuan') selected @endif>Perempuan</option>
                     </x-frond.input-select>
                 </div>
                 {{-- ? agama (select input) --}}
                 <div class="col-spann-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="agama" label="Agama">
                         <option value="" disabled selected>Pilih Agama</option>
-                        <option value="islam">Islam</option>
-                        <option value="kristen">Kristen</option>
-                        <option value="katolik">Katolik</option>
-                        <option value="hindu">Hindu</option>
-                        <option value="buddha">Buddha</option>
-                        <option value="konghucu">Konghucu</option>
+                        <option value="islam" @if(old('agama') === 'islam') selected @endif>Islam</option>
+                        <option value="kristen" @if(old('agama') === 'kristen') selected @endif>Kristen</option>
+                        <option value="katolik" @if(old('agama') === 'katolik') selected @endif>Katolik</option>
+                        <option value="hindu" @if(old('agama') === 'hindu') selected @endif>Hindu</option>
+                        <option value="buddha" @if(old('agama') === 'buddha') selected @endif>Buddha</option>
+                        <option value="konghucu" @if(old('agama') === 'konghucu') selected @endif>Konghucu</option>
                     </x-frond.input-select>
                 </div>
-                {{-- ? alamat siswa --}}
+                {{-- ? alamat_siswa --}}
                 <div class="col-span-2 lg:col-span-4">
                     <x-frond.input
                         name="alamat_siswa"
+                        value="{{ old('alamat_siswa') }}"
                         label="Alamat Siswa"
                         placeholder="Masukan Alamat Rumah Anda"
                     />
                 </div>
-                {{-- ? asal sekolah --}}
+                {{-- ? alamat_sekolah_sebelumnya --}}
                 <div class="col-span-2 lg:col-span-4">
                     <x-frond.input
-                        name="alamat_siswa"
-                        label="Alamat Siswa"
+                        name="alamat_sekolah_sebelumnya"
+                        value="{{ old('alamat_sekolah_sebelumnya') }}"
+                        label="Alamat Sekolah Sebelumnya"
                         placeholder="Masukan Alamat Rumah Anda"
                     />
                 </div>
-                {{-- ? alamat sekolah asal --}}
-                <div class="col-span-2 lg:col-span-5">
-                    <x-frond.input
-                        name="alamat_sekolah_asal"
-                        label="Alamat Sekolah Asall"
-                        placeholder="Masukan Alamat Sekolah Asal"
-                    />
-                </div>
-                {{-- ? anak ke brp (select input) --}}
+                {{-- ? anak_ke --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
-                    <x-frond.input-select name="anamk_ke" label="Anak Ke">
+                    <x-frond.input-select name="anak_ke" label="Anak Ke">
                         <option value="" disabled selected>Pilih</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="1" @if(old('anak_ke') === '1') selected @endif>1</option>
+                        <option value="2" @if(old('anak_ke') === '2') selected @endif>2</option>
+                        <option value="3" @if(old('anak_ke') === '3') selected @endif>3</option>
+                        <option value="4" @if(old('anak_ke') === '4') selected @endif>4</option>
+                        <option value="5" @if(old('anak_ke') === '5') selected @endif>5</option>
+                        <option value="6" @if(old('anak_ke') === '6') selected @endif>6</option>
+                        <option value="7" @if(old('anak_ke') === '7') selected @endif>7</option>
+                        <option value="8" @if(old('anak_ke') === '8') selected @endif>8</option>
+                        <option value="9" @if(old('anak_ke') === '9') selected @endif>9</option>
+                        <option value="10" @if(old('anak_ke') === '10') selected @endif>10</option>
+                        <option value="10+" @if(old('anak_ke') === '10+') selected @endif>10+</option>
                     </x-frond.input-select>
                 </div>
                 {{-- ? status anak dalam keluarga (select input)  --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="status_anak" label="Status Anak">
                         <option value="" disabled selected>Pilih</option>
-                        <option value="kandung">Anak Kandung</option>
-                        <option value="tiri">Anak Tiri</option>
-                        <option value="angkat">Anak Angkat</option>
-                        <option value="lainya">Lainya</option>
+                        <option value="anak kandung" @if(old('status_anak') === 'anak kandung') selected @endif>Anak Kandung</option>
+                        <option value="anak angkat" @if(old('status_anak') === 'anak angkat') selected @endif>Anak Angkat</option>
+                        <option value="anak tiri" @if(old('status_anak') === 'anak tiri') selected @endif>Anak Tiri</option>
+                        <option value="lainya" @if(old('status_anak') === 'lainya') selected @endif>Lainya</option>
                     </x-frond.input-select>
                 </div>
-                {{-- ? nomor hp siswa --}}
+                {{-- ? nomor_telepon_siswa --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-3">
                     <x-frond.input
-                        name="nomor_hp_siswa"
+                        name="nomor_telepon_siswa"
+                        value="{{ old('nomor_telepon_siswa') }}"
                         label="No Hp Siswa (Whatsaap)"
                         placeholder="contoh 081..."
                         type="number"
                     />
                 </div>
-                {{-- ? jumlah saudara kandung --}}
+                {{-- ? jumlah_saudara_kandung --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-3">
                     <x-frond.input-select name="jumlah_saudara_kandung" label="Jumlah Saudara Kandung">
                         <option value="" disabled selected>Pilih</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+                        <option value="1" @if(old('jumlah_saudara_kandung') == '1') selected @endif>1</option>
+                        <option value="2" @if(old('jumlah_saudara_kandung') == '2') selected @endif>2</option>
+                        <option value="3" @if(old('jumlah_saudara_kandung') == '3') selected @endif>3</option>
+                        <option value="4" @if(old('jumlah_saudara_kandung') == '4') selected @endif>4</option>
+                        <option value="5" @if(old('jumlah_saudara_kandung') == '5') selected @endif>5</option>
+                        <option value="6" @if(old('jumlah_saudara_kandung') == '6') selected @endif>6</option>
+                        <option value="7" @if(old('jumlah_saudara_kandung') == '7') selected @endif>7</option>
+                        <option value="8" @if(old('jumlah_saudara_kandung') == '8') selected @endif>8</option>
+                        <option value="9" @if(old('jumlah_saudara_kandung') == '9') selected @endif>9</option>
+                        <option value="10" @if(old('jumlah_saudara_kandung') == '10') selected @endif>10</option>
+                        <option value="10+" @if(old('jumlah_saudara_kandung') == '10+') selected @endif>10+</option>
                     </x-frond.input-select>
                 </div>
-                {{-- ? tinggal dengan --}}
+
+                {{-- ? tinggal_dengan --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <label for="tinggal_dengan" class="mb-3 block text-base font-medium text-[#07074D]">
                         Tinggal Dengan
@@ -470,12 +474,14 @@
                         x-model="tinggalDengan"
                         >
                         <option value="" disabled selected>Pilih</option>
-                        <option value="orang_tua">Orang Tua</option>
-                        <option value="wali_murid">Wali Murid</option>
+                        <option value="orang tua" @if(old('tinggal_dengan') == 'orang tua') selected @endif>Orang Tua</option>
+                        <option value="wali murid" @if(old('tinggal_dengan') == 'wali murid') selected @endif>Wali Murid</option>
                     </select>
                 </div>
             </div>
-
+            <br>
+            <br>
+            <br>
             {{-- ? orang tua --}}
             <label
                 class="mt-10 mb-5 block text-base font-semibold text-[#07074D] sm:text-xl"
@@ -492,7 +498,7 @@
             </label>
             <div
                 class="grid grid-cols-2 lg:grid-cols-12 gap-4"
-                x-show="tinggalDengan === 'orang_tua' "
+                x-show="tinggalDengan === 'orang tua' "
                 x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
@@ -501,84 +507,90 @@
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-90"
                 >
-                {{-- ? nama lengkap ayah/wali --}}
+                {{-- ?nama_lengkap_ayah --}}
                 <div class="col-span-2 lg:col-span-4">
                     <x-frond.input
                         name="nama_lengkap_ayah"
+                        value="{{ old('nama_lengkap_ayah') }}"
                         label="Nama Lengkap Ayah"
                         placeholder="Masukan Nama Lengkap Ayah"
                     />
                 </div>
-                {{-- ? pekerjaan ayah --}}
+                {{-- ? pekerjaan_ayah --}}
                 <div class="col-span-2 lg:col-span-3">
                     <x-frond.input
                         name="pekerjaan_ayah"
+                        value="{{ old('pekerjaan_ayah') }}"
                         label="Pekerjaan Ayah"
                         placeholder="Masukan Pekerjaan Ayah"
                     />
                 </div>
-                {{-- ? pendidikan terkahir ayah --}}
+                {{-- ? pendidikan_ayah --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="pendidikan_ayah" label="Pendidikan Ayah">
                         <option value="" disabled selected>Pilih</option>
-                        <option value="SD">SD/MI</option>
-                        <option value="SMP">SMP/MTS</option>
-                        <option value="SMA">SMA/SMK/MA</option>
-                        <option value="D1">D1</option>
-                        <option value="D2">D2</option>
-                        <option value="D3">D3</option>
-                        <option value="D4">D4</option>
-                        <option value="S1">S1</option>
-                        <option value="S2">S2</option>
-                        <option value="S3">S3</option>
+                        <option value="sd" @if (old('pendidikan_ayah') == 'sd') selected @endif>SD</option>
+                        <option value="smp" @if (old('pendidikan_ayah') == 'smp') selected @endif>SMP</option>
+                        <option value="sma/smk" @if (old('pendidikan_ayah') == 'sma/smk') selected @endif>SMA/SMK</option>
+                        <option value="d1" @if (old('pendidikan_ayah') == 'd1') selected @endif>D1</option>
+                        <option value="d2" @if (old('pendidikan_ayah') == 'd2') selected @endif>D2</option>
+                        <option value="d3" @if (old('pendidikan_ayah') == 'd3') selected @endif>D3</option>
+                        <option value="d4" @if (old('pendidikan_ayah') == 'd4') selected @endif>D4</option>
+                        <option value="s1" @if (old('pendidikan_ayah') == 's1') selected @endif>S1</option>
+                        <option value="s2" @if (old('pendidikan_ayah') == 's2') selected @endif>S2</option>
+                        <option value="s3" @if (old('pendidikan_ayah') == 's3') selected @endif>S3</option>
                     </x-frond.input-select>
                 </div>
-                {{-- ? nama lengkap ibu --}}
+                {{-- ? nama_lengkap_ibu --}}
                 <div class="col-span-2 lg:col-span-4">
                     <x-frond.input
                         name="nama_lengkap_ibu"
+                        value="{{ old('nama_lengkap_ibu') }}"
                         label="Nama Lengkap Ibu"
                         placeholder="Masukan Nama Lengkap Ibu"
                     />
                 </div>
-                {{-- ? pekerjaan ibu --}}
+                {{-- ? pekerjaan_ibu --}}
                 <div class="col-span-2 lg:col-span-3">
                     <x-frond.input
                         name="pekerjaan_ibu"
+                        value="{{ old('pekerjaan_ibu') }}"
                         label="Pekerjaan Ibu"
                         placeholder="Masukan Pekerjaan Ibu"
                     />
                 </div>
-                {{-- ? pendidikan terkahir ibu --}}
+                {{-- ? pendidikan_ibu --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-2">
                     <x-frond.input-select name="pendidikan_ibu" label="Pendidikan Ibu">
                         <option value="" disabled selected>Pilih</option>
-                        <option value="SD">SD/MI</option>
-                        <option value="SMP">SMP/MTS</option>
-                        <option value="SMA">SMA/SMK/MA</option>
-                        <option value="D1">D1</option>
-                        <option value="D2">D2</option>
-                        <option value="D3">D3</option>
-                        <option value="D4">D4</option>
-                        <option value="S1">S1</option>
-                        <option value="S2">S2</option>
-                        <option value="S3">S3</option>
+                        <option value="sd" @if (old('pendidikan_ibu') == 'sd') selected @endif>SD</option>
+                        <option value="smp" @if (old('pendidikan_ibu') == 'smp') selected @endif>SMP</option>
+                        <option value="sma/smk" @if (old('pendidikan_ibu') == 'sma/smk') selected @endif>SMA/SMK</option>
+                        <option value="d1" @if (old('pendidikan_ibu') == 'd1') selected @endif>D1</option>
+                        <option value="d2" @if (old('pendidikan_ibu') == 'd2') selected @endif>D2</option>
+                        <option value="d3" @if (old('pendidikan_ibu') == 'd3') selected @endif>D3</option>
+                        <option value="d4" @if (old('pendidikan_ibu') == 'd4') selected @endif>D4</option>
+                        <option value="s1" @if (old('pendidikan_ibu') == 's1') selected @endif>S1</option>
+                        <option value="s2" @if (old('pendidikan_ibu') == 's2') selected @endif>S2</option>
+                        <option value="s3" @if (old('pendidikan_ibu') == 's3') selected @endif>S3</option>
                     </x-frond.input-select>
                 </div>
-                {{-- ? nomor hp orang tua --}}
+                {{-- ? nomor_telepon_orang_tua --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-4">
                     <x-frond.input
                         name="nomor_hp_ortu"
                         label="No Hp Orang TUa"
+                        value="{{ old('nomor_telepon_orang_tua') }}"
                         placeholder="contoh 081..."
                         type="number"
                     />
                 </div>
-                {{-- ? alamat orang tua --}}
+                {{-- ? alamat_orang_tua --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-4">
                     <x-frond.input
                         name="alamat_orang_tua"
                         label="Alamat Orang Tua"
+                        value="{{ old('alamat_orang_tua') }}"
                         placeholder="Alamat Orang Tua"
                     />
                 </div>
@@ -600,7 +612,7 @@
             </label>
             <div
                 class="grid grid-cols-2 lg:grid-cols-12 gap-4"
-                x-show="tinggalDengan === 'wali_murid'"
+                x-show="tinggalDengan === 'wali murid'"
                 x-cloak
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 scale-90"
@@ -609,53 +621,57 @@
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-90"
                 >
-                {{-- ? nama lengkap Wali siswa --}}
+                {{-- ? nama_lengkap_wali_murid --}}
                 <div class="col-span-2 lg:col-span-4">
                     <x-frond.input
-                        name="nama_lengkap_wali"
+                        name="nama_lengkap_wali_murid"
                         label="Nama Lengkap Wali Siswa"
+                        value="{{ old('nama_lengkap_wali_murid') }}"
                         placeholder="Masukan Nama Lengkap Wali Siswa"
                     />
                 </div>
-                {{-- ? pekerjaan wali siswa --}}
+                {{-- ? pekerjaan_wali_murid --}}
                 <div class="col-span-2 lg:col-span-3">
                     <x-frond.input
-                        name="pekerjaan_wali"
+                        name="pekerjaan_wali_murid"
                         label="Pekerjaan Wali Siswa"
+                        value="{{ old('pekerjaan_wali_murid') }}"
                         placeholder="Masukan Pekerjaan Wali Siswa"
                     />
                 </div>
-                {{-- ? hubungan Dengan Wali siswa --}}
+                {{-- ? hubungan_dengan_siswa --}}
                 <div class="col-span-2 lg:col-span-3">
-                    <x-frond.input-select name="status_anak" label="Hubungan Dengan Siswa">
+                    <x-frond.input-select name="hubungan_dengan_siswa" label="Hubungan Dengan Siswa">
                         <option value="" disabled selected>Pilih Hubungan</option>
-                        <option value="kakek">Kakek</option>
-                        <option value="nenek">Nenek</option>
-                        <option value="paman">Paman</option>
-                        <option value="bibi">Bibi</option>
-                        <option value="saudara">Saudara</option>
-                        <option value="lainnya">Lainnya</option>
+                        <option value="kakek" @if (old('hubungan_dengan_siswa') == 'kakek') selected @endif>Kakek</option>
+                        <option value="nenek" @if (old('hubungan_dengan_siswa') == 'nenek') selected @endif>Nenek</option>
+                        <option value="paman" @if (old('hubungan_dengan_siswa') == 'paman') selected @endif>Paman</option>
+                        <option value="bibi" @if (old('hubungan_dengan_siswa') == 'bibi') selected @endif>Bibi</option>
+                        <option value="saudara" @if (old('hubungan_dengan_siswa') == 'saudara') selected @endif>Saudara</option>
+                        <option value="lainya" @if (old('hubungan_dengan_siswa') == 'lainya') selected @endif>Lainya</option>
                     </x-frond.input-select>
                 </div>
-                {{-- ? alamat wali siswa --}}
+                {{-- ? alamat_wali_siswa --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-4">
                     <x-frond.input
                         name="alamat_wali_siswa"
                         label="Alamat Wali Siswa"
+                        value="{{ old('alamat_wali_siswa') }}"
                         placeholder="Alamat Wali Siswa"
                     />
                 </div>
-                {{-- ? nomor hp wali siswa --}}
+                {{-- ? nomor_hp_wali --}}
                 <div class="col-span-2 sm:col-span-1 lg:col-span-4">
                     <x-frond.input
                         name="nomor_hp_wali"
                         label="No Hp Wali"
+                        value="{{ old('nomor_hp_wali') }}"
                         placeholder="contoh 081..."
                         type="number"
                     />
                 </div>
             </div>
-
+            @dump($errors->all())
             <button class="mt-10 hover:shadow-form rounded-md bg-yellow-300 py-3 px-8 text-center text-base font-semibold text-white outline-none">
                 Kirim
             </button>

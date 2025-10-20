@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\DateFormatCreatedAtAndUpdatedAt;
 use Illuminate\Database\Eloquent\Model;
 
 class DaftarSiswaBaru extends Model
 {
+    use DateFormatCreatedAtAndUpdatedAt;
+
     protected $table = 'daftar_siswa_baru';
 
     protected $fillable = [
@@ -26,7 +29,7 @@ class DaftarSiswaBaru extends Model
         'tinggal_dengan',
         'nama_lengkap_wali_murid',
         'pekerjaan_wali_murid',
-        'hubugan_dengan_siswa',
+        'hubungan_dengan_siswa',
         'alamat_wali_siswa',
         'nomor_hp_wali',
         'nama_lengkap_ayah',

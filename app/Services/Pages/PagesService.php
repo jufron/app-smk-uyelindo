@@ -4,13 +4,14 @@ namespace App\Services\Pages;
 
 use App\Models\Berita;
 use App\Models\Galeri;
-use App\Models\GuruAndStaf;
 use App\Models\Testimoni;
+use App\Models\GuruAndStaf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Models\DaftarSiswaBaru;
+use App\Models\SiswaBerprestasi;
 use App\Models\PengaturanAplikasi;
 use App\Models\PertanyaanPendaftaran;
-use App\Models\SiswaBerprestasi;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Pagination\CursorPaginator;
 use Illuminate\Database\Eloquent\Collection;
@@ -190,4 +191,46 @@ class PagesService implements PagesServiceInterface
                     ->cursorPaginate(12);
         });
     }
+
+    public function createPpdb (Request $request) : void
+    {
+        $data = $request->only([
+            'nama_lengkap',
+            'nama_panggilan',
+            'email',
+            'nisn',
+            'tanggal_lahir',
+            'tempat_lahir',
+            'jenis_kelamin',
+            'agama',
+            'alamat_siswa',
+            'alamat_sekolah_sebelumnya',
+            'anak_ke',
+            'status_anak',
+            'nomor_telepon_siswa',
+            'jumlah_saudara_kandung',
+            'tinggal_dengan',
+            'nama_lengkap_wali_murid',
+            'pekerjaan_wali_murid',
+            'hubungan_dengan_siswa',
+            'alamat_wali_siswa',
+            'nomor_hp_wali',
+            'nama_lengkap_ayah',
+            'pekerjaan_ayah',
+            'pendidikan_ayah',
+            'nama_lengkap_ibu',
+            'pekerjaan_ibu',
+            'pendidikan_ibu',
+            'nomor_telepon_orang_tua',
+            'alamat_orang_tua'
+        ]);
+
+        // todo jika nanti ada foto untuk para pendaftar siswa baru cukup gunakan ini
+        // if ($request->hasFile('foto')) {
+        //     $data['foto'] = $request->file('foto')->store('guru-and-staf', 'public');
+        // }
+
+        DaftarSiswaBaru::create($data);
+    }
+
 }

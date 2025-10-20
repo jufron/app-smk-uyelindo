@@ -20,6 +20,7 @@ Route::controller(PagesController::class)->group( function () {
     Route::post('testimoni/create', 'storeTestimoni')->name('testimoni.store');
     Route::get('siswa-prestasi', 'siswaPrestasi')->name('siswa-prestasi');
     Route::get('ppdbb', 'ppdb')->name('ppdb');
+    Route::post('ppdbb', 'storePpdb')->name('ppdb.store');
     Route::get('kontak', 'kontak')->name('kontak');
 });
 

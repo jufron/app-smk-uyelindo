@@ -13,6 +13,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\TestimoniRequest;
 use App\Services\Pages\PagesServiceInterface;
+use App\Http\Requests\PendaftaranSiswaBaruRequest;
 
 class PagesController extends Controller
 {
@@ -130,6 +131,12 @@ class PagesController extends Controller
             'tanggal_pendaftaran_gelombang_3_awal'  => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_3_awal'),
             'tanggal_pendaftaran_gelombang_3_akhir' => $this->pagesService->getPengaturanDateWhere('tanggal_pendaftaran_gelombang_3_akhir'),
         ]);
+    }
+
+    public function storePpdb (PendaftaranSiswaBaruRequest $request)
+    {
+        $this->pagesService->createPpdb($request);
+        return redirect()->back()->with('success', 'Selamat Anda Berhiasl terdaftar');
     }
 
     public function kontak () : View

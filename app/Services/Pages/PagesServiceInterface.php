@@ -33,4 +33,6 @@ interface PagesServiceInterface
     public function penerimaanPesertaDidikBaru ($value) ;
 
     public function getSiswaBerprestasiLatest () : CursorPaginator;
+
+    public function createPpdb (Request $request) :void;
 }
