@@ -136,6 +136,7 @@ class PagesController extends Controller
     public function storePpdb (PendaftaranSiswaBaruRequest $request)
     {
         $this->pagesService->createPpdb($request);
+        $this->pagesService->createPdfppdb($request);
         return redirect()->back()->with('success', 'Selamat Anda Berhiasl terdaftar');
     }
 

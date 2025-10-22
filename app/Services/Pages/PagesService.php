@@ -8,6 +8,7 @@ use App\Models\Testimoni;
 use App\Models\GuruAndStaf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\DaftarSiswaBaru;
 use App\Models\SiswaBerprestasi;
 use App\Models\PengaturanAplikasi;
@@ -244,4 +245,23 @@ class PagesService implements PagesServiceInterface
         DaftarSiswaBaru::create($data);
     }
 
+    public function createPdfppdb (Request $request)
+    {
+        $data = [
+            'nama_lengkap'          => $request->nama_lengkap,
+            'nama_panggila'         => $request->nama_panggilan,
+            'email'                 => $request->email,
+            'nisn'                  => $request->nisn,
+            'status'                => "terdaftar",
+            'no_pendaftaran'        => $request->nisn . time(),
+            'tanggal_daftar'        => now()->translatedFormat('d F Y H:i'),
+        ];
+
+        // Buat PDF dari view
+        $pdf = Pdf::loadView('dom-pdf.bukti-pendaftran', $data);
+        // Nama file bukti pendaftaran
+        $filename = 'bukti-pendaftaran-'. $data['nama_lengkap']  . $data['no_pendaftaran'] . '.pdf';
+
+        return $pdf->download($filename);
+    }
 }

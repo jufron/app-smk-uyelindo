@@ -382,7 +382,7 @@
                     <x-frond.input-select name="agama" label="Agama">
                         <option value="" disabled selected>Pilih Agama</option>
                         <option value="islam" @if(old('agama') === 'islam') selected @endif>Islam</option>
-                        <option value="kristen" @if(old('agama') === 'kristen') selected @endif>Kristen</option>
+                        <option value="protestan" @if (old('agama') == 'protestan') selected @endif>Protestan</option>
                         <option value="katolik" @if(old('agama') === 'katolik') selected @endif>Katolik</option>
                         <option value="hindu" @if(old('agama') === 'hindu') selected @endif>Hindu</option>
                         <option value="buddha" @if(old('agama') === 'buddha') selected @endif>Buddha</option>
@@ -671,7 +671,7 @@
                     />
                 </div>
             </div>
-            {{-- @dump($errors->all()) --}}
+            @dump($errors->all())
             <button class="mt-10 hover:shadow-form rounded-md bg-yellow-300 py-3 px-8 text-center text-base font-semibold text-white outline-none">
                 Kirim
             </button>
