@@ -250,7 +250,7 @@
                 </p>
             </div>
             <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
-                <div class="rounded-md bg-white p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                {{-- <div class="rounded-md bg-white p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                     <p class="mb-3 text-2xl font-semibold">Biaya Formulir</p>
                     <p class="text-3xl font-bold text-yellow-400 mb-4">Rp. 100.000</p>
                     <ul class="text-sm text-gray-500 space-y-2">
@@ -267,10 +267,10 @@
                         <li>✓ Fasilitas Sekolah</li>
                         <li>✓ Pengembangan Sarana</li>
                     </ul>
-                </div>
+                </div> --}}
                 <div class="rounded-md bg-white p-8 md:p-10" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <p class="mb-3 text-2xl font-semibold">SPP Bulanan</p>
-                    <p class="text-3xl font-bold text-yellow-400 mb-4">Rp. 300.000</p>
+                    <p class="text-3xl font-bold text-yellow-400 mb-4">Rp. 200.000</p>
                     <ul class="text-sm text-gray-500 space-y-2">
                         <li>✓ Biaya Operasional</li>
                         <li>✓ Kegiatan Pembelajaran</li>

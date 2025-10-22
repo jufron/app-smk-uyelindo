@@ -70,55 +70,107 @@
             </p>
         </div>
         <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-                    <div class="space-y-2">
-                        <h3 class="font-bold">Fasilitas Modern</h3>
-                        <p class="text-sm text-muted-foreground">Dilengkapi dengan laboratorium komputer, bengkel praktik, dan perpustakaan digital untuk mendukung pembelajaran</p>
-                    </div>
+            <!-- 1 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Ruang Guru</h3>
+                <p class="text-sm text-muted-foreground">Tempat guru beristirahat, berdiskusi, dan mempersiapkan materi pembelajaran dengan suasana nyaman.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-                    <div class="space-y-2">
-                        <h3 class="font-bold">Tenaga Pengajar Profesional</h3>
-                        <p class="text-sm text-muted-foreground">Guru-guru berpengalaman dan tersertifikasi dalam bidangnya masing-masing</p>
-                    </div>
+            </div>
+            <!-- 2 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="150">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Ruang Kepala Sekolah</h3>
+                <p class="text-sm text-muted-foreground">Kantor utama tempat pimpinan sekolah mengelola kegiatan akademik dan administrasi.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-                    <div class="space-y-2">
-                        <h3 class="font-bold">Kerjasama Industri</h3>
-                        <p class="text-sm text-muted-foreground">Menjalin kerjasama dengan berbagai perusahaan untuk program magang dan penempatan kerja</p>
-                    </div>
+            </div>
+            <!-- 3 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Ruang Wakil Kepala Sekolah</h3>
+                <p class="text-sm text-muted-foreground">Tempat koordinasi untuk bidang kurikulum, kesiswaan, dan sarana prasarana agar kegiatan sekolah berjalan optimal.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-                    <div class="space-y-2">
-                        <h3 class="font-bold">Program Sertifikasi</h3>
-                        <p class="text-sm text-muted-foreground">Menyediakan program sertifikasi kompetensi yang diakui secara nasional dan internasional</p>
-                    </div>
+            </div>
+            <!-- 4 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="250">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Ruang Tata Usaha</h3>
+                <p class="text-sm text-muted-foreground">Melayani kebutuhan administrasi siswa, guru, dan orang tua dengan sistem informasi yang terintegrasi.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
-                    <div class="space-y-2">
-                        <h3 class="font-bold">Ekstrakurikuler Beragam</h3>
-                        <p class="text-sm text-muted-foreground">Menyediakan berbagai kegiatan ekstrakurikuler untuk mengembangkan bakat dan minat siswa</p>
-                    </div>
+            </div>
+            <!-- 5 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Perpustakaan</h3>
+                <p class="text-sm text-muted-foreground">Koleksi buku cetak dan digital untuk menunjang kegiatan literasi dan riset siswa.</p>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            </div>
+            <!-- 6 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="350">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">UKS</h3>
+                <p class="text-sm text-muted-foreground">Unit Kesehatan Sekolah dengan fasilitas medis ringan untuk menjaga kesehatan peserta didik.</p>
+                </div>
+            </div>
+            </div>
+            <!-- 7 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">WC & Kamar Mandi</h3>
+                <p class="text-sm text-muted-foreground">Tersedia toilet bersih dan terpisah antara guru dan siswa untuk menjaga kenyamanan bersama.</p>
+                </div>
+            </div>
+            </div>
+            <!-- 8 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="450">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Area Internet & Hotspot</h3>
+                <p class="text-sm text-muted-foreground">Akses Wi-Fi gratis di seluruh lingkungan sekolah untuk menunjang kegiatan pembelajaran digital.</p>
+                </div>
+            </div>
+            </div>
+            <!-- 9 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Gedung Sekolah</h3>
+                <p class="text-sm text-muted-foreground">Bangunan kokoh dan modern dengan ruang kelas ber-AC serta fasilitas pendukung lengkap.</p>
+                </div>
+            </div>
+            </div>
+            <!-- 10 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="550">
+            <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+                <div class="space-y-2">
+                <h3 class="font-bold">Laboratorium RPL & TKJ</h3>
+                <p class="text-sm text-muted-foreground">Lab komputer dengan perangkat terbaru untuk praktik pemrograman, jaringan, dan teknologi informasi.</p>
+                </div>
+            </div>
+            </div>
+            <!-- 11 -->
+            <div class="relative overflow-hidden rounded-lg border bg-gray-100/50 p-2" data-aos="fade-up" data-aos-delay="600">
                 <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
                     <div class="space-y-2">
-                        <h3 class="font-bold">Lingkungan Kondusif</h3>
-                        <p class="text-sm text-muted-foreground">Suasana belajar yang nyaman dan aman dengan fasilitas pendukung yang lengkap</p>
+                        <h3 class="font-bold">Lapangan Olahraga</h3>
+                        <p class="text-sm text-muted-foreground">Fasilitas olahraga multifungsi untuk kegiatan jasmani, ekstrakurikuler, dan kebersamaan siswa.</p>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
     {{-- ? keunggulan --}}
 
