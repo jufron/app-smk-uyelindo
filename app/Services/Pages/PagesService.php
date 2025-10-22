@@ -29,7 +29,12 @@ class PagesService implements PagesServiceInterface
 
     public function getPengaturanWhere($query): ?string
     {
-        return $this->cachePengaturanAplikasi()->where('key', $query)->first()->value;
+        return optional($this->cachePengaturanAplikasi()->where('key', $query)->first())->value;
+    }
+
+    private function toCarbon(?string $value): ?\Carbon\Carbon
+    {
+        return !empty($value) ? \Carbon\Carbon::parse($value) : null;
     }
 
     public function getPengaturanDateWhere ($query) : ?string
@@ -130,26 +135,35 @@ class PagesService implements PagesServiceInterface
         });
     }
 
-    public function penerimaanPesertaDidikBaru ($value)
+    public function penerimaanPesertaDidikBaru($value)
     {
-        // * pendaftaran
-        $now = now();
+        $now = Carbon::now();
 
-        $tanggal_pendaftaran_gelombang_1_awal = $this->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_awal');
-        $tanggal_pendaftaran_gelombang_1_akhir = $this->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_akhir');
-        $tanggal_pendaftaran_gelombang_2_awal = $this->getPengaturanWhere('tanggal_pendaftaran_gelombang_2_awal');
-        $tanggal_pendaftaran_gelombang_2_akhir = $this->getPengaturanWhere('tanggal_pendaftaran_gelombang_2_akhir');
-        $tanggal_pendaftaran_gelombang_3_awal = $this->getPengaturanWhere('tanggal_pendaftaran_gelombang_3_awal');
-        $tanggal_pendaftaran_gelombang_3_akhir = $this->getPengaturanWhere('tanggal_pendaftaran_gelombang_3_akhir');
+        // Ambil data pengaturan dan ubah ke Carbon jika ada
+        $tanggal_pendaftaran_gelombang_1_awal  = $this->toCarbon($this->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_awal'));
+        $tanggal_pendaftaran_gelombang_1_akhir = $this->toCarbon($this->getPengaturanWhere('tanggal_pendaftaran_gelombang_1_akhir'));
+        $tanggal_pendaftaran_gelombang_2_awal  = $this->toCarbon($this->getPengaturanWhere('tanggal_pendaftaran_gelombang_2_awal'));
+        $tanggal_pendaftaran_gelombang_2_akhir = $this->toCarbon($this->getPengaturanWhere('tanggal_pendaftaran_gelombang_2_akhir'));
+        $tanggal_pendaftaran_gelombang_3_awal  = $this->toCarbon($this->getPengaturanWhere('tanggal_pendaftaran_gelombang_3_awal'));
+        $tanggal_pendaftaran_gelombang_3_akhir = $this->toCarbon($this->getPengaturanWhere('tanggal_pendaftaran_gelombang_3_akhir'));
 
-        $gelombang1 = $now->between($tanggal_pendaftaran_gelombang_1_awal, $tanggal_pendaftaran_gelombang_1_akhir);
-        $gelombang2 = $now->between($tanggal_pendaftaran_gelombang_2_awal, $tanggal_pendaftaran_gelombang_2_akhir);
-        $gelombang3 = $now->between($tanggal_pendaftaran_gelombang_3_awal, $tanggal_pendaftaran_gelombang_3_akhir);
+        // Cek apakah tanggal valid sebelum memanggil between()
+        $gelombang1 = $tanggal_pendaftaran_gelombang_1_awal && $tanggal_pendaftaran_gelombang_1_akhir
+            ? $now->between($tanggal_pendaftaran_gelombang_1_awal, $tanggal_pendaftaran_gelombang_1_akhir)
+            : false;
 
-        // ? bool cek kapan dibuka pendaftaran
+        $gelombang2 = $tanggal_pendaftaran_gelombang_2_awal && $tanggal_pendaftaran_gelombang_2_akhir
+            ? $now->between($tanggal_pendaftaran_gelombang_2_awal, $tanggal_pendaftaran_gelombang_2_akhir)
+            : false;
+
+        $gelombang3 = $tanggal_pendaftaran_gelombang_3_awal && $tanggal_pendaftaran_gelombang_3_akhir
+            ? $now->between($tanggal_pendaftaran_gelombang_3_awal, $tanggal_pendaftaran_gelombang_3_akhir)
+            : false;
+
+        // Bool: apakah pendaftaran dibuka
         $pendaftaran_dibuka = $gelombang1 || $gelombang2 || $gelombang3;
 
-        // ? cek sekarang aktif di gelombang pendaftaran berapa
+        // Cek gelombang aktif
         $gelombang_aktif = null;
         if ($gelombang1) {
             $gelombang_aktif = 1;
@@ -159,28 +173,25 @@ class PagesService implements PagesServiceInterface
             $gelombang_aktif = 3;
         }
 
-        // ? untuk coundDown hitung mundur berapa hari, berapa jam, berapa, menit, dan berapa detik
+        // Cari tanggal pendaftaran berikutnya (yang belum lewat)
         $tanggal_berikutnya = collect([
             $tanggal_pendaftaran_gelombang_1_awal,
             $tanggal_pendaftaran_gelombang_2_awal,
-            $tanggal_pendaftaran_gelombang_3_awal
-        ])->filter(function($tanggal) use ($now) {
-            return $now->lt($tanggal); // tanggal di masa depan
-        })->sort()->first(); // ambil yang paling dekat
+            $tanggal_pendaftaran_gelombang_3_awal,
+        ])
+            ->filter(fn($tanggal) => $tanggal && $now->lt($tanggal)) // hanya yang valid dan di masa depan
+            ->sort()
+            ->first();
 
+        // Kumpulkan semua hasil
         $allData = [
-            'pendaftaran_dibuka'    => $pendaftaran_dibuka,
-            'gelombang_aktif'       => $gelombang_aktif,
-            'tanggal_berikutnya'    => $tanggal_berikutnya
+            'pendaftaran_dibuka' => $pendaftaran_dibuka,
+            'gelombang_aktif'    => $gelombang_aktif,
+            'tanggal_berikutnya' => $tanggal_berikutnya,
         ];
 
-        foreach ($allData as $item) {
-            if ($value === $item) {
-                return $item;
-            }
-        }
-
-        return null;
+        // Kembalikan nilai yang diminta jika cocok
+        return $allData[$value] ?? null;
     }
 
     public function getSiswaBerprestasiLatest () : CursorPaginator
