@@ -23,6 +23,7 @@
                 </li>
 
                 {{-- ? aplikasi --}}
+                @role('superadmin')
                 <li @class([
                     'nav-item',
                     'active' => request()->routeIs('dashboard.pengaturan-aplikasi.index')
@@ -32,8 +33,10 @@
                         <p>Pengaturan Aplikasi</p>
                     </a>
                 </li>
+                @endrole
 
                 {{-- ? galeri foto --}}
+                @role('superadmin')
                     <li @class([
                         'nav-item',
                         'active' => request()->routeIs('dashboard.galery-foto.index')
@@ -43,8 +46,10 @@
                         <p>Galeri Foto</p>
                     </a>
                 </li>
+                @endrole
 
                 {{-- ? manajement berita --}}
+                @if(auth()->user()->hasRole('superadmin') || auth()->user()->hasRole('kesiswaan'))
                 <x-dashboard.linkMenu-dropdown
                     id="manajement-berita"
                     title="Manajement Berita"
@@ -77,12 +82,14 @@
                         ],
                     ]"
                 />
+                @endif
 
                 <li class="nav-section">
                     <h4 class="text-section">Akademik</h4>
                 </li>
 
                 {{-- ? akademik --}}
+                @role('superadmin')
                 <x-dashboard.linkMenu-dropdown
                     id="akademik"
                     title="Akademik"
@@ -127,12 +134,36 @@
                         ]
                     ]"
                 />
+                @endrole
+                @role('kesiswaan')
+                <x-dashboard.linkMenu-dropdown
+                    id="akademik"
+                    title="Akademik"
+                    :routes="[
+                        'dashboard.testimoni.index',
+                        'dashboard.testimoni.create',
+                        'dashboard.testimoni.edit',
+                    ]"
+                    :items="[
+                        [
+                            'label' => 'Testimoni',
+                            'route' => 'dashboard.testimoni.index',
+                            'routes' => [
+                                'dashboard.testimoni.index',
+                                'dashboard.testimoni.create',
+                                'dashboard.testimoni.edit'
+                            ]
+                        ],
+                    ]"
+                />
+                @endrole
 
                 <li class="nav-section">
                     <h4 class="text-section">Peserta Didik Baru</h4>
                 </li>
 
                 {{-- ? ppdb --}}
+                @role('superadmin')
                 <x-dashboard.linkMenu-dropdown
                     id="ppdb"
                     title="PPDB"
@@ -165,7 +196,7 @@
                         ],
                     ]"
                 />
-
+                @endrole
             </ul>
         </div>
     </div>

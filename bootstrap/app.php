@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
         then: function () {
             Route::prefix('dashboard')-> middleware('web', 'auth')->group( function () {
-                Route::middleware('role:superadmin')->group([
+                Route::middleware('role:superadmin|kesiswaan')->group([
                     __DIR__ . '/../routes/dashboard.php',
                     // __DIR__ . '/../routes/dashboard.php',
                 ]);

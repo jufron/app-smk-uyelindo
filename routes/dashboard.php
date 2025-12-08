@@ -24,7 +24,7 @@ Route::get('/', DashboardController::class)->name('dashboard');
 // });
 
 // todo ------------------------------------ pengaturan aplikasi -------------------------------------------------
-Route::prefix('pengaturan-aplikasi')->controller(PengaturanAplikasiController::class)->group(function () {
+Route::prefix('pengaturan-aplikasi')->middleware('role:superadmin')->controller(PengaturanAplikasiController::class)->group(function () {
     Route::get('/', 'index')->name('dashboard.pengaturan-aplikasi.index');
     Route::get('/umum', 'createUmum')->name('dashboard.pengaturan-aplikasi-umum.create');
     Route::get('/kontak', 'createKontak')->name('dashboard.pengaturan-aplikasi-kontak.create');
@@ -37,7 +37,7 @@ Route::prefix('pengaturan-aplikasi')->controller(PengaturanAplikasiController::c
 
 
 // todo ------------------------------------ galery foto -------------------------------------------------
-Route::get('galery-foto/fetch', [GaleriFotoController::class, 'getLatest'])->name('dashboard.galery-foto.fetch');
+Route::get('galery-foto/fetch', [GaleriFotoController::class, 'getLatest'])->middleware('role:superadmin')->name('dashboard.galery-foto.fetch');
 Route::resource('galery-foto', GaleriFotoController::class)
     ->parameters(['galery-foto' => 'galeri'])
     ->names([
@@ -52,6 +52,7 @@ Route::resource('galery-foto', GaleriFotoController::class)
 
 // todo ------------------------------------ kategory -------------------------------------------------
 Route::resource('kategory', KategoryController::class)
+    ->middleware('role:superadmin|kesiswaan')
     ->names([
         'index'     => 'dashboard.kategory.index',
         'create'    => 'dashboard.kategory.create',
@@ -64,84 +65,95 @@ Route::resource('kategory', KategoryController::class)
 
 
 // todo ------------------------------------ berita -------------------------------------------------
-Route::get('berita/fetch', [BeritaController::class, 'getLatest'])->name('dashboard.berita.fetch');
-Route::resource('berita', BeritaController::class)
-    ->parameters(['berita' => 'berita'])
-    ->names([
-        'index'     => 'dashboard.berita.index',
-        'create'    => 'dashboard.berita.create',
-        'store'     => 'dashboard.berita.store',
-        'show'      => 'dashboard.berita.show',
-        'edit'      => 'dashboard.berita.edit',
-        'update'    => 'dashboard.berita.update',
-        'destroy'   => 'dashboard.berita.destroy',
-    ]);
+Route::middleware('role:superadmin|kesiswaan')->group( function () {
+    Route::get('berita/fetch', [BeritaController::class, 'getLatest'])->name('dashboard.berita.fetch');
+    Route::resource('berita', BeritaController::class)
+        ->parameters(['berita' => 'berita'])
+        ->names([
+            'index'     => 'dashboard.berita.index',
+            'create'    => 'dashboard.berita.create',
+            'store'     => 'dashboard.berita.store',
+            'show'      => 'dashboard.berita.show',
+            'edit'      => 'dashboard.berita.edit',
+            'update'    => 'dashboard.berita.update',
+            'destroy'   => 'dashboard.berita.destroy',
+        ]);
+});
 
 // todo ------------------------------------ guru & staf -------------------------------------------------
-Route::get('guru-&-staf/fetch', [GuruDanStafController::class, 'getLatest'])->name('dashboard.guru-staf.fetch');
-Route::resource('guru-&-staf', GuruDanStafController::class)
-    ->parameters(['guru-&-staf' => 'guruAndStaf'])
-    ->names([
-        'index'     => 'dashboard.guru-staf.index',
-        'create'    => 'dashboard.guru-staf.create',
-        'store'     => 'dashboard.guru-staf.store',
-        'show'      => 'dashboard.guru-staf.show',
-        'edit'      => 'dashboard.guru-staf.edit',
-        'update'    => 'dashboard.guru-staf.update',
-        'destroy'   => 'dashboard.guru-staf.destroy',
-    ]);
+Route::middleware('role:superadmin')->group( function () {
+    Route::get('guru-&-staf/fetch', [GuruDanStafController::class, 'getLatest'])->name('dashboard.guru-staf.fetch');
+    Route::resource('guru-&-staf', GuruDanStafController::class)
+        ->parameters(['guru-&-staf' => 'guruAndStaf'])
+        ->names([
+            'index'     => 'dashboard.guru-staf.index',
+            'create'    => 'dashboard.guru-staf.create',
+            'store'     => 'dashboard.guru-staf.store',
+            'show'      => 'dashboard.guru-staf.show',
+            'edit'      => 'dashboard.guru-staf.edit',
+            'update'    => 'dashboard.guru-staf.update',
+            'destroy'   => 'dashboard.guru-staf.destroy',
+        ]);
+});
 
 // todo ------------------------------------ testimoni -------------------------------------------------
-Route::get('testimoni/fetch', [TestimoniController::class, 'getLatest'])->name('dashboard.testimoni.fetch');
-Route::resource('testimoni', TestimoniController::class)
-    ->names([
-        'index'     => 'dashboard.testimoni.index',
-        'create'    => 'dashboard.testimoni.create',
-        'store'     => 'dashboard.testimoni.store',
-        'show'      => 'dashboard.testimoni.show',
-        'edit'      => 'dashboard.testimoni.edit',
-        'update'    => 'dashboard.testimoni.update',
-        'destroy'   => 'dashboard.testimoni.destroy'
-    ]);
+Route::middleware('role:superadmin|kesiswaan')->group( function () {
+    Route::get('testimoni/fetch', [TestimoniController::class, 'getLatest'])->name('dashboard.testimoni.fetch');
+    Route::resource('testimoni', TestimoniController::class)
+        ->names([
+            'index'     => 'dashboard.testimoni.index',
+            'create'    => 'dashboard.testimoni.create',
+            'store'     => 'dashboard.testimoni.store',
+            'show'      => 'dashboard.testimoni.show',
+            'edit'      => 'dashboard.testimoni.edit',
+            'update'    => 'dashboard.testimoni.update',
+            'destroy'   => 'dashboard.testimoni.destroy'
+        ]);
+});
 
 // todo ------------------------------------ siswa berprestasi -------------------------------------------------
-Route::get('siswa-berprestasi/fetch', [SiswaBerprestasiController::class, 'getLatest'])->name('dashboard.siswa-berprestasi.fetch');
-Route::resource('siswa-berprestasi', SiswaBerprestasiController::class)
-    ->parameters(['siswa-berprestasi' => 'siswaBerprestasi'])
-    ->names([
-        'index'     => 'dashboard.siswa-berprestasi.index',
-        'create'    => 'dashboard.siswa-berprestasi.create',
-        'store'     => 'dashboard.siswa-berprestasi.store',
-        'show'      => 'dashboard.siswa-berprestasi.show',
-        'edit'      => 'dashboard.siswa-berprestasi.edit',
-        'update'    => 'dashboard.siswa-berprestasi.update',
-        'destroy'   => 'dashboard.siswa-berprestasi.destroy'
-    ]);
+Route::middleware('role:superadmin')->group( function () {
+    Route::get('siswa-berprestasi/fetch', [SiswaBerprestasiController::class, 'getLatest'])->name('dashboard.siswa-berprestasi.fetch');
+    Route::resource('siswa-berprestasi', SiswaBerprestasiController::class)
+        ->parameters(['siswa-berprestasi' => 'siswaBerprestasi'])
+        ->names([
+            'index'     => 'dashboard.siswa-berprestasi.index',
+            'create'    => 'dashboard.siswa-berprestasi.create',
+            'store'     => 'dashboard.siswa-berprestasi.store',
+            'show'      => 'dashboard.siswa-berprestasi.show',
+            'edit'      => 'dashboard.siswa-berprestasi.edit',
+            'update'    => 'dashboard.siswa-berprestasi.update',
+            'destroy'   => 'dashboard.siswa-berprestasi.destroy'
+        ]);
+});
 
 // todo ------------------------------------ PPDB -------------------------------------------------
-Route::get('penerimaan-peserta-didik-baru/fetch', [PenerimaanSiswaBaruController::class, 'getLatest'])->name('dashboard.penerimaan-peserta-didik-baru.fetch');
-Route::resource('penerimaan-peserta-didik-baru', PenerimaanSiswaBaruController::class)
-    ->parameters(['penerimaan-peserta-didik-baru' => 'daftarSiswaBaru'])
-    ->names([
-        'index'     => 'dashboard.penerimaan-peserta-didik-baru.index',
-        'create'    => 'dashboard.penerimaan-peserta-didik-baru.create',
-        'store'     => 'dashboard.penerimaan-peserta-didik-baru.store',
-        'show'      => 'dashboard.penerimaan-peserta-didik-baru.show',
-        'edit'      => 'dashboard.penerimaan-peserta-didik-baru.edit',
-        'update'    => 'dashboard.penerimaan-peserta-didik-baru.update',
-        'destroy'   => 'dashboard.penerimaan-peserta-didik-baru.destroy'
-    ]);
+Route::middleware('role:superadmin')->group( function () {
+    Route::get('penerimaan-peserta-didik-baru/fetch', [PenerimaanSiswaBaruController::class, 'getLatest'])->name('dashboard.penerimaan-peserta-didik-baru.fetch');
+    Route::resource('penerimaan-peserta-didik-baru', PenerimaanSiswaBaruController::class)
+        ->parameters(['penerimaan-peserta-didik-baru' => 'daftarSiswaBaru'])
+        ->names([
+            'index'     => 'dashboard.penerimaan-peserta-didik-baru.index',
+            'create'    => 'dashboard.penerimaan-peserta-didik-baru.create',
+            'store'     => 'dashboard.penerimaan-peserta-didik-baru.store',
+            'show'      => 'dashboard.penerimaan-peserta-didik-baru.show',
+            'edit'      => 'dashboard.penerimaan-peserta-didik-baru.edit',
+            'update'    => 'dashboard.penerimaan-peserta-didik-baru.update',
+            'destroy'   => 'dashboard.penerimaan-peserta-didik-baru.destroy'
+        ]);
+});
 
 // todo ------------------------------------ daftar pertanyaan ppdb -------------------------------------------------
-Route::resource('daftar-pertanyaan-ppdb', PertanyaanPenerimaanSiswaController::class)
-    ->parameters(['daftar-pertanyaan-ppdb' => 'pertanyaanPendaftaran'])
-    ->names([
-        'index'     => 'dashboard.daftar-pertanyaan-ppdb.index',
-        'create'    => 'dashboard.daftar-pertanyaan-ppdb.create',
-        'store'     => 'dashboard.daftar-pertanyaan-ppdb.store',
-        'show'      => 'dashboard.daftar-pertanyaan-ppdb.show',
-        'edit'      => 'dashboard.daftar-pertanyaan-ppdb.edit',
-        'update'    => 'dashboard.daftar-pertanyaan-ppdb.update',
-        'destroy'   => 'dashboard.daftar-pertanyaan-ppdb.destroy'
-    ]);
-
+Route::middleware('role:superadmin')->group( function () {
+    Route::resource('daftar-pertanyaan-ppdb', PertanyaanPenerimaanSiswaController::class)
+        ->parameters(['daftar-pertanyaan-ppdb' => 'pertanyaanPendaftaran'])
+        ->names([
+            'index'     => 'dashboard.daftar-pertanyaan-ppdb.index',
+            'create'    => 'dashboard.daftar-pertanyaan-ppdb.create',
+            'store'     => 'dashboard.daftar-pertanyaan-ppdb.store',
+            'show'      => 'dashboard.daftar-pertanyaan-ppdb.show',
+            'edit'      => 'dashboard.daftar-pertanyaan-ppdb.edit',
+            'update'    => 'dashboard.daftar-pertanyaan-ppdb.update',
+            'destroy'   => 'dashboard.daftar-pertanyaan-ppdb.destroy'
+        ]);
+});
