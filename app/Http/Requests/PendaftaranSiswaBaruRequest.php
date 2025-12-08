@@ -34,7 +34,7 @@ class PendaftaranSiswaBaruRequest extends FormRequest
             'nisn'                          => ['required', 'string', 'max:20'],
             'tanggal_lahir'                 => ['required', 'date'],
             'tempat_lahir'                  => ['required', 'string', 'max:100'],
-            'jenis_kelamin'                 => ['required', 'in:Laki-laki,perempuan'],
+            'jenis_kelamin'                 => ['required', 'in:laki-laki,perempuan'],
             'agama'                         => ['required', 'string', 'max:50'],
             'alamat_siswa'                  => ['required', 'string', 'max:100'],
             'alamat_sekolah_sebelumnya'     => ['required', 'string', 'max:100'],

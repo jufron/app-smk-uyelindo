@@ -181,7 +181,7 @@
                     <div class="col-md-2">
                         <x-dashboard.input-select label="Tinggal Dengan" name="tinggal_dengan">
                             <option value="orang tua" @if (old('tinggal_dengan') == 'orang tua') selected @endif>Orang Tua</option>
-                            <option value="wali murid" @if (old('ntinggal_dengan') == 'wali murid') selected @endif>Wali Murid</option>
+                            <option value="wali murid" @if (old('tinggal_dengan') == 'wali murid') selected @endif>Wali Murid</option>
                         </x-dashboard.input-select>
                     </div>
                 </div>

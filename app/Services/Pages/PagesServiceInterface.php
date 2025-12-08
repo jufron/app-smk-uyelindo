@@ -2,6 +2,7 @@
 
 namespace App\Services\Pages;
 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\CursorPaginator;
@@ -35,4 +36,6 @@ interface PagesServiceInterface
     public function getSiswaBerprestasiLatest () : CursorPaginator;
 
     public function createPpdb (Request $request) :void;
+
+    public function createPdfppdb (Request $request);
 }
