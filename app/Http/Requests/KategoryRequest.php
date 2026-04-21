@@ -24,7 +24,7 @@ class KategoryRequest extends FormRequest
         $kategory = $this->route('kategory');
         return [
             'nama'          => ['required', 'string', 'min:3', 'max:50', $kategory ? "unique:kategory,nama,$kategory->id" : 'unique:kategory,nama'],
-            'deskripsi'     => ['nullable', 'string', 'min:10', 'max:65535']
+            'deskripsi'     => ['required', 'string', 'min:10', 'max:65535']
         ];
     }
 }

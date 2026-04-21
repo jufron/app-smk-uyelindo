@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class LoginRequest extends FormRequest
 {
@@ -27,8 +29,8 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'email'         => ['required', 'string', 'email'],
+            'password'      => ['required', 'string'],
         ];
     }
 
@@ -44,9 +46,26 @@ class LoginRequest extends FormRequest
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
-            return back()->withErrors([
-                'email' => 'Email atau password salah.',
-            ])->onlyInput('email');
+            // return back()->withErrors([
+            //     'email' => 'Email atau password salah.',
+            // ])->onlyInput('email');
+
+            // 1. cek apakah email ada
+            $user = User::where('email', $this->email)->first();
+
+            if (!$user) {
+                throw ValidationException::withMessages([
+                    'email'       => trans('Email yang dimasukin salah.'),
+                ]);
+            }
+
+            // 2. cek password
+            if (!Hash::check($this->password, $user->password)) {
+                throw ValidationException::withMessages([
+                    'password'  => trans('Password yang dimasukin salah.'),
+                ]);
+            }
+
         }
 
         RateLimiter::clear($this->throttleKey());
