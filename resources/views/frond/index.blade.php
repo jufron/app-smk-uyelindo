@@ -242,10 +242,7 @@
                                 <div class="flex space-x-6">
                                     <div class="flex space-x-4 flex-shrink-0 w-52">
                                         <img
-                                            src="{{ $testimoni->avatar_url 
-                                                ? asset("storage/$testimoni->avatar_url") 
-                                                : asset('img/defaultsvg.svg') }}
-                                                "
+                                            src="{{ $testimoni->avatar_url ? asset("$testimoni->avatar_url") : asset('img/defaultsvg.svg') }}"
                                             class="w-10 h-10 rounded-full"
                                             loading="lazy"
                                         />
